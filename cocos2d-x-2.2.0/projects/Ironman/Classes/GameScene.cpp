@@ -7,6 +7,7 @@
 //
 
 #include "GameScene.h"
+#include "CCShake.h"
 bool GameScene::init()
 {
 	gameSceneMapLayer = new GameSceneMapLayer();
@@ -150,8 +151,15 @@ void GameScene::update(float dt)
 
 	if (playLayer->playerBoundingBox.intersectsRect(gameSceneMonster->MonsterAmatureBoundingBox))
 	{
-		//this->unscheduleUpdate();
-		//gameSceneMonster->MonsterDestroyAction();
+		/*
+		if(MonsterGround_enum == gameSceneMonster->MonsterIndex)
+		{
+			gameSceneMonster->unscheduleUpdate();
+			gameSceneMonster->MonsterDestroyAction();
+		}
+		*/
+		CCShake * shark = CCShake::create(0.3f,10); 
+		playLayer->runAction(shark);
 		playLayer->imManArmatureBrood-=1;
 		if(playLayer->imManArmatureBrood<1)
 		{
