@@ -10,6 +10,7 @@
 #include "GameScene.h"
 #include "Laser.h"
 #include "AudioPlayer.h"
+
 #define ANIME_RUN 0
 #define ANIME_JUMP 0
 
@@ -400,7 +401,6 @@ void GameScenePlayLayer::Dead(cocos2d::extension::CCArmature *armature, Movement
 
 int GameScenePlayLayer::getMonsterGroundAmount()
 {
-	
 	return monsterGroundAmount;
 }
 

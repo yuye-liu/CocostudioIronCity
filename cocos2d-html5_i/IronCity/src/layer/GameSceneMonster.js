@@ -80,7 +80,7 @@ var GameSceneMonster = cc.Layer.extend({
         this.addChild(armature);
         this.MonsterAmature = armature;
         this.MonsterIndex = MonsterType.MonsterSky_enum;
-        var movePoint = cc.p(pGameScene.playLayer.imManArmature.getPosition().x-100,
+        var movePoint = cc.p(pGameScene.playLayer.imManArmature.getPosition().x,
             pGameScene.playLayer.imManArmature.getPosition().y);
         var jumpAction = cc.JumpTo.create(3.0,movePoint,0,1);
         //console.log("add action");
