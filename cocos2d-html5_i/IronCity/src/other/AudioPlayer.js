@@ -25,10 +25,10 @@ var AudioPlayer = cc.Class.extend({
     _bMusicPlay:true,
     _audio:null,
     init:function(){
-        console.log("AudioPlayer init.");
-        console.log("g_ArrEffects: ", g_ArrEffects);
+        //console.log("AudioPlayer init.");
+        //console.log("g_ArrEffects: ", g_ArrEffects);
         this._audio = cc.AudioEngine.getInstance();
-        console.log("audioEngine: ", this._audio, "map3_music_background: ", mp3_music_background);
+        //console.log("audioEngine: ", this._audio, "map3_music_background: ", mp3_music_background);
         this._audio.preloadMusic(mp3_music_background);
         //SimpleAudioEngine::sharedEngine()->preloadEffect("");
         for(var obj in g_ArrEffects){

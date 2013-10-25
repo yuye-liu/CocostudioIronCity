@@ -61,11 +61,11 @@ var Laser = cc.Sprite.extend({
             var type = GameScene.getScene().gameSceneMonster.MonsterIndex;
             if (type == MonsterType.MonsterSky_enum) {
                 GameScene.getScene().playLayer.addMonsterSkyAmount();
-                //AudioPlayer::sharedAudio()->playEffect(Effect_Monster_Dead_0);
+                AudioPlayer.getInstance().playEffect(g_ArrEffects.Effect_Monster_Dead_0);
             }
             else if (type == MonsterType.MonsterGround_enum){
                 GameScene.getScene().playLayer.addMonsterGroundAmount();
-                //AudioPlayer::sharedAudio()->playEffect(Effect_Monster_Dead_1);
+                AudioPlayer.getInstance().playEffect(g_ArrEffects.Effect_Monster_Dead_1);
             }
             if(!GameScene.getScene().isRectDetectedLock)
             {
