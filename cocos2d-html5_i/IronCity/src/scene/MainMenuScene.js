@@ -41,6 +41,7 @@ var MainMenuScene = cc.Scene.extend({
         this.mainMenu.setPosition(cc.p(size.width/2, size.height/5));
 
         menuLayer.addChild(this.mainMenu,1);
+        //AudioPlayer.getInstance();
         this.addChild(menuLayer);
     },
     init:function(){

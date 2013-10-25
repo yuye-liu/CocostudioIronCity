@@ -24,6 +24,7 @@
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  THE SOFTWARE.
  ****************************************************************************/
+var winSize = cc.SizeMake(480, 320);
 var cocos2dApp = cc.Application.extend({
     config:document['ccConfig'],
     ctor:function (scene) {
@@ -44,7 +45,7 @@ var cocos2dApp = cc.Application.extend({
 
         var screenSize = cc.EGLView.getInstance().getFrameSize();
         var resourceSize = cc.size(480, 800);
-        var designSize = cc.size(480, 800);
+        var designSize = winSize;
 
         var searchPaths = [];
         var resDirOrders = [];
@@ -66,9 +67,9 @@ var cocos2dApp = cc.Application.extend({
             }
         }
 
-        cc.FileUtils.getInstance().setSearchResolutionsOrder(resDirOrders);
+        //cc.FileUtils.getInstance().setSearchResolutionsOrder(resDirOrders);
 
-        director.setContentScaleFactor(resourceSize.width / designSize.width);
+        //director.setContentScaleFactor(resourceSize.width / designSize.width);
 
        // cc.EGLView.getInstance().setDesignResolutionSize(480, 320, cc.RESOLUTION_POLICY.SHOW_ALL);
 

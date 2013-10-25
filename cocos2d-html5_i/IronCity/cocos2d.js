@@ -39,6 +39,7 @@
         //SingleEngineFile:'',
         appFiles:[
             'src/resource.js',
+            'src/other/VisibleRect.js',
             'src/layer/tiledMap.js',
             'src/scene/MainMenuScene.js',
             'src/scene/GameScene.js',
@@ -46,7 +47,9 @@
             'src/layer/GameSceneSetLayer.js',
             'src/layer/GameSceneMonster.js',
             'src/layer/GameSceneOverLayer.js',
-            'src/layer/GameScenePlayLayer.js'
+            'src/layer/GameScenePlayLayer.js',
+            'src/layer/Laser.js',
+            'src/other/AudioPlayer.js'
         ]
     };
 
