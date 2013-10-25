@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="20" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="sky" tilewidth="480" tileheight="320">
+  <image source="sky.png" width="1440" height="320"/>
+ </tileset>
+ <tileset firstgid="4" name="floor" tilewidth="144" tileheight="192" spacing="2">
+  <tileoffset x="-3" y="0"/>
+  <image source="floor.png" width="878" height="192"/>
+ </tileset>
+ <tileset firstgid="10" name="wooden_ladder" tilewidth="256" tileheight="256" spacing="1">
+  <image source="wooden_ladder.png" width="1029" height="256"/>
+ </tileset>
+ <tileset firstgid="14" name="cloud" tilewidth="192" tileheight="72" spacing="1">
+  <image source="cloud.png" width="1159" height="72"/>
+ </tileset>
+ <tileset firstgid="20" name="pipe" tilewidth="112" tileheight="64" spacing="1">
+  <image source="pipe.png" width="910" height="64"/>
+ </tileset>
+ <layer name="sky" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgYnoARiukNAApMAAM=
+  </data>
+ </layer>
+ <layer name="cloud" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGLuAjUh0/CfoEyHTLKBg+AACJAAA8
+  </data>
+ </layer>
+ <layer name="camp" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgY/oCXjnYBAA7cAA4=
+  </data>
+ </layer>
+ <layer name="floor" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgYnoCVRvKE9AEADygAFQ==
+  </data>
+ </layer>
+ <layer name="pipe" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgY/kAEj5woHjkxPHLiOMQBHwAAVw==
+  </data>
+ </layer>
+</map>

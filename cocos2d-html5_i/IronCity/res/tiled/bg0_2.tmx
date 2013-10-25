@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="20" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="sky" tilewidth="480" tileheight="320">
+  <image source="sky.png" width="1440" height="320"/>
+ </tileset>
+ <tileset firstgid="4" name="floor" tilewidth="144" tileheight="192" spacing="2">
+  <tileoffset x="1" y="0"/>
+  <image source="floor.png" width="878" height="192"/>
+ </tileset>
+ <tileset firstgid="10" name="wooden_ladder" tilewidth="256" tileheight="256" spacing="1">
+  <image source="wooden_ladder.png" width="1029" height="256"/>
+ </tileset>
+ <tileset firstgid="14" name="concrete_wall" tilewidth="64" tileheight="192">
+  <image source="concrete_wall.png" width="192" height="192"/>
+ </tileset>
+ <tileset firstgid="17" name="house" tilewidth="352" tileheight="176" spacing="2">
+  <image source="house.png" width="1060" height="176"/>
+ </tileset>
+ <tileset firstgid="20" name="cloud" tilewidth="192" tileheight="72" spacing="2">
+  <image source="cloud.png" width="1159" height="72"/>
+ </tileset>
+ <tileset firstgid="25" name="pipe2" tilewidth="32" tileheight="160">
+  <image source="pipe2.png" width="134" height="160"/>
+ </tileset>
+ <tileset firstgid="29" name="pipe" tilewidth="112" tileheight="64" spacing="2">
+  <image source="pipe.png" width="910" height="64"/>
+ </tileset>
+ <layer name="sky" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgYnoB5gOwFAArIAAQ=
+  </data>
+ </layer>
+ <layer name="house" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGAS4gPNAOGAVDEgAAM4gAFA==
+  </data>
+ </layer>
+ <layer name="wall" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgYnoCfRL4AlewFACAoAD4=
+  </data>
+ </layer>
+ <layer name="cloud" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGATWBxEA7YBQMOAAAOcAAGQ==
+  </data>
+ </layer>
+ <layer name="wooden" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgYnoBrgOwFAA4QAAs=
+  </data>
+ </layer>
+ <layer name="floor" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgYnoCVRvKE9AEADygAFQ==
+  </data>
+ </layer>
+ <layer name="pipe" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgYuUCSBuoBFRgAMw==
+  </data>
+ </layer>
+ <layer name="pipe1" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgYnkBlgOwFABpAACU=
+  </data>
+ </layer>
+</map>

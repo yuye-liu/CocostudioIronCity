@@ -1,4 +1,4 @@
-CocostudioIronCity
-==================
+cocostudioSampleGmae
+====================
 
-Sample game for cocostudio
+the game sample of cocostudio
