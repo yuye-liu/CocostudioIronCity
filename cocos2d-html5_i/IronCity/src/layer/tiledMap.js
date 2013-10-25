@@ -45,7 +45,13 @@ var TiledMap = cc.Layer.extend({    //load one tiledmap.
     }
 });
 
+var MIN_WIN_SIZE_W =  480;
 var mapGet = cc.Layer.extend({  //load one group tiledmap.
+    _length:null,
+    _bInMap:null,
+    _bCanAddMap:null,
+    _hasNextMap:null,
+    _mapIdx:null,
     objects:null,
     init:function(index){
         if(!index) index = 0;
@@ -60,24 +66,46 @@ var mapGet = cc.Layer.extend({  //load one group tiledmap.
             this.objects.push(tilemap.getObjects());
         }
 
-        this.length = arrMap0.length * g_w;
+        this._length = arrMap0.length * g_w;
+        if(this._length < MIN_WIN_SIZE_W) this._length = MIN_WIN_SIZE_W;
+        this._mapIdx = index;
+        this._bInMap = true;
+        this._bCanAddMap = false;
+        this._hasNextMap = false;
+
+        return true;
     },
     getObjects:function(){
         return this.objects;
     },
     getW:function(){    //get this's width.
-        return this.length;
+        return this._length;
+    },
+    isInMap:function(){
+        return this._bInMap;
     },
     update:function(){
-        var p_x = this.getPositionX();
-        if(p_x <= -this.length){
-            this.getParent().refreshMap();
+        if(!this._bInMap){
+            return;
         }
-        if(p_x == -g_w){
+        var p_x = this.getPositionX();
+        if(p_x <= -this._length){
+            this._bInMap = false;
+            this.getParent().refreshMap();
+            return;
+        }
+        if(p_x <= -g_w/2 && p_x >= -g_w*2){
+            this._bCanAddMap = true;
+        }
+        if(this._bCanAddMap && !this._hasNextMap){
             this.getParent().addNextMap();
+            this._bCanAddMap = false;
+            this._hasNextMap = true;
         }
         p_x -= g_map_move_speed;
-        this.setPositionX(p_x);
+        if(this._bInMap && p_x >= -this._length - g_map_move_speed){
+            this.setPositionX(p_x);
+        }
     }
 });
 
@@ -87,9 +115,9 @@ var g_count = 0;    //for count
 
 var MovedMap = cc.Layer.extend({    //move map for game.
     arrMaps:null,   //curmap is arrMaps[0].
-    _curW:0,
-    bMove:false,
-    _distance:0.0,
+    _curW:null,
+    bMove:null,
+    _distance:null,
     init:function(){
         //add colorlayer
         var colorLy = cc.LayerColor.create(cc.c4b(43,49,62,0));
@@ -115,6 +143,9 @@ var MovedMap = cc.Layer.extend({    //move map for game.
     setMovedSpeed:function(speed){
         g_map_move_speed = speed;
     },
+    getMoveSpeed:function(){
+        return g_map_move_speed;
+    },
     addNextMap:function(){
         var idx = getRandN(2);
         if( idx == this.lastIdx ){
@@ -132,23 +163,13 @@ var MovedMap = cc.Layer.extend({    //move map for game.
     },
     refreshMap:function(){
         //console.log("---refresh map.");
-        this.arrMaps[0].removeFromParent();
+        this.arrMaps[0].removeFromParent(true);
         //this.removeChild(this.arrMaps[0]);
         //for(var i=0; i<2; i++){
         //    this.arrMaps[i] = this.arrMaps[i+1];
         //}
         this.arrMaps[0] = this.arrMaps[1];
         this.arrMaps.pop();
-
-        for(var i=0; i<this.arrMaps.length; i++)
-        {
-            //console.log("-----map index: ", this.lastIdx);
-        }
-        //get x,y
-        //var pos_x = thisd.arrMaps[1].getPositionX();
-        //this.arrMaps[2].setPositionX();
-        //this.addChild(this.arrMaps[2]);
-        //console.log("refresh map, length: ", this.arrMaps.length);
     },
     getObjects:function(){  //get current map's objects.
         return this.arrMaps[0].getObjects();
@@ -159,17 +180,13 @@ var MovedMap = cc.Layer.extend({    //move map for game.
             return;
         }
         for(var i=0; i<this.arrMaps.length; i++){
-            if( this.arrMaps[i] != null )
+            if( this.arrMaps[i] != null && this.arrMaps[i].isInMap())
                 this.arrMaps[i].update();
         }
 
-        if(g_count % 600 == 0){
-            for(var i=0; i<3; i++)
-            {
-                //console.log(this.arrMaps[i].getPositionX());
-                //console.log("map index: ", this.arrMaps[i].mapIdx);
-            }
-        }
+        this._distance += g_map_move_speed;
+        if(GameScene.getScene() && GameScene.getScene().menuLayer)
+            GameScene.getScene().menuLayer.setDistanceScore(this._distance);
     },
     stop:function(){
         if(!this.bMove)

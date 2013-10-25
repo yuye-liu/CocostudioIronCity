@@ -50,7 +50,7 @@ var GameScenePlayLayer = cc.Layer.extend({
         this.playerX = 50.0;
         this.playerY = 70.0;
         this.playerScale = 0.6;
-        this.imManArmatureBrood = 100;
+        this.imManArmatureBrood = 10000;
 
         this.monsterGroundAmount = 0;
         this.monsterSkyAmount = 0;
@@ -382,7 +382,7 @@ var GameScenePlayLayer = cc.Layer.extend({
         if (movementType == CC_MovementEventType_COMPLETE || movementType == CC_MovementEventType_LOOP_COMPLETE)
         {
             //play audio and launch laser.
-            //AudioPlayer::sharedAudio()->playEffect(Effect_Attack_0);
+            AudioPlayer.getInstance().playEffect(g_ArrEffects.Effect_Attack_0);
             GameScene.getScene().laser.addLaser(this._attackPos, this._attackDir);
             this.isAttack = false;
             this.imManArmature.stopAllActions();
