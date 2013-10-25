@@ -20,7 +20,7 @@ var GameSceneOverLayer = cc.UILayer.extend({
             var distanceScore      = this.getWidgetByName("distanceScore");
             this.finalScore = this.getWidgetByName("finalScore");
 
-            //playAgainBtn.setTouchEnabled(true);
+            playAgainBtn.setTouchEnabled(true);
             playAgainBtn.addTouchEventListener(this, this.playAgainBtnCallback);
             console.log("playAgainBtn: ", playAgainBtn);
 
