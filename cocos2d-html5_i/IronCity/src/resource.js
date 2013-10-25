@@ -85,18 +85,18 @@ var Plist_IMDead                    = "res/IronManAnimation/IMDead0.plist";
 var Png_IMDead                      = "res/IronManAnimation/IMDead0.png";
 
 //music
-var map3_music_background   = "res/music/music_background.mp3";
-var map3_sound_coin         = "res/music/sound_coin.mp3";
-var map3_sound_dead         = "res/music/sound_dead.mp3";
-var map3_sound_energy_1     = "res/music/sound_energy_1.mp3";
-var map3_sound_energy_2     = "res/music/sound_energy_2.mp3";
-var map3_sound_enydead_1    = "res/music/sound_enydead_1.mp3";
-var map3_sound_enydead_2    = "res/music/sound_enydead_2.mp3";
-var map3_sound_fire_1       = "res/music/sound_fire_1.mp3";
-var map3_sound_hit_1        = "res/music/sound_hit_1.mp3";
-var map3_sound_hit_2        = "res/music/sound_hit_2.mp3";
-var map3_sound_jump         = "res/music/sound_jump.mp3";
-var map3_sound_run          = "res/music/sound_run.mp3";
+var mp3_music_background   = "res/music/music_background.mp3";
+var mp3_sound_coin         = "res/music/sound_coin.mp3";
+var mp3_sound_dead         = "res/music/sound_dead.mp3";
+var mp3_sound_energy_1     = "res/music/sound_energy_1.mp3";
+var mp3_sound_energy_2     = "res/music/sound_energy_2.mp3";
+var mp3_sound_enydead_1    = "res/music/sound_enydead_1.mp3";
+var mp3_sound_enydead_2    = "res/music/sound_enydead_2.mp3";
+var mp3_sound_fire_1       = "res/music/sound_fire_1.mp3";
+var mp3_sound_hit_1        = "res/music/sound_hit_1.wav";
+var mp3_sound_hit_2        = "res/music/sound_hit_2.wav";
+var mp3_sound_jump         = "res/music/sound_jump.wav";
+var mp3_sound_run          = "res/music/sound_run.wav";
 
 var g_resources = [
     //

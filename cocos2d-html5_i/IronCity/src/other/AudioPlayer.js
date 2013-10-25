@@ -7,34 +7,36 @@
  */
 
 var g_ArrEffects = {
-    Effect_Attack_0:"sound_fire_1.mp3",
-    Effect_Run:"sound_run.wav",
-    Effect_Jump:"sound_jump.wav",
-    Effect_Dead_0:"sound_dead.mp3",
-    Effect_Monster_0:"sound_energy_1.mp3",
-    Effect_Monster_1:"sound_energy_2.mp3",
-    Effect_Monster_Dead_0:"sound_enydead_1.mp3",
-    Effect_Monster_Dead_1:"sound_enydead_2.mp3",
-    Effect_Hit_0:"sound_hit_1.wav",
-    Effect_Hit_1:"sound_hit_2.wav",
-    Effect_Coin:"sound_coin.mp3"
+    Effect_Attack_0:mp3_sound_fire_1,
+    Effect_Run:mp3_sound_run,
+    Effect_Jump:mp3_sound_jump,
+    Effect_Dead_0:mp3_sound_dead,
+    Effect_Monster_0:mp3_sound_energy_1,
+    Effect_Monster_1:mp3_sound_energy_2,
+    Effect_Monster_Dead_0:mp3_sound_enydead_1,
+    Effect_Monster_Dead_1:mp3_sound_enydead_2,
+    Effect_Hit_0:mp3_sound_hit_1,
+    Effect_Hit_1:mp3_sound_hit_2,
+    Effect_Coin:mp3_sound_coin
 };
 
 var AudioPlayer = cc.Class.extend({
     _bEffectPlay:true,
     _bMusicPlay:true,
+    _audio:null,
     init:function(){
         console.log("AudioPlayer init.");
-        console.log("g_ArrEffects: ", g_ArrEffects[0]);
-        var audioEngine = cc.AudioEngine.getInstance();
-        audioEngine.preloadBackgroundMusic(map3_music_background);
+        console.log("g_ArrEffects: ", g_ArrEffects);
+        this._audio = cc.AudioEngine.getInstance();
+        console.log("audioEngine: ", this._audio, "map3_music_background: ", mp3_music_background);
+        this._audio.preloadMusic(mp3_music_background);
         //SimpleAudioEngine::sharedEngine()->preloadEffect("");
         for(var obj in g_ArrEffects){
             //console.log("idx:", obj, g_ArrEffects[obj]);
-            audioEngine.preloadEffect(g_ArrEffects[obj]);
+            this._audio.preloadEffect(g_ArrEffects[obj]);
         };
 
-        audioEngine.playBackgroundMusic("music_background.mp3", true);
+        this._audio.playMusic(mp3_music_background, true);
 
         this._bEffectPlay = true;
         this._bMusicPlay = true;
@@ -47,25 +49,34 @@ var AudioPlayer = cc.Class.extend({
     resume:function(){
         ;
     },
-    playEffect:function(){
-        ;
+    playEffect:function(idx){
+        if(this._bEffectPlay)
+            this._audio.playEffect(idx);
     },
-    setEffectPlay:function(){
-        ;
+    setEffectPlay:function(play){
+        this._bEffectPlay = play;
     },
-    setBackgroundMusicPlay:function(){
-        ;
+    setBackgroundMusicPlay:function(play){
+        this._bMusicPlay = play;
+
+        if (this._bMusicPlay) {
+            this._audio.stopBackgroundMusic();
+        }
+        else{
+            this._audio.playBackgroundMusic(mp3_music_background, true);
+        }
     },
-    setVolume:function(){
-        ;
+    setVolume:function(volume){
+        this._audio.setBackgroundMusicVolume(volume);
+        this._audio.setEffectsVolume(volume);
     }
 });
 
-AudioPlayer._instance = null
+AudioPlayer._instance = null;
 AudioPlayer.getInstance = function(){
     if(this._instance == null){
         this._instance = new AudioPlayer();
         this._instance.init();
     }
     return this._instance;
-}
+};
