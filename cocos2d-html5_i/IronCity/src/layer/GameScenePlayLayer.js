@@ -272,9 +272,9 @@ var GameScenePlayLayer = cc.Layer.extend({
         var armature = cc.Armature.create("IMRunStop");
         armature.getAnimation().play("RunningStop");
         armature.getAnimation().setSpeedScale(1.5);
-        armature.setScale(0.6);
+        armature.setScale(this.playerScale);
         armature.setAnchorPoint(cc.p(0.5,0));
-        armature.setPosition(cc.p(50, 50));
+        armature.setPosition(cc.p(this.playerX+50, this.playerY));
         this.armaturePosition = armature.getPosition();
         this.addChild(armature);
         this.imManArmature = armature;
@@ -292,9 +292,9 @@ var GameScenePlayLayer = cc.Layer.extend({
         var armature = cc.Armature.create("LaserRunAttack");
         armature.getAnimation().play("RunningAttack");
         armature.getAnimation().setSpeedScale(1.5);
-        armature.setScale(0.6);
+        armature.setScale(this.playerScale);
         armature.setAnchorPoint(cc.p(0.5,0));
-        armature.setPosition(cc.p(50, 50));
+        armature.setPosition(cc.p(this.playerX+40, this.playerY));
         this.armaturePosition = armature.getPosition();
         this.addChild(armature);
         this.imManArmature = armature;
@@ -313,9 +313,9 @@ var GameScenePlayLayer = cc.Layer.extend({
         var armature = cc.Armature.create("LaserStandAttack");
         armature.getAnimation().play("StandAttack");
         armature.getAnimation().setSpeedScale(1.5);
-        armature.setScale(0.6);
+        armature.setScale(this.playerScale);
         armature.setAnchorPoint(cc.p(0.5,0));
-        armature.setPosition(cc.p(50, 50));
+        armature.setPosition(cc.p(this.playerX, this.playerY));
         this.armaturePosition = armature.getPosition();
         this.addChild(armature);
         this.imManArmature = armature;

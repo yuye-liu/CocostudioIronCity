@@ -191,7 +191,7 @@ var GameSceneMonster = cc.Layer.extend({
                 bezier[0] = this.MonsterAmature.getPosition();
                 bezier[1] = cc.p(sx+(ex-sx)*0.5+randomNumX, sy+(ey-sy)*0.5+randomNumY);
                 bezier[2] = movePoint;
-                console.log("bezier pos: ", bezier);
+                //console.log("bezier pos: ", bezier);
                 var bezierAction = cc.BezierBy.create(3.0, bezier);
                 var m_grossini = cc.EaseIn.create(bezierAction, 1.5);
                 var callBack = cc.CallFunc.create(this.JumpActionCallBack, this);
