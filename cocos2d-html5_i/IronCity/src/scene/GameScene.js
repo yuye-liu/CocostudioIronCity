@@ -1,4 +1,4 @@
-
+//scene: game scene.
 var GameScene = cc.Scene.extend({
     moveMap:null,
     playerLayer:null,
@@ -47,6 +47,7 @@ var GameScene = cc.Scene.extend({
 
         //this.scheduleUpdate();
     },
+    //when game over.
     gameOver:function(){
         console.log("gameOver.");
         var overLayer = new GameSceneOverLayer();
@@ -69,6 +70,7 @@ var GameScene = cc.Scene.extend({
 
         this.addChild(overLayer, 10);
     },
+    //tick: update all action of per-node in per-frame.
     update:function(dt){
         //console.log("update.");
         var imManArmature = this.playLayer.imManArmature;
@@ -131,13 +133,13 @@ var GameScene = cc.Scene.extend({
             this.playLayer.imManArmatureBrood-=1;
             if(this.playLayer.imManArmatureBrood<1)
             {
-                GameScene.getScene().menuLayer.setBroodBarPercent(0);
+                GameScene.getScene().menuLayer.setBloodBarPercent(0);
                 this.unscheduleUpdate();
                 this.playLayer.IMDeath();
                 return;
             }
 
-            GameScene.getScene().menuLayer.setBroodBarPercent(this.playLayer.imManArmatureBrood);
+            GameScene.getScene().menuLayer.setBloodBarPercent(this.playLayer.imManArmatureBrood);
         }
     }
 });

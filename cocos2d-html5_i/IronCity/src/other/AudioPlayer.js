@@ -18,25 +18,21 @@ var g_ArrEffects = {
     Effect_Hit_0:mp3_sound_hit_1,
     Effect_Hit_1:mp3_sound_hit_2,
     Effect_Coin:mp3_sound_coin
-};
+};  //all effects of audio.
 
+//audio manager.
 var AudioPlayer = cc.Class.extend({
-    _bEffectPlay:true,
-    _bMusicPlay:true,
-    _audio:null,
+    _bEffectPlay:true,  //mark of effect play.
+    _bMusicPlay:true,   //mark of music play.
+    _audio:null,        //
     init:function(){
-        console.log("AudioPlayer init.");
-        console.log("g_ArrEffects: ", g_ArrEffects);
         this._audio = cc.AudioEngine.getInstance();
-        console.log("audioEngine: ", this._audio, "map3_music_background: ", mp3_music_background);
-        this._audio.preloadMusic(mp3_music_background);
-        //SimpleAudioEngine::sharedEngine()->preloadEffect("");
-        for(var obj in g_ArrEffects){
-            //console.log("idx:", obj, g_ArrEffects[obj]);
+        this._audio.preloadMusic(mp3_music_background);     //load background music.
+        for(var obj in g_ArrEffects){       //load effects.
             this._audio.preloadEffect(g_ArrEffects[obj]);
         };
 
-        this._audio.playMusic(mp3_music_background, true);
+        //this._audio.playMusic(mp3_music_background, true);    //play background music.
 
         this._bEffectPlay = true;
         this._bMusicPlay = true;
@@ -49,13 +45,16 @@ var AudioPlayer = cc.Class.extend({
     resume:function(){
         ;
     },
+    //play effect by index.
     playEffect:function(idx){
         if(this._bEffectPlay)
             this._audio.playEffect(idx);
     },
+    //set effect is play.
     setEffectPlay:function(play){
         this._bEffectPlay = play;
     },
+    //set music is play.
     setBackgroundMusicPlay:function(play){
         this._bMusicPlay = play;
 
@@ -66,6 +65,7 @@ var AudioPlayer = cc.Class.extend({
             this._audio.playBackgroundMusic(mp3_music_background, true);
         }
     },
+    //set volume.
     setVolume:function(volume){
         this._audio.setBackgroundMusicVolume(volume);
         this._audio.setEffectsVolume(volume);
@@ -73,6 +73,7 @@ var AudioPlayer = cc.Class.extend({
 });
 
 AudioPlayer._instance = null;
+//instance of AudioPlayer.
 AudioPlayer.getInstance = function(){
     if(this._instance == null){
         this._instance = new AudioPlayer();

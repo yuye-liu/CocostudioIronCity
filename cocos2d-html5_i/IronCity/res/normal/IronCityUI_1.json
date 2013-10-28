@@ -174,7 +174,7 @@
         "options": {
           "__type": "ComGUILoadingBarSurrogate:#EditorCommon.JsonModel.Component.GUI",
           "classname": "LoadingBar",
-          "name": "BroodBar",
+          "name": "BloodBar",
           "ZOrder": 2,
           "actiontag": 23,
           "anchorPointX": 0.5,
@@ -209,7 +209,7 @@
           "scale9Enable": false,
           "texture": null,
           "textureData": {
-            "path": "broodBar.png",
+            "path": "bloodBar.png",
             "plistFile": null,
             "resourceType": 0
           }
@@ -222,7 +222,7 @@
         "options": {
           "__type": "ComGUIImageViewSurrogate:#EditorCommon.JsonModel.Component.GUI",
           "classname": "ImageView",
-          "name": "BroodVector",
+          "name": "BloodVector",
           "ZOrder": 1,
           "actiontag": 22,
           "anchorPointX": 0.5,
@@ -254,7 +254,7 @@
           "capInsetsY": 0,
           "fileName": null,
           "fileNameData": {
-            "path": "brood.png",
+            "path": "blood.png",
             "plistFile": null,
             "resourceType": 0
           },

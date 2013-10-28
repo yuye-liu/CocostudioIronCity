@@ -6,11 +6,13 @@
  * To change this template use File | Settings | File Templates.
  */
 
+//layer: setting layer.
 var GameSceneSetLayer = cc.UILayer.extend({
     musicEffectStatus:0,
     musicEffectSlider:null,
     musicVolumeSlider:null,
     parentScene:null,
+    //init function: effectStatus: effect of audio, volumn: volume of music.
     init:function(effectStatus, volumn){
         if( cc.UILayer.prototype.init.call(this) ){
             this.parentScene = GameScene.getScene();
@@ -22,6 +24,7 @@ var GameSceneSetLayer = cc.UILayer.extend({
             this.parentScene.playLayer.imManArmature.pauseSchedulerAndActions();
             this.parentScene.menuLayer.settingBtn.setTouchEnable(false);
 
+            //add cocostudio json file to widget.
             this.addWidget(cc.UIHelper.getInstance().createWidgetFromJsonFile(Json_GameSceneSetMenu_1));
 
             this.musicEffectSlider = this.getWidgetByName("musicEffect");
@@ -49,6 +52,7 @@ var GameSceneSetLayer = cc.UILayer.extend({
 
         return false;
     },
+    //callback function of music effect slider.
     musicEffectSliderCallFunc:function(pSender, type){
         if(type == cc.SliderEventType.PERCENTCHANGED){
             if(this.musicEffectStatus == 0){
@@ -65,6 +69,7 @@ var GameSceneSetLayer = cc.UILayer.extend({
         //set audio state.
         //AudioPlayer::sharedAudio()->setBackgroundMusicPlay(musicEffectStatus);
     },
+    //callback function of music volume slider.
     musicVolumeSliderCallFunc:function(pSender, type){
         var voice = 0.0;
         if(type == cc.SliderEventType.PERCENTCHANGED){
@@ -82,6 +87,7 @@ var GameSceneSetLayer = cc.UILayer.extend({
         //set audio voice.
         //AudioPlayer::sharedAudio().setVolume(voice/100);
     },
+    //callback of backGame button.
     backGameBtn:function(pSender, type){
         if(cc.TouchEventType.ENDED == type){
             this.parentScene.resumeSchedulerAndActions();
@@ -100,6 +106,7 @@ var GameSceneSetLayer = cc.UILayer.extend({
             this.removeFromParent(true);
         }
     },
+    //callback of return main menu button.
     returnMainMenuBtnFunc:function(pSender, type){
         var mainMenuScene =  new MainMenuScene();
         mainMenuScene.init();
