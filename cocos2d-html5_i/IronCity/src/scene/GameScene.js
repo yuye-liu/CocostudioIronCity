@@ -133,7 +133,7 @@ var GameScene = cc.Scene.extend({
             this.playLayer.imManArmatureBrood-=1;
             if(this.playLayer.imManArmatureBrood<1)
             {
-                GameScene.getScene().menuLayer.setBroodBarPercent(0);
+                GameScene.getScene().menuLayer.setBloodBarPercent(0);
                 this.unscheduleUpdate();
                 this.playLayer.IMDeath();
                 return;

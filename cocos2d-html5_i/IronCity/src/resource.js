@@ -63,6 +63,7 @@ var s_labelatlasimg         = "res/normal/labelatlasimg.png";
 var Json_GameSceneSetMenu_1 = "res/normal/GameSceneSetMenu_1.json";
 var s_musicEffectSwitch     = "res/normal/musicEffectSwitch.png";
 var s_musicVolumeSwitch     = "res/normal/musicVolumeSwitch.png";
+var s_musicVolumeBottom = "res/normal/musicVolumeBottom.png";
 var s_musicVolumeOn                 = "res/normal/musicVolumeOn.png";
 var s_musicVolumeBK                 = "res/normal/musicVolumeBK.png";
 var Json_GameSceneOverLayer_1       = "res/normal/GameSceneOverLayer_1.json";
@@ -83,6 +84,13 @@ var s_MonsterSkyMoving_png          = "res/IronManAnimation/MonsterSkyMoving0.pn
 var Json_IMDead                     = "res/IronManAnimation/IMDead.ExportJson";
 var Plist_IMDead                    = "res/IronManAnimation/IMDead0.plist";
 var Png_IMDead                      = "res/IronManAnimation/IMDead0.png";
+var png_backGame        = "res/normal/backGame.png";
+var png_backGamePush = "res/normal/backGamePush.png";
+var png_backMainMenuBtn = "res/normal/backMainMenuBtn.png";
+var png_backMainMenuPushBtn = "res/normal/backMainMenuPushBtn.png";
+var png_playAgainBtn = "res/normal/playAgainBtn.png";
+var png_playAgainPushBtn = "res/normal/playAgainPushBtn.png";
+var png_gameOverMenu = "res/normal/gameOverMenu.png";
 
 //music
 var mp3_music_background   = "res/music/music_background.mp3";
@@ -147,7 +155,15 @@ var g_resources = [
     {src:s_musicVolumeSwitch},
     {src:s_musicVolumeOn},
     {src:s_musicVolumeBK},
+    {src:s_musicVolumeBottom},
     {src:Png_laser},
+    {src:png_backGame},
+    {src:png_backGamePush},
+    {src:png_backMainMenuBtn},
+    {src:png_backMainMenuPushBtn},
+    {src:png_playAgainBtn},
+    {src:png_playAgainPushBtn},
+    {src:png_gameOverMenu},
 
     //tiledmap
     {src:s_Concreate_wall},

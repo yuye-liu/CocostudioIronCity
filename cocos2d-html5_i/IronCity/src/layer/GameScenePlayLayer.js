@@ -52,7 +52,7 @@ var GameScenePlayLayer = cc.Layer.extend({
         this.playerX = 50.0;
         this.playerY = 70.0;
         this.playerScale = 0.6;
-        this.imManArmatureBrood = 10000;
+        this.imManArmatureBrood = 100;
 
         this.monsterGroundAmount = 0;
         this.monsterSkyAmount = 0;
