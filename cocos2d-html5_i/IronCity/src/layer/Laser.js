@@ -6,11 +6,13 @@
  * To change this template use File | Settings | File Templates.
  */
 
+//laser: attack's mode.
 var Laser = cc.Sprite.extend({
-    _idx:0,
-    dir_x:0,
+    _idx:0, //idx: index of laser.
+    dir_x:0,    //for describe direction of laser.
     dir_y:0,
-    speed:0,
+    speed:0,    //speed of laser.
+    //init function, idx: index of laser, pos: position of laser. direction: direction of laser.
     init:function(idx, pos, direction){
         this.initWithFile(Png_laser);
         this.setPosition(pos);
@@ -22,9 +24,11 @@ var Laser = cc.Sprite.extend({
         this.dir_x = Math.cos(direction);
         this.dir_y = -Math.sin(direction);
     },
+    //delete self from parent.
     releaseLaser:function(){
         (this.getParent()).removeLaser(this._idx);
     },
+    //outside of wall or not.
     ifOutSideWall:function(){
         var winSize = cc.Director.getInstance().getWinSize();
         if(winSize.width < 480)
@@ -40,6 +44,7 @@ var Laser = cc.Sprite.extend({
 
         return false;
     },
+    //is crossing a rect.
     inRect:function(rect){
         var _org = this.getPosition();
         for (var i=0; i<100; i++) {
@@ -50,14 +55,18 @@ var Laser = cc.Sprite.extend({
         }
         return false;
     },
+    //update status of pre-frame.
     update:function(){
+        //if out of wall, delete self and return.
         if (this.ifOutSideWall()) {
             this.releaseLaser();
             return;
         }
+        //if hit a monster
         if (this.inRect(GameScene.getScene().gameSceneMonster.MonsterAmatureBoundingBox))
         {
             //add score.
+            console.log("get score.");
             var type = GameScene.getScene().gameSceneMonster.MonsterIndex;
             if (type == MonsterType.MonsterSky_enum) {
                 GameScene.getScene().playLayer.addMonsterSkyAmount();
@@ -79,16 +88,20 @@ var Laser = cc.Sprite.extend({
             return;
         }
 
+        //move
         var pos = this.getPosition();
         pos.x += this.dir_x * this.speed;
         pos.y += this.dir_y * this.speed;
         this.setPosition(pos);
     }
 });
+
+//manager of lasers.
 var LaserManager = cc.Layer.extend({
-    lasers:null,
-    topNum:0,
-    attackTime:0,
+    lasers:null,    //array of lasers.
+    topNum:0,       //for count top number.
+    attackTime:0,   //set attack time of two laser.
+    //init function.
     init:function(){
         this.topNum = 0;
         this.attackTime = 0;
@@ -96,6 +109,7 @@ var LaserManager = cc.Layer.extend({
         //this->scheduleUpdate();
         return true;
     },
+    //get index of current empty position.
     getIndex:function(){
         for (var i=0; i<this.topNum; i++) {
             if (this.lasers[i] == null) {
@@ -105,6 +119,7 @@ var LaserManager = cc.Layer.extend({
 
         return this.topNum;
     },
+    //tick all lasers.
     update:function(dt){
         if (this.attackTime > 0) {
             this.attackTime --;
@@ -115,6 +130,7 @@ var LaserManager = cc.Layer.extend({
             }
         }
     },
+    //add a laser.
     addLaser:function(pos, dir){
         if (this.attackTime > 0) {
             return;
@@ -131,6 +147,7 @@ var LaserManager = cc.Layer.extend({
 
         this.attackTime = 20;
     },
+    //remove a laser.
     removeLaser:function(idx){
         this.lasers[idx].removeFromParent(true);
         this.lasers[idx] = null;
