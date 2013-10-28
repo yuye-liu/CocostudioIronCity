@@ -6,24 +6,25 @@
  * To change this template use File | Settings | File Templates.
  */
 
+//layer: game menu.
 var GameSceneMenuLayer = cc.UILayer.extend({
     parentScene:null,
     settingBtn:null,
-    broodBar:null,
+    bloodBar:null,
     distanceScore:null,
     musicEffect:null,
     musicVolume:null,
-    init:function(broodBarPercent, value){
+    init:function(bloodBarPercent, value){
         if( cc.UILayer.prototype.init.call(this) ){
             this.parentScene = GameScene.getScene();
             this.addWidget( cc.UIHelper.getInstance().createWidgetFromJsonFile(Json_IronCityUI_1) );
 
             this.settingBtn    = this.getWidgetByName("Setting");
-            this.broodBar      = this.getWidgetByName("BroodBar");
+            this.bloodBar      = this.getWidgetByName("BloodBar");
             this.distanceScore = this.getWidgetByName("DistanceScore");
 
             this.settingBtn.addTouchEventListener(this, this.settingBtnCallback);
-            this.setBroodBarPercent(broodBarPercent);
+            this.setBloodBarPercent(bloodBarPercent);
             this.setDistanceScore(value);
 
             this.musicEffect = 0;
@@ -33,12 +34,15 @@ var GameSceneMenuLayer = cc.UILayer.extend({
         }
         return false;
     },
-    setBroodBarPercent:function(percent){
-        this.broodBar.setPercent(percent);
+    //set blood.
+    setBloodBarPercent:function(percent){
+        this.bloodBar.setPercent(percent);
     },
+    //set distance score.
     setDistanceScore:function(value){
         this.distanceScore.setStringValue(value);
     },
+    //call back function of setting button.
     settingBtnCallback:function(pSender, type){
         if(cc.TouchEventType.BEGAN == type){
             this.parentScene = GameScene.getScene();
@@ -54,6 +58,7 @@ var GameSceneMenuLayer = cc.UILayer.extend({
             return true;
         }
     },
+    //get score of distance.
     getDistanceScore:function(){
         return this.distanceScore.getStringValue();
     }

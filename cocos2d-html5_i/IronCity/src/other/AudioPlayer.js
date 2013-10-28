@@ -32,7 +32,7 @@ var AudioPlayer = cc.Class.extend({
             this._audio.preloadEffect(g_ArrEffects[obj]);
         };
 
-        this._audio.playMusic(mp3_music_background, true);    //play background music.
+        //this._audio.playMusic(mp3_music_background, true);    //play background music.
 
         this._bEffectPlay = true;
         this._bMusicPlay = true;

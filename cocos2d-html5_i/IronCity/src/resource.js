@@ -56,9 +56,9 @@ var s_bg_22                 = "res/tiled/bg2_2.tmx";
 //ui
 var Json_IronCityUI_1       = "res/normal/IronCityUI_1.json";
 var s_settingBtn            = "res/normal/settingBtn.png";
-var s_brood                 = "res/normal/brood.png";
+var s_blood                 = "res/normal/blood.png";
 var s_distance              = "res/normal/distance.png";
-var s_broodBar              = "res/normal/broodBar.png";
+var s_bloodBar              = "res/normal/bloodBar.png";
 var s_labelatlasimg         = "res/normal/labelatlasimg.png";
 var Json_GameSceneSetMenu_1 = "res/normal/GameSceneSetMenu_1.json";
 var s_musicEffectSwitch     = "res/normal/musicEffectSwitch.png";
@@ -139,9 +139,9 @@ var g_resources = [
     {src:Png_StartBtnPush},
     {src:Png_loadingPng},
     {src:s_settingBtn},
-    {src:s_brood},
+    {src:s_blood},
     {src:s_distance},
-    {src:s_broodBar},
+    {src:s_bloodBar},
     {src:s_labelatlasimg},
     {src:s_musicEffectSwitch},
     {src:s_musicVolumeSwitch},

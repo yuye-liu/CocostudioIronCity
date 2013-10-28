@@ -6,14 +6,18 @@
  * To change this template use File | Settings | File Templates.
  */
 
+//layer: game over.
 var GameSceneOverLayer = cc.UILayer.extend({
     finalScore:null,
     parentScene:null,
+    //init function.
     init:function(){
         if( cc.UILayer.prototype.init.call(this) ){
             this.parentScene = GameScene.getScene();
+            //add cocostudio json file to widget.
             this.addWidget(cc.UIHelper.getInstance().createWidgetFromJsonFile(Json_GameSceneOverLayer_1));
 
+            //get unit of all parts.
             var playAgainBtn        = this.getWidgetByName("playAgain");
             var monsterGroundAmount = this.getWidgetByName("monsterGroundLabel");
             var monsterSkyAmount    = this.getWidgetByName("monsterSkyLabel");
@@ -45,6 +49,7 @@ var GameSceneOverLayer = cc.UILayer.extend({
 //    onTouchesBegan:function(touch){
 //        console.log("touches", touch);
 //    },
+    //calculate final score.
     calculateFinalScore:function(monsterSkyAmountValue, monsterGroundAmountValue, distanceScoreValue){
         var distanceScore = 0;
         distanceScore = distanceScoreValue;
@@ -52,6 +57,7 @@ var GameSceneOverLayer = cc.UILayer.extend({
         var score = monsterSkyAmountValue + monsterGroundAmountValue + distanceScore * 3;
         this.finalScore.setStringValue(score);
     },
+    //callback function of playAgain button.
     playAgainBtnCallback:function(pSender, type){
         console.log("playAgainBtnCallback: ", pSender, type);
         if(cc.TouchEventType.BEGAN == type){

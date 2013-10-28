@@ -3,6 +3,8 @@ var GameScenePlayLayer = ACTION ({
     CROUCH = 0;
 
 });*/
+
+//layer: player layer.
 var GameScenePlayLayer = cc.Layer.extend({
     isMouseDown:false,
     actionNum:null,
@@ -31,14 +33,14 @@ var GameScenePlayLayer = cc.Layer.extend({
     ACTION_RUN_STOP:5,
     ACTION_DEATH:6,
 
+    //init function.
     init:function () {
         this._super();
         this.setTouchEnabled(true);
         //this.setTouchMode(cc.TOUCH_ONE_BY_ONE);
         var size = cc.Director.getInstance().getWinSize();
 
-        //cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_IMCrouch);
-        //cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_IMCrouchJump);
+        //add cocostudio json file to widget.
         cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_IMRun);
         cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_IMRunJump);
         cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_IMRunStop);
@@ -62,7 +64,7 @@ var GameScenePlayLayer = cc.Layer.extend({
         this.IMRunningStop();
         this.actionNum = this.ACTION_RUN_STOP;
     },
-
+    //callback function of runjump action.
     runJumpActionCallBack:function(sender, data){
         //console.log("runJumpActionCallBack.");
         this.imManArmature.stopAllActions();
@@ -76,42 +78,39 @@ var GameScenePlayLayer = cc.Layer.extend({
             this.IMRunningStop();
         }
     },
-
+    //callback function of standjump action.
     standJumpActionCallBack:function(){
         //console.log("standJumpActionCallBack.");
         this.imManArmature.stopAllActions();
         this.imManArmature.removeFromParent(false);
         this.IMRunningStop();
     },
+    //register touch dispatcher.
     registerWithTouchDispatcher:function(){
-        //console.log("registerWithTouchDispatcher.");
         cc.registerTargetedDelegate(0, false, this);
     },
+    //callback function of menu close button.
     menuCloseCallback:function(){
-        //console.log("menuCloseCallback.");
         var splitCols = cc.MoveTo.create(1.0 ,cc.p(this.imManArmature.getPosition().x+300, this.imManArmature.getPosition().y));
         this.imManArmature.runAction(splitCols);
     },
+    //change Ironman's speed.
     changeSpeed:function(t){
         this.imManArmature.getAnimation().setSpeedScale(2.0);
         GameScene.getScene().moveMap.setMovedSpeed(3);
     },
-//    onTouchBegan:function(sender){
-//        console.log("Touch Began.");
-//    },
+    //on touch began.
     onTouchBegan:function (touches, event) {
         this.m_tBeginPos = touches.getLocation();
-        //console.log("m_tBeginPos", this.m_tBeginPos);
 
         return true;
     },
-
+    //on touch moved.
     onTouchMoved:function (touches, event) {
         this.touchTime++;
     },
-
+    //on touch ended.
     onTouchEnded:function (touches, event) {
-        //console.log("onTouchesEnded", this.touchTime, touches);
         if(this.isAttack){
             return;
         }
@@ -124,13 +123,7 @@ var GameScenePlayLayer = cc.Layer.extend({
         var touchLocation = touches.getLocation();
         var nMoveX = touchLocation.x - this.m_tBeginPos.x;
         var nMoveY = touchLocation.y - this.m_tBeginPos.y;
-//        cc.log("m_tBeginPos.x = " + this.m_tBeginPos.x);
-//        cc.log("touchLocation.x = " + touchLocation.x);
-//        cc.log("nMoveX = %f ,nMoveY = " + nMoveX,nMoveY);
-//        cc.log("tan1 = " + Math.tan(nMoveY/nMoveX));
-//        cc.log("tan2 = " + Math.abs(Math.sqrt(3)/10));
         var radian = 10;
-        //console.log("nMoveX: ", nMoveX, "nMoveY: ", nMoveY);
 
         if(this.touchTime<3 )//&& checkIfTouchNotInSetBtnArea(touchLocation,setBtnSize, setBtnLocation))
         {
@@ -212,12 +205,13 @@ var GameScenePlayLayer = cc.Layer.extend({
             this.IMRunningStop();
         }
     },
-
+    //on touch cancelled.
 //    onTouchesCancelled:function (touches, event) {
 //        console.log("onTouchesCancelled");
 //    },
 
 
+    //Running animation.
     IMRunning:function(){
         //console.log("IMRunning.");
         var armature = cc.Armature.create("IMRun");
@@ -235,6 +229,7 @@ var GameScenePlayLayer = cc.Layer.extend({
             GameScene.getScene().moveMap.move();
     },
 
+    //Run jump animation.
     IMRunJump:function(){
         //console.log("IMRunJump.");
         var armature = cc.Armature.create("IMRunJump");
@@ -251,6 +246,7 @@ var GameScenePlayLayer = cc.Layer.extend({
         armature.getAnimation().setMovementEventCallFunc(this.amatureActionCallBack, this);
     },
 
+    //Stand jump animation.
     IMStandJump:function(){
         //console.log("IMStandJump.");
         var armature = cc.Armature.create("IMStandJump");
@@ -267,6 +263,7 @@ var GameScenePlayLayer = cc.Layer.extend({
             GameScene.getScene().moveMap.stop();
     },
 
+    //Running stop animation.
     IMRunningStop:function(){
         //console.log("IMRunningStop.");
         var armature = cc.Armature.create("IMRunStop");
@@ -280,10 +277,10 @@ var GameScenePlayLayer = cc.Layer.extend({
         this.imManArmature = armature;
 
         this.actionNum = this.ACTION_RUN_STOP;
-        //console.log("IMRunningStop.");
         if(GameScene.getScene() && GameScene.getScene().moveMap)
             GameScene.getScene().moveMap.stop();
     },
+    //Running attack animation.
     IMRunAttack:function(touch){
         //console.log("IMRunAttack.");
         var angle = this.getAngle(touch);
@@ -291,7 +288,7 @@ var GameScenePlayLayer = cc.Layer.extend({
 
         var armature = cc.Armature.create("LaserRunAttack");
         armature.getAnimation().play("RunningAttack");
-        armature.getAnimation().setSpeedScale(1.5);
+        armature.getAnimation().setSpeedScale(2.0);
         armature.setScale(this.playerScale);
         armature.setAnchorPoint(cc.p(0.5,0));
         armature.setPosition(cc.p(this.playerX+40, this.playerY));
@@ -304,6 +301,7 @@ var GameScenePlayLayer = cc.Layer.extend({
         this._attackPos = posHand;
         this._attackDir = angle;
     },
+    //Stand attack animation.
     IMStandAttack:function(touch){
         //console.log("IMStandAttack.");
         var posHand = this.getPosHand(0.1);
@@ -324,6 +322,7 @@ var GameScenePlayLayer = cc.Layer.extend({
         this._attackDir = angle;
         //console.log("IMStandAttack end.");
     },
+    //death animation.
     IMDeath:function(){
         //console.log("IMDeath.");
         this.setTouchEnabled(false);
@@ -341,6 +340,7 @@ var GameScenePlayLayer = cc.Layer.extend({
         this.actionNum = this.ACTION_DEATH;
         armature.getAnimation().setMovementEventCallFunc(this.Dead, this);
     },
+    //CallBack of running jump animation.
     amatureActionCallBack:function(armature, movementType, armature){
         if (movementType == CC_MovementEventType_COMPLETE || movementType == CC_MovementEventType_LOOP_COMPLETE)
         {
@@ -356,6 +356,7 @@ var GameScenePlayLayer = cc.Layer.extend({
             }
         }
     },
+    //get an angle
     getAngle:function(touch){
         var posOrg = cc.p(135, 132);
         if(touch.x <= posOrg.x)
@@ -373,10 +374,12 @@ var GameScenePlayLayer = cc.Layer.extend({
         var angle = Math.atan(tan);
         return -angle;
     },
+    //get Ironman's hand position.
     getPosHand:function(angle){
         var posH = cc.p(141, 141);
         return posH;
     },
+    //callback function of attack animation.
     setAttackEvent:function(armature, movementType, movementID){
         //console.log("setAttackEvent, movementType:", movementType, "movementID: ", movementID, "armature: ", armature);
         if (movementType == CC_MovementEventType_COMPLETE || movementType == CC_MovementEventType_LOOP_COMPLETE)
@@ -397,6 +400,7 @@ var GameScenePlayLayer = cc.Layer.extend({
             }
         }
     },
+    //callback function of dead animation.
     Dead:function(armature, movementType, movementID){
         //console.log("Dead");
         if (movementType == CC_MovementEventType_COMPLETE || movementType == CC_MovementEventType_LOOP_COMPLETE)
@@ -405,21 +409,26 @@ var GameScenePlayLayer = cc.Layer.extend({
                 GameScene.getScene().gameOver();
         }
     },
+    //chech area of not in set button.
     checkIfTouchNotInSetBtnArea:function(touchPosition, setBtnSize, setBtnPosition){
         //console.log("checkIfTouchNotInSetBtnArea.");
         return true;
     },
+    //get Amount of monster on ground.
     getMonsterGroundAmount:function(){
         //console.log("getMonsterGroundAmount.");
         return this.monsterGroundAmount;
     },
+    //get Amount of monster in sky.
     getMonsterSkyAmount:function(){
         //console.log("getMonsterSkyAmount.");
         return this.monsterSkyAmount;
     },
+    //add Amount of monster on ground.
     addMonsterGroundAmount:function(){
         this.monsterGroundAmount ++;
     },
+    //add Amount of monster in sky.
     addMonsterSkyAmount:function(){
         this.monsterSkyAmount ++;
     }
