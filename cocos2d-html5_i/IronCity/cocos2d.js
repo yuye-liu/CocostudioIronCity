@@ -15,18 +15,17 @@
         //SingleEngineFile:'',
         appFiles:
         [
-            'src/resource.js',
+            'src/scene/MainMenuScene.js',
+            'src/other/AudioPlayer.js',
+            'src/scene/GameScene.js',
             'src/other/VisibleRect.js',
             'src/layer/tiledMap.js',
-            'src/scene/MainMenuScene.js',
-            'src/scene/GameScene.js',
+            'src/layer/Laser.js',
             'src/layer/GameSceneMenuLayer.js',
             'src/layer/GameSceneSetLayer.js',
             'src/layer/GameSceneMonster.js',
             'src/layer/GameSceneOverLayer.js',
-            'src/layer/GameScenePlayLayer.js',
-            'src/layer/Laser.js',
-            'src/other/AudioPlayer.js'
+            'src/layer/GameScenePlayLayer.js'
         ]
     };
 
