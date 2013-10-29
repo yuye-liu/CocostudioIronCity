@@ -250,6 +250,7 @@
 		D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF949B15BD2D8E00D803EB /* Icon-114.png */; };
 		D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF949D15BD2D9600D803EB /* Icon-72.png */; };
 		D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = D4EF949F15BD2D9800D803EB /* Icon-144.png */; };
+		ED5EE109181F579600BE1F0C /* CCShake.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED5EE107181F579600BE1F0C /* CCShake.cpp */; };
 		ED7D5AFB180FC8C200BDCFAE /* music in Resources */ = {isa = PBXBuildFile; fileRef = ED7D5AFA180FC8C200BDCFAE /* music */; };
 		ED7D5AFE180FC97700BDCFAE /* AudioPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ED7D5AFC180FC97700BDCFAE /* AudioPlayer.cpp */; };
 		EDC813421817CFD7007304CD /* VisibleRect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EDC813401817CFD7007304CD /* VisibleRect.cpp */; };
@@ -760,6 +761,8 @@
 		D4EF949D15BD2D9600D803EB /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "../proj.ios/Icon-72.png"; sourceTree = "<group>"; };
 		D4EF949F15BD2D9800D803EB /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-144.png"; path = "../proj.ios/Icon-144.png"; sourceTree = "<group>"; };
 		D4F9F37B12E54555005CA6D2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		ED5EE107181F579600BE1F0C /* CCShake.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCShake.cpp; path = ../Classes/CCShake.cpp; sourceTree = "<group>"; };
+		ED5EE108181F579600BE1F0C /* CCShake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCShake.h; path = ../Classes/CCShake.h; sourceTree = "<group>"; };
 		ED7D5AFA180FC8C200BDCFAE /* music */ = {isa = PBXFileReference; lastKnownFileType = folder; path = music; sourceTree = "<group>"; };
 		ED7D5AFC180FC97700BDCFAE /* AudioPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AudioPlayer.cpp; path = ../Classes/AudioPlayer.cpp; sourceTree = "<group>"; };
 		ED7D5AFD180FC97700BDCFAE /* AudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioPlayer.h; path = ../Classes/AudioPlayer.h; sourceTree = "<group>"; };
@@ -1289,6 +1292,8 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				ED5EE107181F579600BE1F0C /* CCShake.cpp */,
+				ED5EE108181F579600BE1F0C /* CCShake.h */,
 				EDC813401817CFD7007304CD /* VisibleRect.cpp */,
 				EDC813411817CFD7007304CD /* VisibleRect.h */,
 				ED7D5AFC180FC97700BDCFAE /* AudioPlayer.cpp */,
@@ -2102,6 +2107,7 @@
 				EDDEB2B11810DF7A009F93B2 /* GameSceneMonster.cpp in Sources */,
 				844233931811085700981BB1 /* Laser.cpp in Sources */,
 				EDC813421817CFD7007304CD /* VisibleRect.cpp in Sources */,
+				ED5EE109181F579600BE1F0C /* CCShake.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
