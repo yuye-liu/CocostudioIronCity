@@ -51,7 +51,9 @@ var MainMenuScene = cc.Scene.extend({
     dataLoaded:function(percent){
         if(!isFirstInGame)
         {
-            var gameScene =  GameScene.getInstance();
+            console.log("in MainMenuScene, data loaded.");
+            var gameScene =  new GameScene();
+            gameScene.init();
             var gameSceneTransition =  cc.TransitionFade.create(0.5, gameScene, cc.WHITE);
             cc.Director.getInstance().replaceScene(gameSceneTransition);
             return;
@@ -131,7 +133,7 @@ var MainMenuScene = cc.Scene.extend({
     startBtnCallFunc:function(pSender) {
         var gameScene = new GameScene();
         gameScene.init();
-        GameScene.Scene = gameScene;
+        //GameScene.Scene = gameScene;
 
         var gameSceneTransition = cc.TransitionFade.create(0.5, gameScene, cc.white());
         cc.Director.getInstance().replaceScene(gameSceneTransition);

@@ -17,6 +17,7 @@ var GameSceneMonster = cc.Layer.extend({
     MonsterIndex:null,
     VisibleSize:null,
     VisiblePosition:null,
+    lastAction:null,
     init:function(){
         //add cocostudio json file to widget.
         cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_MonsterGroundMoving);
@@ -44,6 +45,8 @@ var GameSceneMonster = cc.Layer.extend({
                 break;
         }
 
+        this.lastAction = null;
+
         return true;
     },
     //moving of monster on ground.
@@ -65,9 +68,10 @@ var GameSceneMonster = cc.Layer.extend({
         var callBack = cc.CallFunc.create(this.JumpActionCallBack, this);
         var  action = cc.Sequence.create(jumpAction, callBack);
         this.MonsterAmature.runAction(action);
+        this.lastAction = action;
     },
     //moving of monster in sky.
-        MonsterSkyMoving:function(position){
+    MonsterSkyMoving:function(position){
         var pGameScene = GameScene.getScene();
         var armature = null;
         armature = cc.Armature.create("MonsterSkyMoving");
@@ -85,6 +89,7 @@ var GameSceneMonster = cc.Layer.extend({
         var callBack = cc.CallFunc.create(this.JumpActionCallBack, this);
         var  action = cc.Sequence.create(jumpAction, callBack);
         this.MonsterAmature.runAction(action);
+        this.lastAction = action;
     },
     //dead of monster on ground.
     MonsterGroundDestroyAction:function(position){
@@ -193,6 +198,7 @@ var GameSceneMonster = cc.Layer.extend({
                 var callBack = cc.CallFunc.create(this.JumpActionCallBack, this);
                 var  seq = cc.Sequence.create(m_grossini, m_grossini.reverse(), callBack);
                 this.MonsterAmature.runAction(seq);
+                this.lastAction = seq;
             }
                 break;
             default:
@@ -211,5 +217,15 @@ var GameSceneMonster = cc.Layer.extend({
     DelayInit:function(f){
         this.init();
         GameScene.getScene().isRectDetectedLock = false;
+    },
+    pause:function(){
+        console.log("monster pause.");
+        this.stopAllActions();
+        console.log("monster pause end.");
+    },
+    play:function(){
+        console.log("monster play.");
+        this.runAction(this.lastAction);
+        console.log("monster play end.");
     }
 });

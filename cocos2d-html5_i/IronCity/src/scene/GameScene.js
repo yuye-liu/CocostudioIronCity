@@ -46,6 +46,11 @@ var GameScene = cc.Scene.extend({
         this.isRectDetectedLock = false;
 
         //this.scheduleUpdate();
+        console.log("GameScene enter.111");
+    },
+    init:function(){
+        GameScene.Scene = this;
+        console.log("GameScene init.222");
     },
     //when game over.
     gameOver:function(){
@@ -69,6 +74,15 @@ var GameScene = cc.Scene.extend({
         this.menuLayer.unscheduleUpdate();
 
         this.addChild(overLayer, 10);
+    },
+    pause:function(){
+        console.log("will pause.");
+        this.gameSceneMonster.pause();
+        console.log("will pause end.");
+    },
+    play:function(){
+        console.log("game continue.");
+        this.gameSceneMonster.play();
     },
     //tick: update all action of per-node in per-frame.
     update:function(dt){
