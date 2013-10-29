@@ -33,6 +33,7 @@ var GameSceneOverLayer = cc.UILayer.extend({
 
             var monsterSkyCount= this.parentScene.playLayer.getMonsterSkyAmount();
             monsterSkyAmount.setText(monsterSkyCount);
+            console.log("amount: ", monsterGroundCount, monsterSkyCount);
 
             distanceScore.setStringValue(this.parentScene.menuLayer.getDistanceScore());
             this.calculateFinalScore(monsterGroundCount*88 , monsterSkyCount*66 , this.parentScene.menuLayer.getDistanceScore());

@@ -4,7 +4,7 @@
 	<dict>
 		<key>frames</key>
 		<dict>
-			<key>monsterSky7.png</key>
+			<key>MonsterGroundMoving2.png</key>
 			<dict>
 				<key>width</key>
 				<integer>120</integer>
@@ -23,7 +23,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>monsterSky1.png</key>
+			<key>MonsterGroundMoving1.png</key>
 			<dict>
 				<key>width</key>
 				<integer>120</integer>
@@ -48,9 +48,9 @@
 			<key>format</key>
 			<integer>0</integer>
 			<key>textureFileName</key>
-			<string>MonsterSkyMoving0.png</string>
+			<string>MonsterGroundMoving0.png</string>
 			<key>realTextureFileName</key>
-			<string>MonsterSkyMoving0.png</string>
+			<string>MonsterGroundMoving0.png</string>
 			<key>size</key>
 			<string>{1024,1024}</string>
 		</dict>

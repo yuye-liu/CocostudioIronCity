@@ -1,15 +1,75 @@
 {
   "armature_data": [
     {
-      "strVersion": "1.0.0.1",
-      "version": 1.001,
+      "strVersion": "1.0.2.0",
+      "version": 1.02,
       "name": "MonsterSkyMoving",
       "bone_data": [
         {
+          "name": "Layer4",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 4,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "name": "MonsterSkyMoving4.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Layer3",
+          "parent": "",
+          "x": 0.0,
+          "y": 0.0,
+          "z": 3,
+          "cX": 1.0,
+          "cY": 1.0,
+          "kX": 0.0,
+          "kY": 0.0,
+          "arrow_x": 0.0,
+          "arrow_y": 0.0,
+          "effectbyskeleton": false,
+          "display_data": [
+            {
+              "name": "MonsterSkyMoving3.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 0.0,
+                  "y": 0.0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Layer2",
           "parent": "",
-          "x": -8.199981689453125,
-          "y": -9.879974365234375,
+          "x": 0.0,
+          "y": 0.0,
           "z": 2,
           "cX": 1.0,
           "cY": 1.0,
@@ -20,7 +80,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "monsterSky7.png",
+              "name": "MonsterSkyMoving2.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -38,8 +98,8 @@
         {
           "name": "Layer1",
           "parent": "",
-          "x": -8.199981689453125,
-          "y": -8.279998779296875,
+          "x": 0.0,
+          "y": 0.0,
           "z": 1,
           "cX": 1.0,
           "cY": 1.0,
@@ -50,7 +110,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "monsterSky1.png",
+              "name": "MonsterSkyMoving1.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -74,7 +134,7 @@
       "mov_data": [
         {
           "name": "Animation1",
-          "dr": 10,
+          "dr": 20,
           "lp": true,
           "to": 0,
           "drTW": 0,
@@ -82,11 +142,11 @@
           "sc": 1.0,
           "mov_bone_data": [
             {
-              "name": "Layer2",
+              "name": "Layer4",
               "dl": 0.0,
               "frame_data": [
                 {
-                  "dI": -2,
+                  "dI": 0,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -99,7 +159,26 @@
                   "tweenFrame": true
                 },
                 {
-                  "dI": 0,
+                  "dI": -2,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 5,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer3",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": -2,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -140,22 +219,9 @@
               ]
             },
             {
-              "name": "Layer1",
+              "name": "Layer2",
               "dl": 0.0,
               "frame_data": [
-                {
-                  "dI": 0,
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 0,
-                  "twE": 0,
-                  "tweenFrame": true
-                },
                 {
                   "dI": -2,
                   "x": 0.0,
@@ -165,7 +231,7 @@
                   "cY": 1.0,
                   "kX": 0.0,
                   "kY": 0.0,
-                  "fi": 5,
+                  "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
                 },
@@ -181,6 +247,64 @@
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
+                },
+                {
+                  "dI": -2,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 15,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
+            {
+              "name": "Layer1",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": -2,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 15,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 20,
+                  "twE": 0,
+                  "tweenFrame": true
                 }
               ]
             }
@@ -191,18 +315,36 @@
   ],
   "texture_data": [
     {
-      "name": "monsterSky1",
-      "width": 79.99,
-      "height": 79.99,
+      "name": "MonsterSkyMoving1",
+      "width": 120.0,
+      "height": 109.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "monsterSky7",
-      "width": 79.99,
-      "height": 79.99,
+      "name": "MonsterSkyMoving2",
+      "width": 120.0,
+      "height": 109.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "MonsterSkyMoving3",
+      "width": 120.0,
+      "height": 109.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "MonsterSkyMoving4",
+      "width": 120.0,
+      "height": 109.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
     }
   ],
   "config_file_path": [
