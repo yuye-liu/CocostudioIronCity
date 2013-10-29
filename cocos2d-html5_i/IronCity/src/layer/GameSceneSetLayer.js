@@ -96,8 +96,12 @@ var GameSceneSetLayer = cc.UILayer.extend({
 
             var currentMovementId = this.parentScene.playLayer.imManArmature.getAnimation().getCurrentMovementID();
             cc.log("currentMovementId is %s", currentMovementId);
-            if(currentMovementId.compare("") !=0 && (currentMovementId.compare("Running")==0 || currentMovementId.compare("RuningJump")==0))
+            //if(currentMovementId.compare("") !=0 && (currentMovementId.compare("Running")==0 || currentMovementId.compare("RuningJump")==0))
+            //    this.parentScene.moveMap.move();
+            if(currentMovementId != "" && (currentMovementId == "Running" || currentMovementId == "RuningJump"))
                 this.parentScene.moveMap.move();
+
+            this.parentScene.play();
 
             //this.parentScene.gameSceneMonster.MonsterAmature.resumeSchedulerAndActions();
             this.parentScene.menuLayer.settingBtn.setTouchEnable(true);

@@ -91,6 +91,8 @@ var png_backMainMenuPushBtn = "res/normal/backMainMenuPushBtn.png";
 var png_playAgainBtn = "res/normal/playAgainBtn.png";
 var png_playAgainPushBtn = "res/normal/playAgainPushBtn.png";
 var png_gameOverMenu = "res/normal/gameOverMenu.png";
+var png_musicEffectOn     = "res/normal/musicEffectOn.png";
+var png_musicEffectOff     = "res/normal/musicEffectOff.png";
 
 //music
 var mp3_music_background   = "res/music/music_background.mp3";
@@ -107,6 +109,8 @@ var mp3_sound_jump         = "res/music/sound_jump.wav";
 var mp3_sound_run          = "res/music/sound_run.wav";
 
 var g_resources = [
+    {src:png_musicEffectOn},
+    {src:png_musicEffectOff},
     //
     {src:s_monsterGround},
     {src:s_monsterSky},

@@ -158,6 +158,7 @@ cc.UISlider = cc.UIWidget.extend({
             default:
                 break;
         }
+
         if (this._scale9Enabled) {
             this._progressBarRenderer.setColor(this.getColor());
             this._progressBarRenderer.setOpacity(this.getOpacity());
@@ -171,6 +172,7 @@ cc.UISlider = cc.UIWidget.extend({
         this._progressBarTextureSize.width = locSize.width;
         this._progressBarTextureSize.height = locSize.height;
         this.progressBarRendererScaleChangedWithSize();
+
     },
 
     /**

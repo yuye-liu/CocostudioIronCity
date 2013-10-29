@@ -997,7 +997,7 @@ cc.CCSGUIReader = cc.Class.extend({
             }
             disabledDic = null;
 
-            slider.setPercent(options["percent"]);
+
 
             var progressBarDic = options["progressBarData"];
             var progressBarType = progressBarDic["resourceType"];
@@ -1016,6 +1016,8 @@ cc.CCSGUIReader = cc.Class.extend({
                     break;
             }
             this.setColorPropsForWidgetFromJsonDictionary(widget, options);
+
+            slider.setPercent(options["percent"]);
         }
     },
 

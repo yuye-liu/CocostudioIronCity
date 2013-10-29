@@ -44,7 +44,8 @@ var GameSceneMenuLayer = cc.UILayer.extend({
     },
     //call back function of setting button.
     settingBtnCallback:function(pSender, type){
-        if(cc.TouchEventType.BEGAN == type){
+        //if(cc.TouchEventType.BEGAN == type){
+        if(cc.TouchEventType.ENDED == type){
             this.parentScene = GameScene.getScene();
             var gameSetLayer = new GameSceneSetLayer();
             gameSetLayer.init(this.musicEffect, this.musicVolume);
@@ -52,9 +53,10 @@ var GameSceneMenuLayer = cc.UILayer.extend({
             gameSetLayer.setAnchorPoint(cc.p(0, 0));
             gameSetLayer.setPosition(cc.p(0, 0));
 
-            console.log("scene:", this.parentScene, "setLayer: ", gameSetLayer);
+            //console.log("scene:", this.parentScene, "setLayer: ", gameSetLayer);
             this.parentScene.addChild(gameSetLayer,4);
-            console.log("click begin, and goto setLayer.");
+            this.parentScene.pause();
+            //console.log("click set, and goto setLayer.");
             return true;
         }
     },

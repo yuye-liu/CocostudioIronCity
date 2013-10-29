@@ -59,8 +59,9 @@ var GameSceneOverLayer = cc.UILayer.extend({
     },
     //callback function of playAgain button.
     playAgainBtnCallback:function(pSender, type){
-        console.log("playAgainBtnCallback: ", pSender, type);
-        if(cc.TouchEventType.BEGAN == type){
+        //console.log("playAgainBtnCallback: ", pSender, type);
+        if(cc.TouchEventType.ENDED == type){
+            console.log("will play again.");
             var againScene = new GameScene();
             againScene.init();
             var playAgainTransition =  cc.TransitionFade.create(0.5, againScene, cc.WHITE);
