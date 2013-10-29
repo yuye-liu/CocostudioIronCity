@@ -153,21 +153,16 @@ cc.CCSGUIReader = cc.Class.extend({
     },
 
 
-    widgetFromJsonFile: function (fileName) {
+    widgetFromJsonFile: function (fileName,isFullPath) {
         this._olderVersion = false;
-        var des = null;
-        var jsonpath = "";
-        var jsonDict = null;
-        jsonpath = cc.FileUtils.getInstance().fullPathForFilename(fileName);
-
-        var size = 0;
-        des = cc.FileUtils.getInstance().getTextFileData(jsonpath, "r", size);
+        var jsonPath = fileName || "";
+        var fullJsonPath = cc.FileUtils.getInstance().fullPathForFilename(fileName);
+        var des = cc.FileUtils.getInstance().getTextFileData(fullJsonPath);
         if (!des) {
             cc.log("read json file[" + fileName + "] error!");
             return null;
         }
-        var strDes = des;
-        jsonDict = JSON.parse(strDes);
+        var jsonDict = JSON.parse(des);
 
         var fileVersion = jsonDict["version"];
         if (!fileVersion || this.getVersionInteger(fileVersion) < 250) {
@@ -175,12 +170,12 @@ cc.CCSGUIReader = cc.Class.extend({
         }
 
         var textures = jsonDict["textures"];
-        var pos = jsonpath.lastIndexOf('/');
-        this._filePath = jsonpath.substr(0, pos + 1);
+        var pos = jsonPath.lastIndexOf('/');
+        this._filePath = jsonPath.substr(0, pos + 1);
         for (var i = 0; i < textures.length; i++) {
             var file = textures[i];
             var tp = this._filePath;
-            tp+=file;
+            tp += file;
             cc.UIHelper.getInstance().addSpriteFrame(tp);
         }
         var fileDesignWidth = jsonDict["designWidth"];
@@ -216,7 +211,7 @@ cc.CCSGUIReader = cc.Class.extend({
     },
 
     setPropsForWidgetFromJsonDictionary: function (widget, options) {
-        var ignoreSizeExsit = options["ignoreSize"];
+        var ignoreSizeExsit = options.hasOwnProperty("ignoreSize");
         if (ignoreSizeExsit) {
             widget.ignoreContentAdaptWithSize(options["ignoreSize"]);
         }
@@ -233,21 +228,17 @@ cc.CCSGUIReader = cc.Class.extend({
         widget.setName(widgetName);
         var x = options["x"];
         var y = options["y"];
-        widget.setPosition(cc.p(x, y));
-        var sx = options["scaleX"];
-        if (sx) {
+        widget.setPosition(cc.p(x, y));;
+        if (options.hasOwnProperty("scaleX")) {
             widget.setScaleX(options["scaleX"]);
         }
-        var sy = options["scaleY"];
-        if (sy) {
+        if (options.hasOwnProperty("scaleY")) {
             widget.setScaleY(options["scaleY"]);
         }
-        var rt = options["rotation"];
-        if (rt) {
+        if (options.hasOwnProperty("rotation")) {
             widget.setRotation(options["rotation"]);
         }
-        var vb = options["visible"];
-        if (vb) {
+        if (options.hasOwnProperty("visible")) {
             widget.setVisible(options["visible"]);
         }
 //    widget.setUseMergedTexture(options["useMergedTexture"));
@@ -256,21 +247,15 @@ cc.CCSGUIReader = cc.Class.extend({
     },
 
     setColorPropsForWidgetFromJsonDictionary: function (widget, options) {
-        var op = options["opacity"];
-        if (op) {
+        if (options.hasOwnProperty("opacity")) {
             widget.setOpacity(options["opacity"]);
         }
-        var colorR = options["colorR"];
-        var colorG = options["colorG"];
-        var colorB = options["colorB"];
-        colorR = (colorR || colorR == 0) ? options["colorR"] : 255;
-        colorG = (colorG || colorG == 0) ? options["colorG"] : 255;
-        colorB = (colorB || colorB == 0) ? options["colorB"] : 255;
+        var colorR = options.hasOwnProperty("colorR") ? options["colorR"] : 255;
+        var colorG = options.hasOwnProperty("colorG") ? options["colorG"] : 255;
+        var colorB = options.hasOwnProperty("colorB") ? options["colorB"] : 255;
         widget.setColor(cc.c3b(colorR, colorG, colorB));
-        var apx = options["anchorPointX"];
-        apx = (apx || apx == 0) ? apx : ((widget.getWidgetType() == cc.WidgetType.Widget) ? 0.5 : 0);
-        var apy = options["anchorPointY"];
-        apy = (apy || apy == 0) ? apy : ((widget.getWidgetType() == cc.WidgetType.Widget) ? 0.5 : 0);
+        var apx = options.hasOwnProperty("anchorPointX") ? options["anchorPointX"] : ((widget.getWidgetType() == cc.WidgetType.Widget) ? 0.5 : 0);
+        var apy = options.hasOwnProperty("anchorPointY") ? options["anchorPointY"] : ((widget.getWidgetType() == cc.WidgetType.Widget) ? 0.5 : 0);
         widget.setAnchorPoint(cc.p(apx, apy));
         var flipX = options["flipX"];
         var flipY = options["flipY"];
@@ -310,9 +295,7 @@ cc.CCSGUIReader = cc.Class.extend({
                     button.loadTextures(normalFileName_tp, pressedFileName_tp, disabledFileName_tp);
                 }
                 button.setCapInsets(cc.rect(cx, cy, cw, ch));
-                var sw = options["scale9Width"];
-                var sh = options["scale9Height"];
-                if (sw && sh) {
+                if (options.hasOwnProperty("scale9Width") && options.hasOwnProperty("scale9Height")) {
                     var swf = options["scale9Width"];
                     var shf = options["scale9Height"];
                     button.setSize(cc.size(swf, shf));
@@ -396,9 +379,7 @@ cc.CCSGUIReader = cc.Class.extend({
                 var ch = options["capInsetsHeight"];
 
                 button.setCapInsets(cc.rect(cx, cy, cw, ch));
-                var sw = options["scale9Width"];
-                var sh = options["scale9Height"];
-                if (sw && sh) {
+                if (options.hasOwnProperty("scale9Width") && options.hasOwnProperty("scale9Height")) {
                     var swf = options["scale9Width"];
                     var shf = options["scale9Height"];
                     button.setSize(cc.size(swf, shf));
@@ -545,11 +526,7 @@ cc.CCSGUIReader = cc.Class.extend({
 
             var imageView = widget;
             var imageFileName = options["fileName"];
-            var scale9EnableExist = options["scale9Enable"];
-            var scale9Enable = false;
-            if (scale9EnableExist) {
-                scale9Enable = options["scale9Enable"];
-            }
+            var scale9Enable = options["scale9Enable"]||false;
             imageView.setScale9Enabled(scale9Enable);
 
             var tp_i = this._filePath;
@@ -567,9 +544,7 @@ cc.CCSGUIReader = cc.Class.extend({
                     imageView.loadTexture(imageFileName_tp);
                 }
 
-                var sw = options["scale9Width"];
-                var sh = options["scale9Height"];
-                if (sw && sh) {
+                if (options.hasOwnProperty("scale9Width") && options.hasOwnProperty("scale9Height")) {
                     var swf = options["scale9Width"];
                     var shf = options["scale9Height"];
                     imageView.setSize(cc.size(swf, shf));
@@ -618,18 +593,11 @@ cc.CCSGUIReader = cc.Class.extend({
             }
             imageFileNameDic = null;
 
-            var scale9EnableExist = options["scale9Enable"];
-            var scale9Enable = false;
-            if (scale9EnableExist) {
-                scale9Enable = options["scale9Enable"];
-            }
+            var scale9Enable =  options["scale9Enable"]||false;
             imageView.setScale9Enabled(scale9Enable);
 
-
             if (scale9Enable) {
-                var sw = options["scale9Width"];
-                var sh = options["scale9Height"];
-                if (sw && sh) {
+                if (options.hasOwnProperty("scale9Width") && options.hasOwnProperty("scale9Height")) {
                     var swf = options["scale9Width"];
                     var shf = options["scale9Height"];
                     imageView.setSize(cc.size(swf, shf));
@@ -654,20 +622,15 @@ cc.CCSGUIReader = cc.Class.extend({
         label.setTouchScaleChangeAble(touchScaleChangeAble);
         var text = options["text"];
         label.setText(text);
-        var fs = options["fontSize"];
-        if (fs) {
+        if (options.hasOwnProperty("fontSize")) {
             label.setFontSize(options["fontSize"]);
         }
-        var fn = options["fontName"];
-        if (fn) {
+        if (options.hasOwnProperty("fontName")) {
             label.setFontName(options["fontName"]);
         }
-        var cro = options["colorR"];
-        var cgo = options["colorG"];
-        var cbo = options["colorB"];
-        var cr = cro ? options["colorR"] : 255;
-        var cg = cgo ? options["colorG"] : 255;
-        var cb = cbo ? options["colorB"] : 255;
+        var cr = options.hasOwnProperty("colorR") ? options["colorR"] : 255;
+        var cg = options.hasOwnProperty("colorG") ? options["colorG"] : 255;
+        var cb = options.hasOwnProperty("colorB") ? options["colorB"] : 255;
         var tc = cc.c3b(cr, cg, cb);
         label.setColor(tc);
         this.setColorPropsForWidgetFromJsonDictionary(widget, options);
@@ -869,11 +832,11 @@ cc.CCSGUIReader = cc.Class.extend({
             this.setPropsForWidgetFromJsonDictionary(widget, options);
             var slider = widget;
 
-            var barTextureScale9Enable = options["barTextureScale9Enable"];
+            var barTextureScale9Enable = options["barTextureScale9Enable"] || false;
             slider.setScale9Enabled(barTextureScale9Enable);
-            var bt = options["barFileName"];
             var barLength = options["length"];
             var useMergedTexture = options["useMergedTexture"];
+            var bt = options.hasOwnProperty("barFileName");
             if (bt) {
                 if (barTextureScale9Enable) {
                     var tp_b = this._filePath;
@@ -933,13 +896,12 @@ cc.CCSGUIReader = cc.Class.extend({
             this.setPropsForWidgetFromJsonDictionary(widget, options);
             var slider = widget;
 
-            var barTextureScale9Enable = options["barTextureScale9Enable"];
+            var barTextureScale9Enable = options["barTextureScale9Enable"] || false;
             slider.setScale9Enabled(barTextureScale9Enable);
-            var bt = options["barFileName"];
             var barLength = options["length"];
+            var bt = options.hasOwnProperty("barFileName");
             if (bt) {
                 if (barTextureScale9Enable) {
-
                     var imageFileNameDic = options["barFileNameData"];
                     var imageFileType = imageFileNameDic["resourceType"];
                     switch (imageFileType) {
@@ -1035,7 +997,7 @@ cc.CCSGUIReader = cc.Class.extend({
             }
             disabledDic = null;
 
-            slider.setPercent(options["percent"]);
+
 
             var progressBarDic = options["progressBarData"];
             var progressBarType = progressBarDic["resourceType"];
@@ -1054,6 +1016,8 @@ cc.CCSGUIReader = cc.Class.extend({
                     break;
             }
             this.setColorPropsForWidgetFromJsonDictionary(widget, options);
+
+            slider.setPercent(options["percent"]);
         }
     },
 
@@ -1061,8 +1025,7 @@ cc.CCSGUIReader = cc.Class.extend({
         this.setPropsForWidgetFromJsonDictionary(widget, options);
         var textArea = widget;
         textArea.setText(options["text"]);
-        var fs = options["fontSize"];
-        if (fs) {
+        if (options.hasOwnProperty("fontSize")) {
             textArea.setFontSize(options["fontSize"]);
         }
         var cr = options["colorR"]
@@ -1070,18 +1033,14 @@ cc.CCSGUIReader = cc.Class.extend({
         var cb = options["colorB"];
         textArea.setColor(cc.c3b(cr, cg, cb));
         textArea.setFontName(options["fontName"]);
-        var aw = options["areaWidth"];
-        var ah = options["areaHeight"];
-        if (aw && ah) {
+        if (options.hasOwnProperty("areaWidth") && options.hasOwnProperty("areaHeight")) {
             var size = cc.size(options["areaWidth"], options["areaHeight"]);
             textArea.setTextAreaSize(size);
         }
-        var ha = options["hAlignment"];
-        if (ha) {
+        if (options.hasOwnProperty("hAlignment")) {
             textArea.setTextHorizontalAlignment(options["hAlignment"]);
         }
-        var va = options["vAlignment"];
-        if (va) {
+        if (options.hasOwnProperty("vAlignment")) {
             textArea.setTextVerticalAlignment(options["vAlignment"]);
         }
         this.setColorPropsForWidgetFromJsonDictionary(widget, options);
@@ -1092,19 +1051,14 @@ cc.CCSGUIReader = cc.Class.extend({
 
         var textButton = widget;
         textButton.setTitleText(options["text"]||"");
-        var cr = options["textColorR"];
-        var cg = options["textColorG"];
-        var cb = options["textColorB"];
-        var cri = cr ? options["textColorR"] : 255;
-        var cgi = cg ? options["textColorG"] : 255;
-        var cbi = cb ? options["textColorB"] : 255;
+        var cri = options.hasOwnProperty("textColorR") ? options["textColorR"] : 255;
+        var cgi = options.hasOwnProperty("textColorG") ? options["textColorG"] : 255;
+        var cbi = options.hasOwnProperty("textColorB") ? options["textColorB"] : 255;
         textButton.setTitleColor(cc.c3b(cri, cgi, cbi));
-        var fs = options["fontSize"];
-        if (fs) {
+        if (options.hasOwnProperty("fontSize")) {
             textButton.setTitleFontSize(options["fontSize"]);
         }
-        var fn = options["fontName"];
-        if (fn) {
+        if (options.hasOwnProperty("fontName")) {
             textButton.setTitleFontName(options["fontName"]);
         }
         this.setColorPropsForWidgetFromJsonDictionary(widget, options);
@@ -1113,22 +1067,17 @@ cc.CCSGUIReader = cc.Class.extend({
     setPropsForTextFieldFromJsonDictionary: function (widget, options) {
         this.setPropsForWidgetFromJsonDictionary(widget, options);
         var textField = widget;
-        var ph = options["placeHolder"];
-        if (ph) {
+        if (options.hasOwnProperty("placeHolder")) {
             textField.setPlaceHolder(options["placeHolder"]);
         }
         textField.setText(options["text"]);
-        var fs = options["fontSize"];
-        if (fs) {
+        if (options.hasOwnProperty("fontSize")) {
             textField.setFontSize(options["fontSize"]);
         }
-        var fn = options["fontName"];
-        if (fn) {
+        if (options.hasOwnProperty("fontName")) {
             textField.setFontName(options["fontName"]);
         }
-        var tsw = options["touchSizeWidth"];
-        var tsh = options["touchSizeHeight"];
-        if (tsw && tsh) {
+        if (options.hasOwnProperty("touchSizeWidth") && options.hasOwnProperty("touchSizeHeight")) {
             textField.setTouchSize(cc.size(options["touchSizeWidth"], options["touchSizeHeight"]));
         }
 

@@ -56,13 +56,14 @@ var s_bg_22                 = "res/tiled/bg2_2.tmx";
 //ui
 var Json_IronCityUI_1       = "res/normal/IronCityUI_1.json";
 var s_settingBtn            = "res/normal/settingBtn.png";
-var s_brood                 = "res/normal/brood.png";
+var s_blood                 = "res/normal/blood.png";
 var s_distance              = "res/normal/distance.png";
-var s_broodBar              = "res/normal/broodBar.png";
+var s_bloodBar              = "res/normal/bloodBar.png";
 var s_labelatlasimg         = "res/normal/labelatlasimg.png";
 var Json_GameSceneSetMenu_1 = "res/normal/GameSceneSetMenu_1.json";
 var s_musicEffectSwitch     = "res/normal/musicEffectSwitch.png";
 var s_musicVolumeSwitch     = "res/normal/musicVolumeSwitch.png";
+var s_musicVolumeBottom = "res/normal/musicVolumeBottom.png";
 var s_musicVolumeOn                 = "res/normal/musicVolumeOn.png";
 var s_musicVolumeBK                 = "res/normal/musicVolumeBK.png";
 var Json_GameSceneOverLayer_1       = "res/normal/GameSceneOverLayer_1.json";
@@ -83,6 +84,15 @@ var s_MonsterSkyMoving_png          = "res/IronManAnimation/MonsterSkyMoving0.pn
 var Json_IMDead                     = "res/IronManAnimation/IMDead.ExportJson";
 var Plist_IMDead                    = "res/IronManAnimation/IMDead0.plist";
 var Png_IMDead                      = "res/IronManAnimation/IMDead0.png";
+var png_backGame        = "res/normal/backGame.png";
+var png_backGamePush = "res/normal/backGamePush.png";
+var png_backMainMenuBtn = "res/normal/backMainMenuBtn.png";
+var png_backMainMenuPushBtn = "res/normal/backMainMenuPushBtn.png";
+var png_playAgainBtn = "res/normal/playAgainBtn.png";
+var png_playAgainPushBtn = "res/normal/playAgainPushBtn.png";
+var png_gameOverMenu = "res/normal/gameOverMenu.png";
+var png_musicEffectOn     = "res/normal/musicEffectOn.png";
+var png_musicEffectOff     = "res/normal/musicEffectOff.png";
 
 //music
 var mp3_music_background   = "res/music/music_background.mp3";
@@ -99,6 +109,8 @@ var mp3_sound_jump         = "res/music/sound_jump.wav";
 var mp3_sound_run          = "res/music/sound_run.wav";
 
 var g_resources = [
+    {src:png_musicEffectOn},
+    {src:png_musicEffectOff},
     //
     {src:s_monsterGround},
     {src:s_monsterSky},
@@ -139,15 +151,23 @@ var g_resources = [
     {src:Png_StartBtnPush},
     {src:Png_loadingPng},
     {src:s_settingBtn},
-    {src:s_brood},
+    {src:s_blood},
     {src:s_distance},
-    {src:s_broodBar},
+    {src:s_bloodBar},
     {src:s_labelatlasimg},
     {src:s_musicEffectSwitch},
     {src:s_musicVolumeSwitch},
     {src:s_musicVolumeOn},
     {src:s_musicVolumeBK},
+    {src:s_musicVolumeBottom},
     {src:Png_laser},
+    {src:png_backGame},
+    {src:png_backGamePush},
+    {src:png_backMainMenuBtn},
+    {src:png_backMainMenuPushBtn},
+    {src:png_playAgainBtn},
+    {src:png_playAgainPushBtn},
+    {src:png_gameOverMenu},
 
     //tiledmap
     {src:s_Concreate_wall},

@@ -11,13 +11,13 @@ ActionType = {
     ACTION_MONSTER_SKY : 8,
     MONSTER_GROUND_MOVING : 9,
     MONSTER_SKY__MOVING : 10
-};
-var isFirstInGame = true;
+};  //action type.
+var isFirstInGame = true;   //mark of first in game.
+//scene: main menu.
 var MainMenuScene = cc.Scene.extend({
-    loadingCount:0,
-    mainMenu:null,
+    loadingCount:0,     //loading file count.
+    mainMenu:null,      //menu layer.
     onEnter:function () {
-
         this._super();
 
         var menuLayer = cc.Layer.create();
@@ -47,10 +47,13 @@ var MainMenuScene = cc.Scene.extend({
     init:function(){
         ;
     },
+    //load data.
     dataLoaded:function(percent){
         if(!isFirstInGame)
         {
-            var gameScene =  GameScene.getInstance();
+            console.log("in MainMenuScene, data loaded.");
+            var gameScene =  new GameScene();
+            gameScene.init();
             var gameSceneTransition =  cc.TransitionFade.create(0.5, gameScene, cc.WHITE);
             cc.Director.getInstance().replaceScene(gameSceneTransition);
             return;
@@ -126,10 +129,11 @@ var MainMenuScene = cc.Scene.extend({
         this.loadingCount++;
     },
 
+    //click btn of start.
     startBtnCallFunc:function(pSender) {
         var gameScene = new GameScene();
         gameScene.init();
-        GameScene.Scene = gameScene;
+        //GameScene.Scene = gameScene;
 
         var gameSceneTransition = cc.TransitionFade.create(0.5, gameScene, cc.white());
         cc.Director.getInstance().replaceScene(gameSceneTransition);
