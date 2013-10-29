@@ -1,5 +1,6 @@
-
-ActionType = {
+//action type.
+ActionType =
+{
     ACTION_RUN : 0,
     ACTION_RUN_JUMP : 1,
     ACTION_STAND_JUMP : 2,
@@ -11,40 +12,42 @@ ActionType = {
     ACTION_MONSTER_SKY : 8,
     MONSTER_GROUND_MOVING : 9,
     MONSTER_SKY__MOVING : 10
-};  //action type.
-var isFirstInGame = true;   //mark of first in game.
+};
+//mark of first in game.
+var isFirstInGame = true;
 //scene: main menu.
 var MainMenuScene = cc.Scene.extend({
-    loadingCount:0,     //loading file count.
-    mainMenu:null,      //menu layer.
-    onEnter:function () {
+    //loading file count.
+    loadingCount:0,
+    //menu layer.
+    mainMenu:null,
+    onEnter:function ()
+    {
         this._super();
-
         var menuLayer = cc.Layer.create();
         var size = cc.Director.getInstance().getWinSize();
 
         // Add backGroundPic
         var backGroundPic = cc.Sprite.create(Png_MainMenuSceneBK);
         backGroundPic.setAnchorPoint(cc.p(0,0));
-
         menuLayer.addChild(backGroundPic,0);
 
         //Add StartBtn
         var start = cc.Sprite.create(Png_StartBtn);
         var startPush = cc.Sprite.create(Png_StartBtnPush);
-
         var startBtn = cc.MenuItemSprite.create(start, startPush, this.startBtnCallFunc, this);
 
         //Add Menu
         this.mainMenu = cc.Menu.create(startBtn);
         this.mainMenu.setAnchorPoint(cc.p(0, 0));
         this.mainMenu.setPosition(cc.p(size.width/2, size.height/5));
-
         menuLayer.addChild(this.mainMenu,1);
+
         AudioPlayer.getInstance();
         this.addChild(menuLayer);
     },
-    init:function(){
+    init:function()
+    {
         ;
     },
     //load data.
