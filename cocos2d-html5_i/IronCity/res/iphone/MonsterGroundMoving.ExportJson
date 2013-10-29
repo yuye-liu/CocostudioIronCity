@@ -1,15 +1,15 @@
 {
   "armature_data": [
     {
-      "strVersion": "1.0.0.1",
-      "version": 1.001,
+      "strVersion": "1.0.2.0",
+      "version": 1.02,
       "name": "MonsterGroundMoving",
       "bone_data": [
         {
           "name": "Layer2",
           "parent": "",
-          "x": 13.399993896484375,
-          "y": -15.47998046875,
+          "x": 0.0,
+          "y": 0.0,
           "z": 2,
           "cX": 1.0,
           "cY": 1.0,
@@ -20,7 +20,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "monsterGround2.png",
+              "name": "MonsterGroundMoving2.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -38,8 +38,8 @@
         {
           "name": "Layer1",
           "parent": "",
-          "x": 14.20001220703125,
-          "y": -14.67999267578125,
+          "x": 0.0,
+          "y": 0.0,
           "z": 1,
           "cX": 1.0,
           "cY": 1.0,
@@ -50,7 +50,7 @@
           "effectbyskeleton": false,
           "display_data": [
             {
-              "name": "monsterGround1.png",
+              "name": "MonsterGroundMoving1.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -86,7 +86,7 @@
               "dl": 0.0,
               "frame_data": [
                 {
-                  "dI": -2,
+                  "dI": 0,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -99,7 +99,7 @@
                   "tweenFrame": true
                 },
                 {
-                  "dI": 0,
+                  "dI": -2,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -108,19 +108,6 @@
                   "kX": 0.0,
                   "kY": 0.0,
                   "fi": 5,
-                  "twE": 0,
-                  "tweenFrame": true
-                },
-                {
-                  "dI": 0,
-                  "x": 0.0,
-                  "y": 0.0,
-                  "z": 0,
-                  "cX": 1.0,
-                  "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
-                  "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
                 }
@@ -131,7 +118,7 @@
               "dl": 0.0,
               "frame_data": [
                 {
-                  "dI": 0,
+                  "dI": -2,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -144,7 +131,7 @@
                   "tweenFrame": true
                 },
                 {
-                  "dI": -2,
+                  "dI": 0,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -157,7 +144,7 @@
                   "tweenFrame": true
                 },
                 {
-                  "dI": -2,
+                  "dI": 0,
                   "x": 0.0,
                   "y": 0.0,
                   "z": 0,
@@ -178,18 +165,20 @@
   ],
   "texture_data": [
     {
-      "name": "monsterGround1",
-      "width": 79.99,
-      "height": 79.99,
+      "name": "MonsterGroundMoving1",
+      "width": 120.0,
+      "height": 120.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "monsterGround2",
-      "width": 79.99,
-      "height": 79.99,
+      "name": "MonsterGroundMoving2",
+      "width": 120.0,
+      "height": 120.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     }
   ],
   "config_file_path": [
