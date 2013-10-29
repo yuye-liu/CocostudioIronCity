@@ -56,7 +56,7 @@ var GameSceneMonster = cc.Layer.extend({
         armature = cc.Armature.create("MonsterGroundMoving");
         armature.getAnimation().playByIndex(0);
         armature.getAnimation().setSpeedScale(1.5);
-        armature.setScale(1.0);
+        armature.setScale(0.6);
         armature.setAnchorPoint(cc.p(0.5,0));
         armature.setPosition(position);
         this.addChild(armature);
@@ -77,19 +77,28 @@ var GameSceneMonster = cc.Layer.extend({
         armature = cc.Armature.create("MonsterSkyMoving");
         armature.getAnimation().playByIndex(0);
         armature.getAnimation().setSpeedScale(1.5);
-        armature.setScale(1.0);
+        armature.setScale(0.6);
         armature.setAnchorPoint(cc.p(0.5,0));
         armature.setPosition(position);
         this.addChild(armature);
         this.MonsterAmature = armature;
         this.MonsterIndex = MonsterType.MonsterSky_enum;
-        var movePoint = cc.p(pGameScene.playLayer.imManArmature.getPosition().x-100,
-            pGameScene.playLayer.imManArmature.getPosition().y);
-        var jumpAction = cc.JumpTo.create(3.0,movePoint,0,1);
-        var callBack = cc.CallFunc.create(this.JumpActionCallBack, this);
-        var  action = cc.Sequence.create(jumpAction, callBack);
-        this.MonsterAmature.runAction(action);
-        this.lastAction = action;
+        var movePoint = cc.p(GameScene.getScene().playLayer.imManArmature.getPositionX()-this.MonsterAmature.getPositionX(),
+            GameScene.getScene().playLayer.imManArmature.getPositionY()-this.MonsterAmature.getPositionY());
+
+        var sx = this.MonsterAmature.getPosition().x;
+        var sy = this.MonsterAmature.getPosition().y;
+        var ex =movePoint.x+50;
+        var ey =movePoint.y+150;
+        var bezier = [];
+        bezier[0] = this.MonsterAmature.getPosition();
+        bezier[1] = cc.p(sx+(ex-sx)*0.3-100, sy+(ey-sy)*0.5+150);
+        bezier[2] = movePoint;
+        var bezierAction = cc.BezierBy.create(3.0,bezier);
+        var m_grossini = cc.EaseIn.create(bezierAction, 1.5);
+        var callBack = cc.CallFunc.create(this.JumpActionCallBack, this, 0xbebabeba);
+        var  seq = cc.Sequence.create(m_grossini,m_grossini.reverse(),callBack);
+        this.MonsterAmature.runAction(seq);
     },
     //dead of monster on ground.
     MonsterGroundDestroyAction:function(position){
@@ -97,7 +106,7 @@ var GameSceneMonster = cc.Layer.extend({
         armature = cc.Armature.create("MonsterGroundAnimation");
         armature.getAnimation().playByIndex(0);
         armature.getAnimation().setSpeedScale(1.5);
-        armature.setScale(1.0);
+        armature.setScale(0.6);
         armature.setAnchorPoint(cc.p(0.5,0));
         armature.setPosition(position);
         this.addChild(armature);
@@ -110,7 +119,7 @@ var GameSceneMonster = cc.Layer.extend({
         armature = cc.Armature.create("MonsterSkyAnimation");
         armature.getAnimation().playByIndex(0);
         armature.getAnimation().setSpeedScale(1.5);
-        armature.setScale(1.0);
+        armature.setScale(0.6);
         armature.setAnchorPoint(cc.p(0.5,0));
         armature.setPosition(position);
         this.addChild(armature);
@@ -180,10 +189,16 @@ var GameSceneMonster = cc.Layer.extend({
                 var movePoint = cc.p(
                     GameScene.getScene().playLayer.imManArmature.getPosition().x-this.MonsterAmature.getPositionX(),
                     GameScene.getScene().playLayer.imManArmature.getPosition().y-this.MonsterAmature.getPositionY());
+                //movePoint = cc.p(-200.000000, 42.000000);
                 var sx = this.MonsterAmature.getPosition().x;
                 var sy = this.MonsterAmature.getPosition().y;
                 var ex =movePoint.x+50;
                 var ey =movePoint.y+150;
+
+                console.log("movePoint: ", movePoint, sx, sy, ex, ey);
+                console.log("(", sx, ", ", sy, ")");
+                console.log("(", ex, ", ", ey, ")");
+                console.log("randomNumX:", randomNumX, "randomNumY:", randomNumY);
 //                var bezier = {};
 //                bezier.controlPoint_1 = this.MonsterAmature.getPosition();
 //                bezier.controlPoint_2 = cc.p(sx+(ex-sx)*0.5+randomNumX, sy+(ey-sy)*0.5+randomNumY);
@@ -196,7 +211,7 @@ var GameSceneMonster = cc.Layer.extend({
                 var bezierAction = cc.BezierBy.create(3.0, bezier);
                 var m_grossini = cc.EaseIn.create(bezierAction, 1.5);
                 var callBack = cc.CallFunc.create(this.JumpActionCallBack, this);
-                var  seq = cc.Sequence.create(m_grossini, m_grossini.reverse(), callBack);
+                var  seq = cc.Sequence.create(bezierAction, bezierAction.reverse(), callBack);
                 this.MonsterAmature.runAction(seq);
                 this.lastAction = seq;
             }
@@ -220,12 +235,12 @@ var GameSceneMonster = cc.Layer.extend({
     },
     pause:function(){
         console.log("monster pause.");
-        this.stopAllActions();
+        this.unscheduleUpdate();
         console.log("monster pause end.");
     },
     play:function(){
         console.log("monster play.");
-        this.runAction(this.lastAction);
+        this.scheduleUpdate();
         console.log("monster play end.");
     }
 });
