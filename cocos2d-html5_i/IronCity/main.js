@@ -1,33 +1,7 @@
-/****************************************************************************
- Copyright (c) 2010-2012 cocos2d-x.org
- Copyright (c) 2008-2010 Ricardo Quesada
- Copyright (c) 2011      Zynga Inc.
-
- http://www.cocos2d-x.org
-
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- THE SOFTWARE.
- ****************************************************************************/
-var winSize = cc.SizeMake(480, 320);
 var cocos2dApp = cc.Application.extend({
     config:document['ccConfig'],
-    ctor:function (scene) {
+    ctor:function (scene)
+    {
         this._super();
         this.startScene = scene;
         cc.COCOS2D_DEBUG = this.config['COCOS2D_DEBUG'];
@@ -35,43 +9,42 @@ var cocos2dApp = cc.Application.extend({
         cc.setup(this.config['tag']);
         cc.AppController.shareAppController().didFinishLaunchingWithOptions();
     },
-    applicationDidFinishLaunching:function () {
-        if(cc.RenderDoesnotSupport()){
+    applicationDidFinishLaunching:function ()
+    {
+        if(cc.RenderDoesnotSupport())
+        {
             //show Information to user
             alert("Browser doesn't support WebGL");
             return false;
         }
         var director = cc.Director.getInstance();
-
+        //get the real device screen size
         var screenSize = cc.EGLView.getInstance().getFrameSize();
         var resourceSize = cc.size(480, 800);
-        var designSize = winSize;
-
-        var searchPaths = [];
+        var designSize = cc.SizeMake(480, 320);
+        //initial a array for push the files' path in
         var resDirOrders = [];
-
-       // searchPaths.push("res");
-        cc.FileUtils.getInstance().setSearchPaths(searchPaths);
-
+        //get platform method
         var platform = cc.Application.getInstance().getTargetPlatform();
-        if (platform == cc.TARGET_PLATFORM.MOBILE_BROWSER) {
+        if (platform == cc.TARGET_PLATFORM.MOBILE_BROWSER)
+        {
+            // add the resource's file to game for recognition
             resDirOrders.push("HD");
         }
-        else if (platform == cc.TARGET_PLATFORM.PC_BROWSER) {
-            if (screenSize.height >= 800) {
+        else if (platform == cc.TARGET_PLATFORM.PC_BROWSER)
+        {
+            if (screenSize.height >= 800)
+            {
                 resDirOrders.push("HD");
             }
-            else {
-                resourceSize = cc.size(480, 320);
-                designSize = cc.size(480, 320);
-            }
         }
+        //set the resources's paths for searching in game
+        cc.FileUtils.getInstance().setSearchResolutionsOrder(resDirOrders);
 
-        //cc.FileUtils.getInstance().setSearchResolutionsOrder(resDirOrders);
-
-        //director.setContentScaleFactor(resourceSize.width / designSize.width);
-
-       // cc.EGLView.getInstance().setDesignResolutionSize(480, 320, cc.RESOLUTION_POLICY.SHOW_ALL);
+        //auto zooming the sources to right scale
+        director.setContentScaleFactor(resourceSize.width / designSize.width);
+        //revising the right screen objects' position  by 5 types's resolution
+        cc.EGLView.getInstance().setDesignResolutionSize(480, 320, cc.RESOLUTION_POLICY.NO_BORDER);
 
         // turn on display FPS
         director.setDisplayStats(this.config['showFPS']);
@@ -79,8 +52,9 @@ var cocos2dApp = cc.Application.extend({
         // set FPS. the default value is 1.0/60 if you don't call this
         director.setAnimationInterval(1.0 / this.config['frameRate']);
 
-        //load resources
-        cc.LoaderScene.preload(g_resources, function () {
+        //preload resources and relpaceScene
+        cc.LoaderScene.preload(MainMenuScene_resources, function ()
+        {
             director.replaceScene(new this.startScene());
         }, this);
 

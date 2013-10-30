@@ -1,162 +1,64 @@
-
-ActionType = {
-    ACTION_RUN : 0,
-    ACTION_RUN_JUMP : 1,
-    ACTION_STAND_JUMP : 2,
-    ACTION_RUN_STOP : 3,
-    ACTION_RUN_ATTACK : 4,
-    ACTION_STAND_ATTACK : 5,
-    ACTION_IM_DEATH : 6,
-    ACTION_MONSTER_GROUND : 7,
-    ACTION_MONSTER_SKY : 8,
-    MONSTER_GROUND_MOVING : 9,
-    MONSTER_SKY__MOVING : 10
-};  //action type.
-var isFirstInGame = true;   //mark of first in game.
+//png
+var Png_MainMenuSceneBK     = "res/iphone/MainMenuSceneBK.png";
+var Png_StartBtn             = "res/iphone/StartBtn.png";
+var Png_StartBtnPush        = "res/iphone/StartBtnPush.png";
+var Png_loadingPng           = "res/iphone/loading.png";
+//music
+var mp3_music_background    = "res/music/music_background.mp3";
+//preload
+var MainMenuScene_resources =
+[
+    {src:mp3_music_background},
+    {src:Png_MainMenuSceneBK},
+    {src:Png_StartBtn},
+    {src:Png_StartBtnPush},
+    {src:Png_loadingPng}
+];
 //scene: main menu.
-var MainMenuScene = cc.Scene.extend({
-    loadingCount:0,     //loading file count.
+var MainMenuScene = cc.Scene.extend
+({
     mainMenu:null,      //menu layer.
-    onEnter:function () {
+    onEnter:function ()
+    {
         this._super();
-
+        // Add a Layer
         var menuLayer = cc.Layer.create();
+        // Get screen size
         var size = cc.Director.getInstance().getWinSize();
 
         // Add backGroundPic
         var backGroundPic = cc.Sprite.create(Png_MainMenuSceneBK);
         backGroundPic.setAnchorPoint(cc.p(0,0));
-
         menuLayer.addChild(backGroundPic,0);
 
         //Add StartBtn
         var start = cc.Sprite.create(Png_StartBtn);
         var startPush = cc.Sprite.create(Png_StartBtnPush);
-
         var startBtn = cc.MenuItemSprite.create(start, startPush, this.startBtnCallFunc, this);
 
         //Add Menu
         this.mainMenu = cc.Menu.create(startBtn);
         this.mainMenu.setAnchorPoint(cc.p(0, 0));
         this.mainMenu.setPosition(cc.p(size.width/2, size.height/5));
-
         menuLayer.addChild(this.mainMenu,1);
-        AudioPlayer.getInstance();
         this.addChild(menuLayer);
-    },
-    init:function(){
-        ;
-    },
-    //load data.
-    dataLoaded:function(percent){
-        if(!isFirstInGame)
-        {
-            console.log("in MainMenuScene, data loaded.");
-            var gameScene =  new GameScene();
-            gameScene.init();
-            var gameSceneTransition =  cc.TransitionFade.create(0.5, gameScene, cc.WHITE);
-            cc.Director.getInstance().replaceScene(gameSceneTransition);
-            return;
-        }
 
-        switch (this.loadingCount)
-        {
-//            case ActionType.ACTION_RUN:
-//            {
-//                cc.ArmatureDataManager.getInstance().addArmatureFileInfoAsync(Json_IMRun, this, this.dataLoaded);
-//            }
-//                break;
-//            case ActionType.ACTION_RUN_JUMP:
-//            {
-//                cc.ArmatureDataManager.getInstance().addArmatureFileInfoAsync(Json_IMRunJump, this, this.dataLoaded);
-//            }
-//                break;
-//            case ActionType.ACTION_STAND_JUMP:
-//            {
-//                cc.ArmatureDataManager.getInstance().addArmatureFileInfoAsync(Json_IMStandJump, this, this.dataLoaded);
-//            }
-//                break;
-//            case ActionType.ACTION_RUN_STOP:
-//            {
-//                cc.ArmatureDataManager.getInstance().addArmatureFileInfoAsync(Json_IMRunStop, this, this.dataLoaded);
-//            }
-//                break;
-//            case ActionType.ACTION_RUN_ATTACK:
-//            {
-//                cc.ArmatureDataManager.getInstance().addArmatureFileInfoAsync(Json_LaserRunAttack, this, this.dataLoaded);
-//            }
-//                break;
-//            case ActionType.ACTION_STAND_ATTACK:
-//            {
-//                cc.ArmatureDataManager.getInstance().addArmatureFileInfoAsync(Json_LaserStandAttack, this, this.dataLoaded);
-//            }
-//                break;
-//            case ActionType.ACTION_IM_DEATH:
-//            {
-//                cc.ArmatureDataManager.getInstance().addArmatureFileInfoAsync(Json_IMDead, this, this.dataLoaded);
-//            }
-//                break;
-//            case ActionType.ACTION_MONSTER_GROUND:
-//            {
-//                cc.ArmatureDataManager.getInstance().addArmatureFileInfoAsync(Json_MonsterGroundAnimation, this, this.dataLoaded);
-//            }
-//                break;
-//            case ActionType.ACTION_MONSTER_SKY:
-//            {
-//                cc.ArmatureDataManager.getInstance().addArmatureFileInfoAsync(Json_MonsterSkyAnimation, this, this.dataLoaded);
-//            }
-//                break;
-//            case ActionType.MONSTER_GROUND_MOVING:
-//            {
-//                cc.ArmatureDataManager.getInstance().addArmatureFileInfoAsync(Json_MonsterGroundMoving, this, this.dataLoaded);
-//            }
-//                break;
-//            case ActionType.MONSTER_SKY__MOVING:
-//            {
-//                cc.ArmatureDataManager.getInstance().addArmatureFileInfoAsync(Json_MonsterSkyMoving, this, this.dataLoaded);
-//            }
-//                break;
-
-            default:
-            {
-                isFirstInGame = false;
-                var gameScene =  GameScene.getScene();
-                //var gameSceneTransition =  cc.TransitionFade.create(0.5, gameScene, cc.WHITE);
-                cc.Director.getInstance().replaceScene(gameScene);
-            }
-                break;
-        }
-        this.loadingCount++;
+        // Play music
+        AudioPlayer.getInstance();
     },
-
     //click btn of start.
-    startBtnCallFunc:function(pSender) {
-        var gameScene = new GameScene();
-        gameScene.init();
-        //GameScene.Scene = gameScene;
-
-        var gameSceneTransition = cc.TransitionFade.create(0.5, gameScene, cc.white());
-        cc.Director.getInstance().replaceScene(gameSceneTransition);
-
-        var  startBtn = pSender;
-        startBtn.setOpacity(0);
-        this.mainMenu.setEnabled(false);
-
-        var meteor = cc.ParticleSystem.create(Plist_qwe);
-        //var meteor = cc.ParticleSystemQuad.create("qwe.plist");
-        meteor.setScale(0.5);
-        meteor.setPosition(cc.p(240,65));
-        this.addChild(meteor);
-
-        var activity = cc.Sprite.create(Png_loadingPng);
-        activity.setPosition(cc.p(240,65));
-        this.addChild(activity);
-
-        var rotateAction = cc.RotateBy.create(0.5, 180.0);
-        activity.runAction(cc.RepeatForever.create(rotateAction));
-
-        this.loadingCount = 0;
-        this.dataLoaded(this.loadingCount);
+    startBtnCallFunc:function(pSender)
+    {
+        //preload resources and relpaceScene
+        cc.LoaderScene.preload(GameScene_resources, function ()
+        {
+            // initial gameScene
+            var gameScene = new GameScene();
+            gameScene.init();
+            // set gameScene transition animation
+            var gameSceneTransition = cc.TransitionFade.create(0.5, gameScene, cc.white());
+            cc.Director.getInstance().replaceScene(gameSceneTransition);
+        }, this);
     }
 });
 
