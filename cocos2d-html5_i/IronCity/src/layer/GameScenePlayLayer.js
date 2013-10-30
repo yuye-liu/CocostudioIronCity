@@ -442,6 +442,16 @@ var GameScenePlayLayer = cc.Layer.extend({
     //add Amount of monster in sky.
     addMonsterSkyAmount:function(){
         this.monsterSkyAmount ++;
+    },
+    pause:function()
+    {
+        this.imManArmature.pauseSchedulerAndActions();
+        this.imManArmature.unscheduleUpdate();
+    },
+    play:function()
+    {
+        this.imManArmature.resumeSchedulerAndActions();
+        this.imManArmature.scheduleUpdate();
     }
 
 });

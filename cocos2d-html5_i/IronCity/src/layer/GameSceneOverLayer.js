@@ -11,7 +11,8 @@ var GameSceneOverLayer = cc.UILayer.extend({
     finalScore:null,
     parentScene:null,
     //init function.
-    init:function(){
+    init:function()
+    {
         if( cc.UILayer.prototype.init.call(this) ){
             this.parentScene = GameScene.getScene();
             //add cocostudio json file to widget.
