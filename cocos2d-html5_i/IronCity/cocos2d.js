@@ -19,6 +19,7 @@
             'src/other/AudioPlayer.js',
             'src/scene/GameScene.js',
             'src/other/VisibleRect.js',
+            'src/other/CCShake.js',
             'src/layer/tiledMap.js',
             'src/layer/Laser.js',
             'src/layer/GameSceneMenuLayer.js',
