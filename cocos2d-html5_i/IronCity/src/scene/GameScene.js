@@ -223,18 +223,16 @@ var GameScene = cc.Scene.extend
         //collision detection
         this.scheduleUpdate();
 
-        //
+        //opening collision detection
         this.isRectDetectedLock = false;
     },
     init:function()
     {
         GameScene.Scene = this;
-        console.log("GameScene init.222");
     },
     //when game over.
     gameOver:function()
     {
-        console.log("gameOver.");
         var overLayer = new GameSceneOverLayer();
 
         if (!overLayer.init())
@@ -243,13 +241,7 @@ var GameScene = cc.Scene.extend
             return;
         }
 
-        this.playLayer.stopAllActions();
-        this.playLayer.unscheduleUpdate();
-        this.moveMap.stop();
-        this.gameSceneMonster.stopAllActions();
-        this.gameSceneMonster.unscheduleUpdate();
-
-        //this.gameSceneMonster.unscheduleUpdate();
+        pause();
 
         this.menuLayer.unscheduleUpdate();
 
@@ -257,21 +249,24 @@ var GameScene = cc.Scene.extend
     },
     pause:function()
     {
-        console.log("will pause.");
+        this.playLayer.pause();
+        this.moveMap.stop();
         this.gameSceneMonster.pause();
-        console.log("will pause end.");
     },
     play:function()
     {
-        console.log("game continue.");
+        this.playLayer.play();
+        this.moveMap.move();
         this.gameSceneMonster.play();
     },
     //tick: update all action of per-node in per-frame.
     update:function(dt)
     {
-        //console.log("update.");
+        //get player amature
         var imManArmature = this.playLayer.imManArmature;
+        // get player index
         var actionNum = this.playLayer.actionNum;
+        // no repeat same action
         if(actionNum == this.playLayer.ACTION_RUN)
         {
             this.playLayer.playerBoundingBox = cc.rect(imManArmature.getPosition().x-imManArmature.getContentSize().width/2+46,
@@ -330,7 +325,7 @@ var GameScene = cc.Scene.extend
 
             var shark = CCShake.create(0.3, 10);
             this.playLayer.runAction(shark);
-            this.playLayer.imManArmatureBrood-=1;
+            this.playLayer.imManArmatureBrood-=100;
             if(this.playLayer.imManArmatureBrood<1)
             {
                 GameScene.getScene().menuLayer.setBloodBarPercent(0);

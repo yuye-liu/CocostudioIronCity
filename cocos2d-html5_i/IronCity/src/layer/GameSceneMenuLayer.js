@@ -14,8 +14,10 @@ var GameSceneMenuLayer = cc.UILayer.extend({
     distanceScore:null,
     musicEffect:null,
     musicVolume:null,
-    init:function(bloodBarPercent, value){
-        if( cc.UILayer.prototype.init.call(this) ){
+    init:function(bloodBarPercent, value)
+    {
+        if( cc.UILayer.prototype.init.call(this) )
+        {
             this.parentScene = GameScene.getScene();
             this.addWidget( cc.UIHelper.getInstance().createWidgetFromJsonFile(Json_IronCityUI_1) );
 
@@ -35,7 +37,8 @@ var GameSceneMenuLayer = cc.UILayer.extend({
         return false;
     },
     //set blood.
-    setBloodBarPercent:function(percent){
+    setBloodBarPercent:function(percent)
+    {
         this.bloodBar.setPercent(percent);
     },
     //set distance score.
@@ -43,9 +46,10 @@ var GameSceneMenuLayer = cc.UILayer.extend({
         this.distanceScore.setStringValue(value);
     },
     //call back function of setting button.
-    settingBtnCallback:function(pSender, type){
-        //if(cc.TouchEventType.BEGAN == type){
-        if(cc.TouchEventType.ENDED == type){
+    settingBtnCallback:function(pSender, type)
+    {
+        if(cc.TouchEventType.ENDED == type)
+        {
             this.parentScene = GameScene.getScene();
             var gameSetLayer = new GameSceneSetLayer();
             gameSetLayer.init(this.musicEffect, this.musicVolume);
@@ -53,10 +57,9 @@ var GameSceneMenuLayer = cc.UILayer.extend({
             gameSetLayer.setAnchorPoint(cc.p(0, 0));
             gameSetLayer.setPosition(cc.p(0, 0));
 
-            //console.log("scene:", this.parentScene, "setLayer: ", gameSetLayer);
             this.parentScene.addChild(gameSetLayer,4);
             this.parentScene.pause();
-            //console.log("click set, and goto setLayer.");
+
             return true;
         }
     },

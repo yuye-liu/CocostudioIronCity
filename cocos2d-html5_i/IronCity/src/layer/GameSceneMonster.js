@@ -5,7 +5,8 @@
  * Time: 下午3:46
  * To change this template use File | Settings | File Templates.
  */
-MonsterType = {
+MonsterType =
+{
     MonsterGround_enum: 0,
     MonsterSky_enum: 1
 };  //monster type.
@@ -230,14 +231,18 @@ var GameSceneMonster = cc.Layer.extend({
         this.init();
         GameScene.getScene().isRectDetectedLock = false;
     },
-    pause:function(){
-        console.log("monster pause.");
-        this.unscheduleUpdate();
-        console.log("monster pause end.");
+    pause:function()
+    {
+        /*
+        this.MonsterAmature.stopAllActions();
+        this.MonsterAmature.unscheduleUpdate();
+        */
+        this.MonsterAmature.pauseSchedulerAndActions();
+        this.MonsterAmature.unscheduleUpdate();
     },
-    play:function(){
-        console.log("monster play.");
-        this.scheduleUpdate();
-        console.log("monster play end.");
+    play:function()
+    {
+        this.MonsterAmature.resumeSchedulerAndActions();
+        this.MonsterAmature.scheduleUpdate();
     }
 });
