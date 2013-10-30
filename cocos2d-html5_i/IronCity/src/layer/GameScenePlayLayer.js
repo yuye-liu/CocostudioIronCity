@@ -94,7 +94,7 @@ var GameScenePlayLayer = cc.Layer.extend({
         var splitCols = cc.MoveTo.create(1.0 ,cc.p(this.imManArmature.getPosition().x+300, this.imManArmature.getPosition().y));
         this.imManArmature.runAction(splitCols);
     },
-    //change Ironman's speed.
+    //change IronMan's speed.
     changeSpeed:function(t){
         this.imManArmature.getAnimation().setSpeedScale(2.0);
         GameScene.getScene().moveMap.setMovedSpeed(3);
@@ -385,7 +385,7 @@ var GameScenePlayLayer = cc.Layer.extend({
         var angle = Math.atan(tan);
         return -angle;
     },
-    //get Ironman's hand position.
+    //get IronMan's hand position.
     getPosHand:function(angle){
         var posH = cc.p(141, 141);
         return posH;
