@@ -66,7 +66,6 @@ var GameScenePlayLayer = cc.Layer.extend({
     },
     //callback function of runjump action.
     runJumpActionCallBack:function(sender, data){
-        //console.log("runJumpActionCallBack.");
         this.imManArmature.stopAllActions();
         this.imManArmature.removeFromParent(false);
         if(0xbebabebb == data)
@@ -80,7 +79,6 @@ var GameScenePlayLayer = cc.Layer.extend({
     },
     //callback function of standjump action.
     standJumpActionCallBack:function(){
-        //console.log("standJumpActionCallBack.");
         this.imManArmature.stopAllActions();
         this.imManArmature.removeFromParent(false);
         this.IMRunningStop();
@@ -218,13 +216,11 @@ var GameScenePlayLayer = cc.Layer.extend({
     },
     //on touch cancelled.
 //    onTouchesCancelled:function (touches, event) {
-//        console.log("onTouchesCancelled");
 //    },
 
 
     //Running animation.
     IMRunning:function(){
-        //console.log("IMRunning.");
         var armature = cc.Armature.create("IMRun");
         armature.getAnimation().play("Running");
         armature.getAnimation().setSpeedScale(2.0);
@@ -242,7 +238,6 @@ var GameScenePlayLayer = cc.Layer.extend({
 
     //Run jump animation.
     IMRunJump:function(){
-        //console.log("IMRunJump.");
         var armature = cc.Armature.create("IMRunJump");
         armature.getAnimation().play("RuningJump");
         armature.getAnimation().setSpeedScale(1.5);
@@ -259,7 +254,6 @@ var GameScenePlayLayer = cc.Layer.extend({
 
     //Stand jump animation.
     IMStandJump:function(){
-        //console.log("IMStandJump.");
         var armature = cc.Armature.create("IMStandJump");
         armature.getAnimation().play("StandJump");
         armature.getAnimation().setSpeedScale(1.5);
@@ -276,7 +270,6 @@ var GameScenePlayLayer = cc.Layer.extend({
 
     //Running stop animation.
     IMRunningStop:function(){
-        //console.log("IMRunningStop.");
         var armature = cc.Armature.create("IMRunStop");
         armature.getAnimation().play("RunningStop");
         armature.getAnimation().setSpeedScale(1.5);
@@ -293,7 +286,6 @@ var GameScenePlayLayer = cc.Layer.extend({
     },
     //Running attack animation.
     IMRunAttack:function(touch){
-        //console.log("IMRunAttack.");
         var angle = this.getAngle(touch);
         var posHand = this.getPosHand(angle);
 
@@ -306,7 +298,6 @@ var GameScenePlayLayer = cc.Layer.extend({
         this.armaturePosition = armature.getPosition();
         this.addChild(armature);
         this.imManArmature = armature;
-        //console.log("IMRunAttack end.");
         armature.getAnimation().setMovementEventCallFunc(this.setAttackEvent, this);
 
         this._attackPos = posHand;
@@ -314,7 +305,6 @@ var GameScenePlayLayer = cc.Layer.extend({
     },
     //Stand attack animation.
     IMStandAttack:function(touch){
-        //console.log("IMStandAttack.");
         var posHand = this.getPosHand(0.1);
         this._attackPos = posHand;
         var angle = this.getAngle(touch);
@@ -331,20 +321,18 @@ var GameScenePlayLayer = cc.Layer.extend({
         armature.getAnimation().setMovementEventCallFunc(this.setAttackEvent, this);
 
         this._attackDir = angle;
-        //console.log("IMStandAttack end.");
     },
     //death animation.
     IMDeath:function(){
-        //console.log("IMDeath.");
         this.setTouchEnabled(false);
         this.imManArmature.removeFromParent(true);
         var armature = null;
         armature = cc.Armature.create("IMDead");
         armature.getAnimation().playByIndex(0.0, 1.0, 1.0,0.0, 1.0);
-        armature.getAnimation().setSpeedScale(1.0);
+        armature.getAnimation().setSpeedScale(0.5);
         armature.setScale(this.playerScale);
         armature.setAnchorPoint(cc.p(0.5,0));
-        armature.setPosition(cc.p(100, this.playerY));
+        armature.setPosition(cc.p(100, this.playerY-8));
         this.armaturePosition = armature.getPosition();
         this.addChild(armature);
         this.imManArmature = armature;
@@ -392,7 +380,6 @@ var GameScenePlayLayer = cc.Layer.extend({
     },
     //callback function of attack animation.
     setAttackEvent:function(armature, movementType, movementID){
-        //console.log("setAttackEvent, movementType:", movementType, "movementID: ", movementID, "armature: ", armature);
         if (movementType == CC_MovementEventType_COMPLETE || movementType == CC_MovementEventType_LOOP_COMPLETE)
         {
             //play audio and launch laser.
@@ -413,7 +400,6 @@ var GameScenePlayLayer = cc.Layer.extend({
     },
     //callback function of dead animation.
     Dead:function(armature, movementType, movementID){
-        //console.log("Dead");
         if (movementType == CC_MovementEventType_COMPLETE || movementType == CC_MovementEventType_LOOP_COMPLETE)
         {
             if(GameScene.getScene())
@@ -422,17 +408,14 @@ var GameScenePlayLayer = cc.Layer.extend({
     },
     //chech area of not in set button.
     checkIfTouchNotInSetBtnArea:function(touchPosition, setBtnSize, setBtnPosition){
-        //console.log("checkIfTouchNotInSetBtnArea.");
         return true;
     },
     //get Amount of monster on ground.
     getMonsterGroundAmount:function(){
-        //console.log("getMonsterGroundAmount.");
         return this.monsterGroundAmount;
     },
     //get Amount of monster in sky.
     getMonsterSkyAmount:function(){
-        //console.log("getMonsterSkyAmount.");
         return this.monsterSkyAmount;
     },
     //add Amount of monster on ground.
