@@ -21,7 +21,7 @@ var cocos2dApp = cc.Application.extend({
         //get the real device screen size
         var screenSize = cc.EGLView.getInstance().getFrameSize();
         var resourceSize = cc.size(480, 800);
-        var designSize = cc.SizeMake(480, 320);
+        var designSize = cc.size(480, 320);
         //initial a array for push the files' path in
         var resDirOrders = [];
         //get platform method

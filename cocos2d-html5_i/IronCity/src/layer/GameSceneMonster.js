@@ -151,7 +151,6 @@ var GameSceneMonster = cc.Layer.extend({
     },
     //get a random number.
     random:function(start, end){
-        //console.log("random", start, end);
         var i = cc.RANDOM_0_1()*(end-start+1)+start;
         return i | 0;
     },
@@ -162,13 +161,11 @@ var GameSceneMonster = cc.Layer.extend({
         {
             case MonsterType.MonsterGround_enum:
             {
-                console.log("MonsterGround_enum");
                 this.MonsterDestroyAction();
             }
                 break;
             case MonsterType.MonsterSky_enum:
             {
-                console.log("MonsterSky_enum");
                 var randomNumX = this.random(0, 1);
                 var randomNumY = this.random(0, 1);
                 if(0==randomNumY)
@@ -205,7 +202,6 @@ var GameSceneMonster = cc.Layer.extend({
                 bezier[0] = this.MonsterAmature.getPosition();
                 bezier[1] = cc.p(sx+(ex-sx)*0.5+randomNumX, sy+(ey-sy)*0.5+randomNumY);
                 bezier[2] = movePoint;
-                //console.log("bezier pos: ", bezier);
                 var bezierAction = cc.BezierBy.create(3.0, bezier);
                 var m_grossini = cc.EaseIn.create(bezierAction, 1.5);
                 var callBack = cc.CallFunc.create(this.JumpActionCallBack, this);

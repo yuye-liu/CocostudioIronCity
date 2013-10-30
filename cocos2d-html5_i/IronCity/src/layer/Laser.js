@@ -66,7 +66,6 @@ var Laser = cc.Sprite.extend({
         if (this.inRect(GameScene.getScene().gameSceneMonster.MonsterAmatureBoundingBox))
         {
             //add score.
-            console.log("get score.");
             var type = GameScene.getScene().gameSceneMonster.MonsterIndex;
             if (type == MonsterType.MonsterSky_enum) {
                 GameScene.getScene().playLayer.addMonsterSkyAmount();

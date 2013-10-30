@@ -27,14 +27,12 @@ var GameSceneOverLayer = cc.UILayer.extend({
 
             playAgainBtn.setTouchEnabled(true);
             playAgainBtn.addTouchEventListener(this, this.playAgainBtnCallback);
-            console.log("playAgainBtn: ", playAgainBtn);
 
             var monsterGroundCount= this.parentScene.playLayer.getMonsterGroundAmount();
             monsterGroundAmount.setText(monsterGroundCount);
 
             var monsterSkyCount= this.parentScene.playLayer.getMonsterSkyAmount();
             monsterSkyAmount.setText(monsterSkyCount);
-            console.log("amount: ", monsterGroundCount, monsterSkyCount);
 
             distanceScore.setStringValue(this.parentScene.menuLayer.getDistanceScore());
             this.calculateFinalScore(monsterGroundCount*88 , monsterSkyCount*66 , this.parentScene.menuLayer.getDistanceScore());
@@ -46,10 +44,8 @@ var GameSceneOverLayer = cc.UILayer.extend({
         return false;
     },
 //    onTouchBegan:function(touch){
-//        console.log("touch", touch);
 //    },
 //    onTouchesBegan:function(touch){
-//        console.log("touches", touch);
 //    },
     //calculate final score.
     calculateFinalScore:function(monsterSkyAmountValue, monsterGroundAmountValue, distanceScoreValue){
@@ -61,9 +57,7 @@ var GameSceneOverLayer = cc.UILayer.extend({
     },
     //callback function of playAgain button.
     playAgainBtnCallback:function(pSender, type){
-        //console.log("playAgainBtnCallback: ", pSender, type);
         if(cc.TouchEventType.ENDED == type){
-            console.log("will play again.");
             var againScene = new GameScene();
             againScene.init();
             var playAgainTransition =  cc.TransitionFade.create(0.5, againScene, cc.WHITE);

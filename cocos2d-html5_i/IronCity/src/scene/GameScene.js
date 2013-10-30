@@ -241,7 +241,7 @@ var GameScene = cc.Scene.extend
             return;
         }
 
-        pause();
+        this.pause();
 
         this.menuLayer.unscheduleUpdate();
 
