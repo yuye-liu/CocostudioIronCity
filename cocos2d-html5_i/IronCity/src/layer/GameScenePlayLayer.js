@@ -120,15 +120,16 @@ var GameScenePlayLayer = cc.Layer.extend({
             return;
         }
 
-        var touchLocation = touches.getLocation();
-        var nMoveX = touchLocation.x - this.m_tBeginPos.x;
-        var nMoveY = touchLocation.y - this.m_tBeginPos.y;
-        var radian = 10;
+        var touchLocation  = touches.getLocation();
+        var setBtnLocation = GameScene.getScene().menuLayer.settingBtn.getPosition();
+        var setBtnSize = GameScene.getScene().menuLayer.settingBtn.getSize();
 
-        if(this.touchTime<3 )//&& checkIfTouchNotInSetBtnArea(touchLocation,setBtnSize, setBtnLocation))
+        if(this.touchTime<6 && this.checkIfTouchNotInSetBtnArea(touchLocation,setBtnSize, setBtnLocation))
         {
             if(this.actionNum != this.ACTION_RUN && this.actionNum != this.ACTION_RUN_STOP)
+            {
                 return;
+            }
             this.isAttack = true;
             this.imManArmature.stopAllActions();
             this.imManArmature.removeFromParent(false);
@@ -145,16 +146,29 @@ var GameScenePlayLayer = cc.Layer.extend({
             return;
         }
 
-        this.touchTime = 0;
+        var touchLocation = touches.getLocation();
+        var nMoveX = touchLocation.x - this.m_tBeginPos.x;
+        var nMoveY = touchLocation.y - this.m_tBeginPos.y;
+        var radian = 10;
 
         if(nMoveX>10 && Math.abs(Math.tan(nMoveY/nMoveX))<Math.abs(Math.sqrt(3)/radian))
         {
             if(this.actionNum == this.ACTION_RUN)
-                return;
+            {
+                if(GameScene.getScene().moveMap.getMoveSpeed()!=6)
+                {
+                    GameScene.getScene().moveMap.setMovedSpeed(6);
+                    this.imManArmature.getAnimation().setSpeedScale(3.0);
+                    this.schedule(this.changeSpeed,0.5, 0, 0.0);
+                    return;
+                }
+            }
             this.imManArmature.stopAllActions();
             this.imManArmature.removeFromParent(false);
             this.IMRunning();
-        }else if(nMoveX<-10 && Math.abs(Math.tan(nMoveY/nMoveX))<Math.abs(Math.sqrt(3)/radian))
+        }
+
+        if(nMoveX<-10 && Math.abs(Math.tan(nMoveY/nMoveX))<Math.abs(Math.sqrt(3)/radian))
         {
             if(this.actionNum == this.ACTION_RUN_STOP)
                 return;
@@ -162,12 +176,14 @@ var GameScenePlayLayer = cc.Layer.extend({
             this.imManArmature.stopAllActions();
             this.imManArmature.removeFromParent(false);
             this.IMRunningStop();
-        }else if(nMoveY>10 && Math.abs(Math.tan(nMoveY/nMoveX))>Math.abs(Math.sqrt(3)/radian))
+        }
+
+        this.touchTime = 0;
+
+        if(nMoveY>10 && Math.abs(Math.tan(nMoveY/nMoveX))>Math.abs(Math.sqrt(3)/radian))
         {
-            if(this.actionNum == this.ACTION_STAND_JUMP ||
-               this.actionNum == this.ACTION_RUN_JUMP ||
-               this.actionNum == this.ACTION_CROUCH_JUMP)
-               return;
+            if(this.actionNum == this.ACTION_STAND_JUMP || this.actionNum == this.ACTION_RUN_JUMP)
+                return;
 
             var armatureName = this.imManArmature.getName();
             this.imManArmature.stopAllActions();
@@ -188,21 +204,16 @@ var GameScenePlayLayer = cc.Layer.extend({
                 }
                 var action = cc.Sequence.create(jumpAction,callBack);
                 this.imManArmature.runAction(action);
-            }else if(armatureName == "IMRunStop")
+            }
+
+            if(armatureName == "IMRunStop")
             {
                 this.IMStandJump();
-                var jumpAction = cc.JumpTo.create(0.5,cc.p(this.imManArmature.getPosition().x,this.imManArmature.getPosition().y),100,1);
+                var jumpAction = cc.JumpTo.create(0.5,cc.p(this.imManArmature.getPositionX(),this.imManArmature.getPositionY()),200,1);
                 var callBack = cc.CallFunc.create(this.standJumpActionCallBack, this, 0xbebabeba);
                 var action = cc.Sequence.create(jumpAction,callBack);
                 this.imManArmature.runAction(action);
             }
-        }else if(nMoveY<-10 && Math.abs(Math.tan(nMoveY/nMoveX))>Math.abs(Math.sqrt(3)/radian))
-        {
-            if(this.actionNum == this.ACTION_CROUCH)
-                return;
-            this.imManArmature.stopAllActions();
-            this.imManArmature.removeFromParent(false);
-            this.IMRunningStop();
         }
     },
     //on touch cancelled.

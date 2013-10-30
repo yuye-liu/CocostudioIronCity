@@ -1,3 +1,11 @@
+/**
+ * Created with JetBrains WebStorm.
+ * User: cocos
+ * Date: 13-10-23
+ * Time: 下午1:56
+ * To change this template use File | Settings | File Templates.
+ */
+
 //layer: game menu.
 var GameSceneMenuLayer = cc.UILayer.extend({
     parentScene:null,
