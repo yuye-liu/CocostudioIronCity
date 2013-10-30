@@ -223,7 +223,7 @@ var GameScene = cc.Scene.extend
         //collision detection
         this.scheduleUpdate();
 
-        //
+        //open collision detection
         this.isRectDetectedLock = false;
     },
     init:function()
