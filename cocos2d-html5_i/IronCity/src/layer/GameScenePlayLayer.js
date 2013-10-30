@@ -132,7 +132,7 @@ var GameScenePlayLayer = cc.Layer.extend({
             }
             this.isAttack = true;
             this.imManArmature.stopAllActions();
-            this.imManArmature.removeFromParentAndCleanup(false);
+            this.imManArmature.removeFromParent(false);
             if(this.actionNum == this.ACTION_RUN)
             {
                 this.IMRunAttack(touchLocation);
@@ -164,7 +164,7 @@ var GameScenePlayLayer = cc.Layer.extend({
                 }
             }
             this.imManArmature.stopAllActions();
-            this.imManArmature.removeFromParentAndCleanup(false);
+            this.imManArmature.removeFromParent(false);
             this.IMRunning();
         }
 
@@ -173,7 +173,7 @@ var GameScenePlayLayer = cc.Layer.extend({
             if(this.actionNum == this.ACTION_RUN_STOP)
                 return;
             this.imManArmature.stopAllActions();
-            this.imManArmature.removeFromParentAndCleanup(false);
+            this.imManArmature.removeFromParent(false);
             this.IMRunningStop();
         }
 
