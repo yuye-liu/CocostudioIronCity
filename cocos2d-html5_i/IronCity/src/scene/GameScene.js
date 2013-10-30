@@ -327,6 +327,9 @@ var GameScene = cc.Scene.extend
         {
             //this.unscheduleUpdate();
             //gameSceneMonster.MonsterDestroyAction();
+
+            var shark = CCShake.create(0.3, 10);
+            this.playLayer.runAction(shark);
             this.playLayer.imManArmatureBrood-=1;
             if(this.playLayer.imManArmatureBrood<1)
             {
