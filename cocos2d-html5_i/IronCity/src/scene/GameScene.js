@@ -262,11 +262,11 @@ var GameScene = cc.Scene.extend
     //tick: update all action of per-node in per-frame.
     update:function(dt)
     {
-        //get player amature
+        //get player of amature
         var imManArmature = this.playLayer.imManArmature;
         // get player index
         var actionNum = this.playLayer.actionNum;
-        // no repeat same action
+        // update the boundingbox of player's amature in different action
         if(actionNum == this.playLayer.ACTION_RUN)
         {
             this.playLayer.playerBoundingBox = cc.rect(imManArmature.getPosition().x-imManArmature.getContentSize().width/2+46,
@@ -291,20 +291,18 @@ var GameScene = cc.Scene.extend
         {
             this.playLayer.playerBoundingBox = cc.rect(imManArmature.getPosition().x-imManArmature.getContentSize().width/2,
                 imManArmature.getPosition().y,imManArmature.getContentSize().width,imManArmature.getContentSize().height);
-
         }
         else if(actionNum == this.playLayer.ACTION_STAND_ATTACK)
         {
             this.playLayer.playerBoundingBox = cc.rect(imManArmature.getPosition().x-imManArmature.getContentSize().width/2,
                 imManArmature.getPosition().y,imManArmature.getContentSize().width,imManArmature.getContentSize().height);
-
         }
         else if(actionNum == this.playLayer.ACTION_DEATH)
         {
             this.playLayer.playerBoundingBox = cc.rect(imManArmature.getPosition().x-imManArmature.getContentSize().width/2,
                 imManArmature.getPosition().y,imManArmature.getContentSize().width,imManArmature.getContentSize().height);
         }
-
+        // update the boundingbox of monstar's amature in different action
         if(this.gameSceneMonster.MonsterIndex == MonsterType.MonsterGround_enum)
         {
             this.gameSceneMonster.MonsterAmatureBoundingBox = cc.rect(this.gameSceneMonster.MonsterAmature.getPosition().x-
@@ -317,15 +315,15 @@ var GameScene = cc.Scene.extend
                 this.gameSceneMonster.MonsterAmature.getContentSize().width/2+45,this.gameSceneMonster.MonsterAmature.getPosition().y+21,
                 this.gameSceneMonster.MonsterAmature.getContentSize().width-90,this.gameSceneMonster.MonsterAmature.getContentSize().height-90);
         }
-
+        // collision detection beteen playerAmture and MonsterAmture
         if (cc.rectIntersectsRect(this.playLayer.playerBoundingBox, this.gameSceneMonster.MonsterAmatureBoundingBox))
         {
-            //this.unscheduleUpdate();
-            //gameSceneMonster.MonsterDestroyAction();
-
+            // shaking animation
             var shark = CCShake.create(0.3, 10);
             this.playLayer.runAction(shark);
+            // set brood num
             this.playLayer.imManArmatureBrood-=100;
+            // gameover
             if(this.playLayer.imManArmatureBrood<1)
             {
                 GameScene.getScene().menuLayer.setBloodBarPercent(0);
@@ -333,7 +331,7 @@ var GameScene = cc.Scene.extend
                 this.playLayer.IMDeath();
                 return;
             }
-
+            // show brood in label
             GameScene.getScene().menuLayer.setBloodBarPercent(this.playLayer.imManArmatureBrood);
         }
     }

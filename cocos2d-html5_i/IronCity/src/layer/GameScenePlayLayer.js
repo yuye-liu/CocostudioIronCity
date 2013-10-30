@@ -1,11 +1,6 @@
-/*
-var GameScenePlayLayer = ACTION ({
-    CROUCH = 0;
 
-});*/
-
-//layer: player layer.
-var GameScenePlayLayer = cc.Layer.extend({
+var GameScenePlayLayer = cc.Layer.extend
+({
     isMouseDown:false,
     actionNum:null,
     imManArmature:null,
