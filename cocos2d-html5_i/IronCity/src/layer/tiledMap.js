@@ -11,7 +11,7 @@ var arrMap2 = [s_bg_20, s_bg_21, s_bg_22];  //map 3.
 var arrBgs = [arrMap1, arrMap0, arrMap2];   //map array.
 
 //one tiledmap.
-var TiledMap = cc.Layer.extend({    //load one tiledmap.
+var TiledMap = cc.Node.extend({    //load one tiledmap.
     //init function.
     init:function(arr, index){
         //add tiled
@@ -40,7 +40,7 @@ var TiledMap = cc.Layer.extend({    //load one tiledmap.
 
 var MIN_WIN_SIZE_W =  480;
 //one group tiled map.
-var mapGet = cc.Layer.extend({  //load one group tiledmap.
+var mapGet = cc.Node.extend({  //load one group tiledmap.
     _length:null,   //width of this.
     _bInMap:null,   //mark of is in map.
     _bCanAddMap:null,   //mark of is can add map.
@@ -106,7 +106,7 @@ var g_w = 480;      //default screen width.
 var g_map_move_speed = 3;   //map move speed.
 var g_count = 0;    //for count
 //whole map and map manager.
-var MovedMap = cc.Layer.extend({    //move map for game.
+var MovedMap = cc.Node.extend({    //move map for game.
     arrMaps:null,   //curmap is arrMaps[0].
     _curW:null,     //current width of map.
     bMove:null,     //mark of map move.
