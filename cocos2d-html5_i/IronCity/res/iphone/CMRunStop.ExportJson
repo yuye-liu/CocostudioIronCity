@@ -3,7 +3,7 @@
     {
       "strVersion": "1.0.0.0",
       "version": 1.0,
-      "name": "IMRunStop",
+      "name": "CMRunStop",
       "bone_data": [
         {
           "name": "body",
@@ -20,7 +20,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/Body.png",
+              "name": "cocoman/Body.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -50,7 +50,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftArmTop.png",
+              "name": "cocoman/LeftArmTop.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -80,7 +80,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftArmBottom.png",
+              "name": "cocoman/LeftArmBottom.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -110,7 +110,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightLegTop.png",
+              "name": "cocoman/RightLegTop.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -140,7 +140,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightKnee.png",
+              "name": "cocoman/RightKnee.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -170,7 +170,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightLegBottom.png",
+              "name": "cocoman/RightLegBottom.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -200,7 +200,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightFoot.png",
+              "name": "cocoman/RightFoot.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -230,7 +230,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/Neck.png",
+              "name": "cocoman/Neck.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -260,7 +260,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/Head.png",
+              "name": "cocoman/Head.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -290,7 +290,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftLegTop.png",
+              "name": "cocoman/LeftLegTop.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -320,7 +320,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftKnee.png",
+              "name": "cocoman/LeftKnee.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -350,7 +350,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftLegBottom.png",
+              "name": "cocoman/LeftLegBottom.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -380,7 +380,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftFoot.png",
+              "name": "cocoman/LeftFoot.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -410,7 +410,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightArmTop.png",
+              "name": "cocoman/RightArmTop.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -440,7 +440,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightArmBottom.png",
+              "name": "cocoman/RightArmBottom.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -460,7 +460,7 @@
   ],
   "animation_data": [
     {
-      "name": "IMRunStop",
+      "name": "CMRunStop",
       "mov_data": [
         {
           "name": "RunningStop",
@@ -1054,105 +1054,105 @@
   ],
   "texture_data": [
     {
-      "name": "IronMan/Head",
+      "name": "cocoman/Head",
       "width": 21.0,
       "height": 23.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/Neck",
+      "name": "cocoman/Neck",
       "width": 15.0,
       "height": 8.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/Body",
+      "name": "cocoman/Body",
       "width": 36.0,
       "height": 64.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/LeftArmTop",
+      "name": "cocoman/LeftArmTop",
       "width": 34.0,
       "height": 42.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/LeftArmBottom",
+      "name": "cocoman/LeftArmBottom",
       "width": 42.0,
       "height": 36.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/RightArmTop",
+      "name": "cocoman/RightArmTop",
       "width": 27.0,
       "height": 49.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/RightArmBottom",
+      "name": "cocoman/RightArmBottom",
       "width": 29.0,
       "height": 46.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/RightLegTop",
+      "name": "cocoman/RightLegTop",
       "width": 31.0,
       "height": 47.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/RightLegBottom",
+      "name": "cocoman/RightLegBottom",
       "width": 40.0,
       "height": 53.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/RightKnee",
+      "name": "cocoman/RightKnee",
       "width": 20.0,
       "height": 21.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/RightFoot",
+      "name": "cocoman/RightFoot",
       "width": 38.0,
       "height": 27.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/LeftLegTop",
+      "name": "cocoman/LeftLegTop",
       "width": 21.0,
       "height": 42.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/LeftLegBottom",
+      "name": "cocoman/LeftLegBottom",
       "width": 27.0,
       "height": 40.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/LeftKnee",
+      "name": "cocoman/LeftKnee",
       "width": 18.0,
       "height": 18.0,
       "pX": 0.5,
       "pY": 0.5
     },
     {
-      "name": "IronMan/LeftFoot",
+      "name": "cocoman/LeftFoot",
       "width": 32.0,
       "height": 27.0,
       "pX": 0.5,
@@ -1160,6 +1160,6 @@
     }
   ],
   "config_file_path": [
-    "IMRunStop0.plist"
+    "CMRunStop0.plist"
   ]
 }

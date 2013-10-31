@@ -4,7 +4,7 @@
 	<dict>
 		<key>frames</key>
 		<dict>
-			<key>IronMan/LeftArmTop.png</key>
+			<key>cocoman/LeftArmTop.png</key>
 			<dict>
 				<key>width</key>
 				<integer>34</integer>
@@ -23,7 +23,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/LeftArmBottom.png</key>
+			<key>cocoman/LeftArmBottom.png</key>
 			<dict>
 				<key>width</key>
 				<integer>42</integer>
@@ -42,7 +42,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/RightLegBottom.png</key>
+			<key>cocoman/RightLegBottom.png</key>
 			<dict>
 				<key>width</key>
 				<integer>40</integer>
@@ -61,7 +61,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/RightLegTop.png</key>
+			<key>cocoman/RightLegTop.png</key>
 			<dict>
 				<key>width</key>
 				<integer>31</integer>
@@ -80,7 +80,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/Head.png</key>
+			<key>cocoman/Head.png</key>
 			<dict>
 				<key>width</key>
 				<integer>21</integer>
@@ -99,7 +99,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/Neck.png</key>
+			<key>cocoman/Neck.png</key>
 			<dict>
 				<key>width</key>
 				<integer>15</integer>
@@ -118,7 +118,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/Body.png</key>
+			<key>cocoman/Body.png</key>
 			<dict>
 				<key>width</key>
 				<integer>36</integer>
@@ -137,7 +137,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/RightKnee.png</key>
+			<key>cocoman/RightKnee.png</key>
 			<dict>
 				<key>width</key>
 				<integer>20</integer>
@@ -156,7 +156,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/RightFoot.png</key>
+			<key>cocoman/RightFoot.png</key>
 			<dict>
 				<key>width</key>
 				<integer>38</integer>
@@ -175,7 +175,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/LeftLegBottom.png</key>
+			<key>cocoman/LeftLegBottom.png</key>
 			<dict>
 				<key>width</key>
 				<integer>27</integer>
@@ -194,7 +194,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/LeftLegTop.png</key>
+			<key>cocoman/LeftLegTop.png</key>
 			<dict>
 				<key>width</key>
 				<integer>21</integer>
@@ -213,7 +213,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/LeftKnee.png</key>
+			<key>cocoman/LeftKnee.png</key>
 			<dict>
 				<key>width</key>
 				<integer>18</integer>
@@ -232,7 +232,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/LeftFoot.png</key>
+			<key>cocoman/LeftFoot.png</key>
 			<dict>
 				<key>width</key>
 				<integer>32</integer>
@@ -251,7 +251,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/RightArmTop.png</key>
+			<key>cocoman/RightArmTop.png</key>
 			<dict>
 				<key>width</key>
 				<integer>27</integer>
@@ -270,7 +270,7 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>IronMan/RightArmBottom.png</key>
+			<key>cocoman/RightArmBottom.png</key>
 			<dict>
 				<key>width</key>
 				<integer>29</integer>
@@ -295,9 +295,9 @@
 			<key>format</key>
 			<integer>0</integer>
 			<key>textureFileName</key>
-			<string>IMDead0.png</string>
+			<string>CMRunStop0.png</string>
 			<key>realTextureFileName</key>
-			<string>IMDead0.png</string>
+			<string>CMRunStop0.png</string>
 			<key>size</key>
 			<string>{1024,1024}</string>
 		</dict>

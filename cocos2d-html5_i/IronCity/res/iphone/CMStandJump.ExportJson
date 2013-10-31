@@ -1,9 +1,9 @@
 {
   "armature_data": [
     {
-      "strVersion": "1.0.0.0",
-      "version": 1.0,
-      "name": "IMRunJump",
+      "strVersion": "1.0.2.0",
+      "version": 1.02,
+      "name": "CMStandJump",
       "bone_data": [
         {
           "name": "body",
@@ -20,7 +20,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/Body.png",
+              "name": "cocoman/Body.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -38,8 +38,8 @@
         {
           "name": "RightTopLeg",
           "parent": "body",
-          "x": -1.9288291931152344,
-          "y": 3.3228535652160645,
+          "x": -1.9288303852081299,
+          "y": 3.32285475730896,
           "z": 15,
           "cX": 0.9999994,
           "cY": 0.9999999,
@@ -50,7 +50,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightLegTop.png",
+              "name": "cocoman/RightLegTop.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -68,19 +68,19 @@
         {
           "name": "RightKnee",
           "parent": "RightTopLeg",
-          "x": 32.244407653808594,
-          "y": 3.4659485816955566,
+          "x": 32.244434356689453,
+          "y": 3.4659535884857178,
           "z": 8,
-          "cX": 0.999997258,
+          "cX": 0.9999971,
           "cY": 0.9999997,
-          "kX": 0.501824,
-          "kY": -0.501824,
+          "kX": 0.5018239,
+          "kY": -0.5018239,
           "arrow_x": 18.335762023925781,
           "arrow_y": -1.6840467651491053E-06,
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightKnee.png",
+              "name": "cocoman/RightKnee.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -98,8 +98,8 @@
         {
           "name": "RightBottomLeg",
           "parent": "RightKnee",
-          "x": 10.237823486328125,
-          "y": 0.55367279052734375,
+          "x": 10.237800598144531,
+          "y": 0.55367022752761841,
           "z": 17,
           "cX": 1.0,
           "cY": 0.9999995,
@@ -110,7 +110,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightLegBottom.png",
+              "name": "cocoman/RightLegBottom.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -128,8 +128,8 @@
         {
           "name": "RightFoot",
           "parent": "RightBottomLeg",
-          "x": 43.912208557128906,
-          "y": -1.1995620727539063,
+          "x": 43.912239074707031,
+          "y": -1.1995654106140137,
           "z": 7,
           "cX": 1.00000107,
           "cY": 1.00000012,
@@ -140,7 +140,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightFoot.png",
+              "name": "cocoman/RightFoot.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -158,8 +158,8 @@
         {
           "name": "Layer3",
           "parent": "RightFoot",
-          "x": 7.3419990539550781,
-          "y": -7.502288818359375,
+          "x": 7.3420004844665527,
+          "y": -7.502316951751709,
           "z": 1,
           "cX": 1.000004,
           "cY": 0.9999958,
@@ -189,7 +189,7 @@
           "name": "RightTopArm",
           "parent": "body",
           "x": 47.414386749267578,
-          "y": -0.28066158294677734,
+          "y": -0.28066143393516541,
           "z": 13,
           "cX": 0.9999993,
           "cY": 1.00000048,
@@ -200,7 +200,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftArmTop.png",
+              "name": "cocoman/LeftArmTop.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -219,7 +219,7 @@
           "name": "RightBottomArm",
           "parent": "RightTopArm",
           "x": 32.778778076171875,
-          "y": 0.34615612030029297,
+          "y": 0.34615591168403625,
           "z": 16,
           "cX": 0.999999762,
           "cY": 1.0,
@@ -230,12 +230,12 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftArmBottom.png",
+              "name": "cocoman/LeftArmBottom.png",
               "displayType": 0,
               "skin_data": [
                 {
-                  "x": 17.29287,
-                  "y": 0.3427925,
+                  "x": 12.9099083,
+                  "y": 3.04274726,
                   "cX": 1.0,
                   "cY": 1.0,
                   "kX": -0.7688705,
@@ -253,14 +253,14 @@
           "z": 11,
           "cX": 1.00000012,
           "cY": 0.999999762,
-          "kX": 0.5789142,
-          "kY": -0.5789142,
+          "kX": 0.578914165,
+          "kY": -0.578914165,
           "arrow_x": 15.754362106323242,
           "arrow_y": 9.3731068773195148E-07,
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/Neck.png",
+              "name": "cocoman/Neck.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -278,8 +278,8 @@
         {
           "name": "Head",
           "parent": "neck",
-          "x": 3.4609737396240234,
-          "y": -3.1848528385162354,
+          "x": 3.4609732627868652,
+          "y": -3.184852123260498,
           "z": 12,
           "cX": 0.999998868,
           "cY": 1.00000024,
@@ -290,7 +290,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/Head.png",
+              "name": "cocoman/Head.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -309,7 +309,7 @@
           "name": "LeftTopArm",
           "parent": "body",
           "x": 47.691505432128906,
-          "y": 1.3403429985046387,
+          "y": 1.3403428792953491,
           "z": 9,
           "cX": 1.0,
           "cY": 0.9999997,
@@ -320,7 +320,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightArmTop.png",
+              "name": "cocoman/RightArmTop.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -338,8 +338,8 @@
         {
           "name": "LeftBottomArm",
           "parent": "LeftTopArm",
-          "x": 34.141792297363281,
-          "y": 0.76035976409912109,
+          "x": 34.141780853271484,
+          "y": 0.76035839319229126,
           "z": 3,
           "cX": 0.9999997,
           "cY": 0.99999994,
@@ -350,7 +350,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightArmBottom.png",
+              "name": "cocoman/RightArmBottom.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -368,8 +368,8 @@
         {
           "name": "LeftTopLeg",
           "parent": "body",
-          "x": 0.71445465087890625,
-          "y": -1.2128963470458984,
+          "x": 0.71445596218109131,
+          "y": -1.2128961086273193,
           "z": 6,
           "cX": 0.9999996,
           "cY": 1.0,
@@ -380,7 +380,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftLegTop.png",
+              "name": "cocoman/LeftLegTop.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -398,8 +398,8 @@
         {
           "name": "LeftKnee",
           "parent": "LeftTopLeg",
-          "x": 34.4847297668457,
-          "y": 2.5299243927001953,
+          "x": 34.484733581542969,
+          "y": 2.5299239158630371,
           "z": 5,
           "cX": 0.999999464,
           "cY": 1.00000036,
@@ -410,7 +410,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftKnee.png",
+              "name": "cocoman/LeftKnee.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -429,7 +429,7 @@
           "name": "LeftBottomLeg",
           "parent": "LeftKnee",
           "x": 12.10943603515625,
-          "y": 1.0292234420776367,
+          "y": 1.0292233228683472,
           "z": 14,
           "cX": 1.0000006,
           "cY": 0.9999995,
@@ -440,7 +440,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftLegBottom.png",
+              "name": "cocoman/LeftLegBottom.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -458,8 +458,8 @@
         {
           "name": "LeftFoot",
           "parent": "LeftBottomLeg",
-          "x": 40.006767272949219,
-          "y": -0.63928318023681641,
+          "x": 40.006736755371094,
+          "y": -0.63929033279418945,
           "z": 4,
           "cX": 0.9999975,
           "cY": 0.999997556,
@@ -470,7 +470,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftFoot.png",
+              "name": "cocoman/LeftFoot.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -488,8 +488,8 @@
         {
           "name": "Layer4",
           "parent": "LeftFoot",
-          "x": 8.7178916931152344,
-          "y": -8.396820068359375,
+          "x": 8.717890739440918,
+          "y": -8.3968257904052734,
           "z": 2,
           "cX": 1.00000024,
           "cY": 0.9999991,
@@ -520,10 +520,10 @@
   ],
   "animation_data": [
     {
-      "name": "IMRunJump",
+      "name": "CMStandJump",
       "mov_data": [
         {
-          "name": "RuningJump",
+          "name": "StandJump",
           "dr": 30,
           "lp": true,
           "to": 0,
@@ -542,8 +542,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.3723382,
-                  "kY": -0.3723382,
+                  "kX": -6.28318548,
+                  "kY": 6.28318548,
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
@@ -555,8 +555,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.266866475,
-                  "kY": -0.266866475,
+                  "kX": -5.78104544,
+                  "kY": 5.78104544,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -568,8 +568,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.266866475,
-                  "kY": -0.266866475,
+                  "kX": -5.78104544,
+                  "kY": 5.78104544,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
@@ -581,8 +581,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.3723382,
-                  "kY": -0.3723382,
+                  "kX": -6.28318548,
+                  "kY": 6.28318548,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -600,8 +600,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -1.11697268,
-                  "kY": 1.11697268,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
@@ -613,8 +613,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.5930514,
-                  "kY": -0.5930514,
+                  "kX": 0.7020665,
+                  "kY": -0.7020665,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -626,11 +626,19 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.5930514,
-                  "kY": -0.5930514,
+                  "kX": 0.7020665,
+                  "kY": -0.7020665,
                   "fi": 20,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "color": [
+                    {
+                      "a": 255,
+                      "r": 255,
+                      "g": 255,
+                      "b": 255
+                    }
+                  ]
                 },
                 {
                   "dI": 0,
@@ -639,8 +647,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -1.11697268,
-                  "kY": 1.11697268,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -658,8 +666,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.02891113,
-                  "kY": -0.02891113,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
@@ -671,8 +679,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.02891113,
-                  "kY": -0.02891113,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -684,8 +692,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.02891113,
-                  "kY": -0.02891113,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
@@ -697,8 +705,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.02891113,
-                  "kY": -0.02891113,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -716,8 +724,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.4633152,
-                  "kY": -0.4633152,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
@@ -729,8 +737,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.060272254,
-                  "kY": -0.060272254,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -742,8 +750,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.060272254,
-                  "kY": -0.060272254,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
@@ -755,8 +763,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.4633152,
-                  "kY": -0.4633152,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -774,8 +782,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.404291749,
-                  "kY": -0.404291749,
+                  "kX": 6.28318548,
+                  "kY": -6.28318548,
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
@@ -787,8 +795,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.6402161,
-                  "kY": 0.6402161,
+                  "kX": 5.66920137,
+                  "kY": -5.66920137,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -800,8 +808,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.6402161,
-                  "kY": 0.6402161,
+                  "kX": 5.66920137,
+                  "kY": -5.66920137,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
@@ -813,8 +821,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.404291749,
-                  "kY": -0.404291749,
+                  "kX": 6.28318548,
+                  "kY": -6.28318548,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -832,8 +840,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.196091175,
-                  "kY": 0.196091175,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
@@ -845,8 +853,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.196091175,
-                  "kY": 0.196091175,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -858,8 +866,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.196091175,
-                  "kY": 0.196091175,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
@@ -871,8 +879,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.196091175,
-                  "kY": 0.196091175,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -890,8 +898,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.03749654,
-                  "kY": -0.03749654,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
@@ -903,8 +911,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.03749654,
-                  "kY": -0.03749654,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -916,8 +924,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.03749654,
-                  "kY": -0.03749654,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
@@ -929,8 +937,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.03749654,
-                  "kY": -0.03749654,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -948,19 +956,11 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.281211048,
-                  "kY": -0.281211048,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
-                  "tweenFrame": true,
-                  "color": [
-                    {
-                      "a": 255,
-                      "r": 255,
-                      "g": 255,
-                      "b": 255
-                    }
-                  ]
+                  "tweenFrame": true
                 },
                 {
                   "dI": 0,
@@ -969,19 +969,11 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.0615257174,
-                  "kY": -0.0615257174,
+                  "kX": -0.00119930157,
+                  "kY": 0.00119930157,
                   "fi": 10,
                   "twE": 0,
-                  "tweenFrame": true,
-                  "color": [
-                    {
-                      "a": 255,
-                      "r": 255,
-                      "g": 255,
-                      "b": 255
-                    }
-                  ]
+                  "tweenFrame": true
                 },
                 {
                   "dI": 0,
@@ -990,19 +982,11 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.0615257174,
-                  "kY": -0.0615257174,
+                  "kX": -0.00119930157,
+                  "kY": 0.00119930157,
                   "fi": 20,
                   "twE": 0,
-                  "tweenFrame": true,
-                  "color": [
-                    {
-                      "a": 255,
-                      "r": 255,
-                      "g": 255,
-                      "b": 255
-                    }
-                  ]
+                  "tweenFrame": true
                 },
                 {
                   "dI": 0,
@@ -1011,19 +995,11 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.281211048,
-                  "kY": -0.281211048,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 30,
                   "twE": 0,
-                  "tweenFrame": true,
-                  "color": [
-                    {
-                      "a": 255,
-                      "r": 255,
-                      "g": 255,
-                      "b": 255
-                    }
-                  ]
+                  "tweenFrame": true
                 }
               ]
             },
@@ -1038,8 +1014,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.143027961,
-                  "kY": 0.143027961,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
@@ -1051,8 +1027,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.423010617,
-                  "kY": -0.423010617,
+                  "kX": 0.260355979,
+                  "kY": -0.260355979,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -1064,8 +1040,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.423010617,
-                  "kY": -0.423010617,
+                  "kX": 0.260355979,
+                  "kY": -0.260355979,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
@@ -1077,8 +1053,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.143027961,
-                  "kY": 0.143027961,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -1096,8 +1072,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.310453355,
-                  "kY": 0.310453355,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
@@ -1109,8 +1085,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.310453355,
-                  "kY": 0.310453355,
+                  "kX": -0.513777554,
+                  "kY": 0.513777554,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -1122,8 +1098,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.310453355,
-                  "kY": 0.310453355,
+                  "kX": -0.513777554,
+                  "kY": 0.513777554,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
@@ -1135,8 +1111,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.310453355,
-                  "kY": 0.310453355,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -1212,19 +1188,11 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.4539954,
-                  "kY": 0.4539954,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
-                  "tweenFrame": true,
-                  "color": [
-                    {
-                      "a": 255,
-                      "r": 255,
-                      "g": 255,
-                      "b": 255
-                    }
-                  ]
+                  "tweenFrame": true
                 },
                 {
                   "dI": 0,
@@ -1233,19 +1201,11 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.137656257,
-                  "kY": -0.137656257,
+                  "kX": 0.2521888,
+                  "kY": -0.2521888,
                   "fi": 10,
                   "twE": 0,
-                  "tweenFrame": true,
-                  "color": [
-                    {
-                      "a": 255,
-                      "r": 255,
-                      "g": 255,
-                      "b": 255
-                    }
-                  ]
+                  "tweenFrame": true
                 },
                 {
                   "dI": 0,
@@ -1254,19 +1214,11 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.137656257,
-                  "kY": -0.137656257,
+                  "kX": 0.2521888,
+                  "kY": -0.2521888,
                   "fi": 20,
                   "twE": 0,
-                  "tweenFrame": true,
-                  "color": [
-                    {
-                      "a": 255,
-                      "r": 255,
-                      "g": 255,
-                      "b": 255
-                    }
-                  ]
+                  "tweenFrame": true
                 },
                 {
                   "dI": 0,
@@ -1275,19 +1227,11 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.4539954,
-                  "kY": 0.4539954,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 30,
                   "twE": 0,
-                  "tweenFrame": true,
-                  "color": [
-                    {
-                      "a": 255,
-                      "r": 255,
-                      "g": 255,
-                      "b": 255
-                    }
-                  ]
+                  "tweenFrame": true
                 }
               ]
             },
@@ -1302,8 +1246,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.1292192,
-                  "kY": -0.1292192,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
@@ -1315,8 +1259,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.0357212,
-                  "kY": -0.0357212,
+                  "kX": -0.08778273,
+                  "kY": 0.08778273,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -1328,8 +1272,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.0357212,
-                  "kY": -0.0357212,
+                  "kX": -0.08778273,
+                  "kY": 0.08778273,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
@@ -1341,8 +1285,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.1292192,
-                  "kY": -0.1292192,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -1418,8 +1362,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.500781238,
-                  "kY": 0.500781238,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
@@ -1431,8 +1375,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.5882566,
-                  "kY": -0.5882566,
+                  "kX": 0.731597841,
+                  "kY": -0.731597841,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -1444,8 +1388,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.5882566,
-                  "kY": -0.5882566,
+                  "kX": 0.731597841,
+                  "kY": -0.731597841,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
@@ -1457,8 +1401,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.500781238,
-                  "kY": 0.500781238,
+                  "kX": 0.0,
+                  "kY": 0.0,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -1489,8 +1433,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -0.246232569,
-                  "kY": 0.246232569,
+                  "kX": -0.142377168,
+                  "kY": 0.142377168,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -1502,8 +1446,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
+                  "kX": -0.142377168,
+                  "kY": 0.142377168,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
@@ -1515,8 +1459,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
+                  "kX": -0.142377168,
+                  "kY": 0.142377168,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -1547,8 +1491,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.0393726081,
-                  "kY": -0.0393726081,
+                  "kX": 0.188543409,
+                  "kY": -0.188543409,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -1560,8 +1504,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
+                  "kX": 0.188543409,
+                  "kY": -0.188543409,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true
@@ -1573,8 +1517,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.0,
-                  "kY": 0.0,
+                  "kX": 0.188543409,
+                  "kY": -0.188543409,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true
@@ -1588,119 +1532,135 @@
   ],
   "texture_data": [
     {
-      "name": "IronMan/Head",
+      "name": "cocoman/Head",
       "width": 21.0,
       "height": 23.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/Neck",
+      "name": "cocoman/Neck",
       "width": 15.0,
       "height": 8.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/Body",
+      "name": "cocoman/Body",
       "width": 36.0,
       "height": 64.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/LeftArmTop",
+      "name": "cocoman/LeftArmTop",
       "width": 34.0,
       "height": 42.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/LeftArmBottom",
-      "width": 42.0,
-      "height": 36.0,
+      "name": "cocoman/LeftArmBottom",
+      "width": 37.0,
+      "height": 30.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/RightArmTop",
+      "name": "cocoman/RightArmTop",
       "width": 27.0,
       "height": 49.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/RightArmBottom",
+      "name": "cocoman/RightArmBottom",
       "width": 29.0,
       "height": 46.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/RightLegTop",
+      "name": "cocoman/RightLegTop",
       "width": 31.0,
       "height": 47.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/RightLegBottom",
+      "name": "cocoman/RightLegBottom",
       "width": 40.0,
       "height": 53.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/RightKnee",
+      "name": "cocoman/RightKnee",
       "width": 20.0,
       "height": 21.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/RightFoot",
+      "name": "cocoman/RightFoot",
       "width": 38.0,
       "height": 27.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/LeftLegTop",
+      "name": "cocoman/LeftLegTop",
       "width": 21.0,
       "height": 42.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/LeftLegBottom",
+      "name": "cocoman/LeftLegBottom",
       "width": 27.0,
       "height": 40.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/LeftKnee",
+      "name": "cocoman/LeftKnee",
       "width": 18.0,
       "height": 18.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/LeftFoot",
+      "name": "cocoman/LeftFoot",
       "width": 32.0,
       "height": 27.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
       "name": "laser",
       "width": 42.0,
       "height": 79.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     }
   ],
   "config_file_path": [
-    "IMRunJump0.plist"
+    "CMStandJump0.plist"
   ]
 }

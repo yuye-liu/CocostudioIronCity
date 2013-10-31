@@ -1,24 +1,20 @@
 //ExportJson
-var Json_IMCrouch                    = "res/iphone/IMCrouch.ExportJson";
-var Json_IMCrouchJump               = "res/iphone/IMCrouchJump.ExportJson";
-var Json_IMRun                       = "res/iphone/IMRun.ExportJson";
-var Json_IMRunJump                   = "res/iphone/IMRunJump.ExportJson";
-var Json_IMRunStop                   = "res/iphone/IMRunStop.ExportJson";
-var Json_IMStandJump                = "res/iphone/IMStandJump.ExportJson";
+var Json_CMRun                       = "res/iphone/CMRun.ExportJson";
+var Json_CMRunJump                   = "res/iphone/CMRunJump.ExportJson";
+var Json_CMRunStop                   = "res/iphone/CMRunStop.ExportJson";
+var Json_CMStandJump                = "res/iphone/CMStandJump.ExportJson";
 var Json_LaserRunAttack             = "res/iphone/LaserRunAttack.ExportJson";
 var Json_LaserStandAttack           = "res/iphone/LaserStandAttack.ExportJson";
 var Json_MonsterGroundMoving        = "res/iphone/MonsterGroundMoving.ExportJson";
 var Json_MonsterSkyMoving           = "res/iphone/MonsterSkyMoving.ExportJson";
 var Json_MonsterGroundAnimation     = "res/iphone/MonsterGroundAnimation.ExportJson";
 var Json_MonsterSkyAnimation        = "res/iphone/MonsterSkyAnimation.ExportJson";
-var Json_IMDead                       = "res/iphone/IMDead.ExportJson";
+var Json_CMDead                       = "res/iphone/CMDead.ExportJson";
 //png
-var Png_IMCrouch                     = "res/iphone/IMCrouch0.png";
-var Png_IMCrouchJump                = "res/iphone/IMCrouchJump0.png";
-var Png_IMRun                        = "res/iphone/IMRun0.png";
-var Png_IMRunJump                   = "res/iphone/IMRunJump0.png";
-var Png_IMRunStop                   = "res/iphone/IMRunStop0.png";
-var Png_IMStandJump                = "res/iphone/IMStandJump0.png";
+var Png_CMRun                        = "res/iphone/CMRun0.png";
+var Png_CMRunJump                   = "res/iphone/CMRunJump0.png";
+var Png_CMRunStop                   = "res/iphone/CMRunStop0.png";
+var Png_CMStandJump                = "res/iphone/CMStandJump0.png";
 var Png_LaserRunAttack            = "res/iphone/LaserRunAttack0.png";
 var Png_LaserStandAttack          = "res/iphone/LaserStandAttack0.png";
 var Png_laser                      = "res/iphone/laser.png";
@@ -38,7 +34,7 @@ var s_MonsterGroundAnimation_png    = "res/iphone/MonsterGroundAnimation0.png";
 var s_MonsterSkyAnimation_png       = "res/iphone/MonsterSkyAnimation0.png";
 var s_MonsterGroundMoving_png       = "res/iphone/MonsterGroundMoving0.png";
 var s_MonsterSkyMoving_png          = "res/iphone/MonsterSkyMoving0.png";
-var Png_IMDead                      = "res/iphone/IMDead0.png";
+var Png_CMDead                      = "res/iphone/CMDead0.png";
 var png_backGame                  = "res/iphone/backGame.png";
 var png_backGamePush             = "res/iphone/backGamePush.png";
 var png_backMainMenuBtn         = "res/iphone/backMainMenuBtn.png";
@@ -61,19 +57,17 @@ var s_sky                       = "res/tiled/sky.png";
 var s_stair                     = "res/tiled/stairs.png";
 var s_woonden_ladder           = "res/tiled/wooden_ladder.png";
 //plist
-var Plist_IMCrouch              = "res/iphone/IMCrouch0.plist";
-var Plist_IMCrouchJump         = "res/iphone/IMCrouchJump0.plist";
-var Plist_IMRun                 = "res/iphone/IMRun0.plist";
-var Plist_IMRunJump            = "res/iphone/IMRunJump0.plist";
-var Plist_IMRunStop            = "res/iphone/IMRunStop0.plist";
-var Plist_IMStandJump          = "res/iphone/IMStandJump0.plist";
+var Plist_CMRun                 = "res/iphone/CMRun0.plist";
+var Plist_CMRunJump            = "res/iphone/CMRunJump0.plist";
+var Plist_CMRunStop            = "res/iphone/CMRunStop0.plist";
+var Plist_CMStandJump          = "res/iphone/CMStandJump0.plist";
 var Plist_LaserRunAttack       = "res/iphone/LaserRunAttack0.plist";
 var Plist_LaserStandAttack0   = "res/iphone/LaserStandAttack0.plist";
 var p_MonsterGroundAnimation_plist  = "res/iphone/MonsterGroundAnimation0.plist";
 var p_MonsterSkyAnimation_plist     = "res/iphone/MonsterSkyAnimation0.plist";
 var p_MonsterGroundMoving_plist     = "res/iphone/MonsterGroundMoving0.plist";
 var p_MonsterSkyMoving_plist        = "res/iphone/MonsterSkyMoving0.plist";
-var Plist_IMDead                      = "res/iphone/IMDead0.plist";
+var Plist_CMDead                      = "res/iphone/CMDead0.plist";
 //tiledmap
 var s_bg_1                  = "res/tiled/bg0_0.tmx";
 var s_bg_2                  = "res/tiled/bg0_1.tmx";
@@ -105,12 +99,10 @@ var GameScene_resources =
     {src:p_MonsterSkyMoving_plist},
     {src:s_MonsterSkyMoving_png},
     //Jsons
-    {src:Json_IMCrouch},
-    {src:Json_IMCrouchJump},
-    {src:Json_IMRun},
-    {src:Json_IMRunJump},
-    {src:Json_IMRunStop},
-    {src:Json_IMStandJump},
+    {src:Json_CMRun},
+    {src:Json_CMRunJump},
+    {src:Json_CMRunStop},
+    {src:Json_CMStandJump},
     {src:Json_LaserRunAttack},
     {src:Json_LaserStandAttack},
     {src:Json_IronCityUI_1},
@@ -119,12 +111,10 @@ var GameScene_resources =
     {src:Json_MonsterSkyMoving},
     {src:Json_MonsterGroundMoving},
     //Pngs
-    {src:Png_IMCrouch},
-    {src:Png_IMCrouchJump},
-    {src:Png_IMRun},
-    {src:Png_IMRunJump},
-    {src:Png_IMRunStop},
-    {src:Png_IMStandJump},
+    {src:Png_CMRun},
+    {src:Png_CMRunJump},
+    {src:Png_CMRunStop},
+    {src:Png_CMStandJump},
     {src:Png_LaserRunAttack},
     {src:Png_LaserStandAttack},
     {src:s_settingBtn},
@@ -167,17 +157,15 @@ var GameScene_resources =
     {src:s_bg_21},
     {src:s_bg_22},
     //plists
-    {src:Plist_IMCrouch},
-    {src:Plist_IMCrouchJump},
-    {src:Plist_IMRun},
-    {src:Plist_IMRunJump},
-    {src:Plist_IMRunStop},
-    {src:Plist_IMStandJump},
+    {src:Plist_CMRun},
+    {src:Plist_CMRunJump},
+    {src:Plist_CMRunStop},
+    {src:Plist_CMStandJump},
     {src:Plist_LaserRunAttack},
     {src:Plist_LaserStandAttack0},
-    {src:Json_IMDead},
-    {src:Plist_IMDead},
-    {src:Png_IMDead}
+    {src:Json_CMDead},
+    {src:Plist_CMDead},
+    {src:Png_CMDead}
 ];
 //scene: game scene.
 var GameScene = cc.Scene.extend
@@ -325,12 +313,12 @@ var GameScene = cc.Scene.extend
 
             var shark = CCShake.create(0.3, 10);
             this.playLayer.runAction(shark);
-            this.playLayer.imManArmatureBrood-=100;
+            this.playLayer.imManArmatureBrood-=1;
             if(this.playLayer.imManArmatureBrood<1)
             {
                 GameScene.getScene().menuLayer.setBloodBarPercent(0);
                 this.unscheduleUpdate();
-                this.playLayer.IMDeath();
+                this.playLayer.CMDeath();
                 return;
             }
 
