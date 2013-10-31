@@ -7,7 +7,7 @@
  */
 
 //layer: game menu.
-var GameSceneMenuLayer = cc.UILayer.extend({
+var MenuUI = cc.UILayer.extend({
     parentScene:null,
     settingBtn:null,
     bloodBar:null,
@@ -51,7 +51,7 @@ var GameSceneMenuLayer = cc.UILayer.extend({
         if(cc.TouchEventType.ENDED == type)
         {
             this.parentScene = GameScene.getScene();
-            var gameSetLayer = new GameSceneSetLayer();
+            var gameSetLayer = new SettingUI();
             gameSetLayer.init(this.musicEffect, this.musicVolume);
 
             gameSetLayer.setAnchorPoint(cc.p(0, 0));

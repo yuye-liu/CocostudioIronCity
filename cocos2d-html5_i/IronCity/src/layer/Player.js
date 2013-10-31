@@ -5,7 +5,7 @@ var GameScenePlayLayer = ACTION ({
 });*/
 
 //layer: player layer.
-var GameScenePlayLayer = cc.Layer.extend({
+var Player = cc.Layer.extend({
     isMouseDown:false,
     actionNum:null,
     imManArmature:null,
@@ -32,6 +32,8 @@ var GameScenePlayLayer = cc.Layer.extend({
     ACTION_CROUCH_JUMP:4,
     ACTION_RUN_STOP:5,
     ACTION_DEATH:6,
+    ACTION_RUN_ATTACK:7,
+    ACTION_STAND_ATTACK:8,
 
     //init function.
     init:function () {

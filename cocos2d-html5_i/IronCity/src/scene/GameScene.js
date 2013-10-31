@@ -179,13 +179,13 @@ var GameScene = cc.Scene.extend
     {
         this._super();
         //map
-        this.moveMap = new MovedMap();
+        this.moveMap = new Background();
         this.moveMap.init();
         this.moveMap.setMovedSpeed(3);
         this.addChild(this.moveMap, 0);
 
         //menu
-        this.menuLayer = new GameSceneMenuLayer();
+        this.menuLayer = new MenuUI();
         this.menuLayer.init(100, "0");
         this.menuLayer.setAnchorPoint(cc.p(0, 0));
         this.menuLayer.setPosition(cc.p(0, 0));
@@ -193,12 +193,12 @@ var GameScene = cc.Scene.extend
         this.addChild(this.menuLayer, 0);
 
         //player
-        this.playLayer = new GameScenePlayLayer();
+        this.playLayer = new Player();
         this.playLayer.init();
         this.addChild(this.playLayer, 0);
 
         //monster
-        this.gameSceneMonster = new GameSceneMonster();
+        this.gameSceneMonster = new Monster();
         this.gameSceneMonster.init();
         this.addChild(this.gameSceneMonster, 0);
 
@@ -221,7 +221,7 @@ var GameScene = cc.Scene.extend
     //when game over.
     gameOver:function()
     {
-        var overLayer = new GameSceneOverLayer();
+        var overLayer = new GameOver();
 
         if (!overLayer.init())
         {
