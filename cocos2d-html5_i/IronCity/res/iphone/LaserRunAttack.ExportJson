@@ -1,8 +1,8 @@
 {
   "armature_data": [
     {
-      "strVersion": "1.0.0.1",
-      "version": 1.001,
+      "strVersion": "1.0.2.0",
+      "version": 1.02,
       "name": "LaserRunAttack",
       "bone_data": [
         {
@@ -20,7 +20,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/Body.png",
+              "name": "cocoman/Body.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -50,7 +50,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftArmTop.png",
+              "name": "cocoman/LeftArmTop.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -80,12 +80,12 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftArmBottom.png",
+              "name": "cocoman/LeftArmBottom.png",
               "displayType": 0,
               "skin_data": [
                 {
-                  "x": 17.29287,
-                  "y": 0.3427925,
+                  "x": 13.9189243,
+                  "y": 5.432868,
                   "cX": 1.0,
                   "cY": 1.0,
                   "kX": -0.7688705,
@@ -99,7 +99,7 @@
           "name": "RightTopLeg",
           "parent": "body",
           "x": -1.9288303852081299,
-          "y": 3.3228542804718018,
+          "y": 3.32285475730896,
           "z": 14,
           "cX": 0.9999994,
           "cY": 0.9999999,
@@ -110,7 +110,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightLegTop.png",
+              "name": "cocoman/RightLegTop.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -128,10 +128,10 @@
         {
           "name": "RightKnee",
           "parent": "RightTopLeg",
-          "x": 32.244419097900391,
-          "y": 3.4659507274627686,
+          "x": 32.244434356689453,
+          "y": 3.4659535884857178,
           "z": 10,
-          "cX": 0.9999964,
+          "cX": 0.999996245,
           "cY": 0.9999997,
           "kX": 0.5018239,
           "kY": -0.5018239,
@@ -140,7 +140,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightKnee.png",
+              "name": "cocoman/RightKnee.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -158,8 +158,8 @@
         {
           "name": "RightBottomLeg",
           "parent": "RightKnee",
-          "x": 10.237817764282227,
-          "y": 0.55367451906204224,
+          "x": 10.237819671630859,
+          "y": 0.553677499294281,
           "z": 15,
           "cX": 0.99999994,
           "cY": 0.999999166,
@@ -170,7 +170,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightLegBottom.png",
+              "name": "cocoman/RightLegBottom.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -188,8 +188,8 @@
         {
           "name": "RightFoot",
           "parent": "RightBottomLeg",
-          "x": 43.912273406982422,
-          "y": -1.1995755434036255,
+          "x": 43.91229248046875,
+          "y": -1.1995959281921387,
           "z": 9,
           "cX": 1.00000083,
           "cY": 0.99999994,
@@ -200,7 +200,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/RightFoot.png",
+              "name": "cocoman/RightFoot.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -230,7 +230,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/Neck.png",
+              "name": "cocoman/Neck.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -248,8 +248,8 @@
         {
           "name": "Head",
           "parent": "neck",
-          "x": 3.4609735012054443,
-          "y": -3.1848526000976562,
+          "x": 3.4609732627868652,
+          "y": -3.184852123260498,
           "z": 13,
           "cX": 0.999998868,
           "cY": 1.00000024,
@@ -260,7 +260,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/Head.png",
+              "name": "cocoman/Head.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -278,8 +278,8 @@
         {
           "name": "LeftTopLeg",
           "parent": "body",
-          "x": 0.71445590257644653,
-          "y": -1.2128963470458984,
+          "x": 0.71445596218109131,
+          "y": -1.2128961086273193,
           "z": 7,
           "cX": 0.9999996,
           "cY": 1.0,
@@ -290,7 +290,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftLegTop.png",
+              "name": "cocoman/LeftLegTop.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -309,7 +309,7 @@
           "name": "LeftKnee",
           "parent": "LeftTopLeg",
           "x": 34.484733581542969,
-          "y": 2.5299234390258789,
+          "y": 2.5299239158630371,
           "z": 6,
           "cX": 0.999999464,
           "cY": 1.00000036,
@@ -320,7 +320,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftKnee.png",
+              "name": "cocoman/LeftKnee.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -338,8 +338,8 @@
         {
           "name": "LeftBottomLeg",
           "parent": "LeftKnee",
-          "x": 11.340089797973633,
-          "y": 1.0330946445465088,
+          "x": 11.340059280395508,
+          "y": 1.0330938100814819,
           "z": 8,
           "cX": 1.0000006,
           "cY": 0.9999995,
@@ -350,7 +350,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftLegBottom.png",
+              "name": "cocoman/LeftLegBottom.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -368,8 +368,8 @@
         {
           "name": "LeftFoot",
           "parent": "LeftBottomLeg",
-          "x": 40.006748199462891,
-          "y": -0.639290988445282,
+          "x": 40.006732940673828,
+          "y": -0.63929802179336548,
           "z": 5,
           "cX": 0.999997,
           "cY": 0.9999974,
@@ -380,7 +380,7 @@
           "effectbyskeleton": true,
           "display_data": [
             {
-              "name": "IronMan/LeftFoot.png",
+              "name": "cocoman/LeftFoot.png",
               "displayType": 0,
               "skin_data": [
                 {
@@ -458,8 +458,8 @@
         {
           "name": "LeftBottomArmAttack",
           "parent": "LeftElbowAttack",
-          "x": 9.517852783203125,
-          "y": 0.51914870738983154,
+          "x": 9.5178632736206055,
+          "y": 0.51914918422698975,
           "z": 3,
           "cX": 1.00000012,
           "cY": 1.0,
@@ -488,13 +488,13 @@
         {
           "name": "LeftHandAttack",
           "parent": "LeftBottomArmAttack",
-          "x": 21.032764434814453,
-          "y": -0.91440445184707642,
+          "x": 21.03276252746582,
+          "y": -0.91440606117248535,
           "z": 1,
-          "cX": 0.9999997,
-          "cY": 0.9999999,
-          "kX": -0.455896735,
-          "kY": 0.455896735,
+          "cX": 0.9999996,
+          "cY": 0.999999762,
+          "kX": -0.455898881,
+          "kY": 0.455898881,
           "arrow_x": 19.784156799316406,
           "arrow_y": 4.6339555410668254E-06,
           "effectbyskeleton": true,
@@ -510,6 +510,36 @@
                   "cY": 1.21052635,
                   "kX": 0.499346852,
                   "kY": -0.499346852
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "laser",
+          "parent": "LeftHandAttack",
+          "x": 7.3698215484619141,
+          "y": -0.24628111720085144,
+          "z": 18,
+          "cX": 1.00000024,
+          "cY": 0.9999995,
+          "kX": 0.429660678,
+          "kY": -0.429660678,
+          "arrow_x": 79.866653442382812,
+          "arrow_y": -3.3076212275773287E-06,
+          "effectbyskeleton": true,
+          "display_data": [
+            {
+              "name": "laserShoot.png",
+              "displayType": 0,
+              "skin_data": [
+                {
+                  "x": 36.19976,
+                  "y": -0.482673645,
+                  "cX": 0.99999994,
+                  "cY": 0.99999994,
+                  "kX": -9.918213E-05,
+                  "kY": 9.918213E-05
                 }
               ]
             }
@@ -531,6 +561,51 @@
           "twE": 0,
           "sc": 0.6666667,
           "mov_bone_data": [
+            {
+              "name": "laser",
+              "dl": 0.0,
+              "frame_data": [
+                {
+                  "dI": -2,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": -0.381056845,
+                  "kY": 0.381056845,
+                  "fi": 0,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": -0.242858887,
+                  "kY": 0.242858887,
+                  "fi": 20,
+                  "twE": 0,
+                  "tweenFrame": true
+                },
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": -0.102430888,
+                  "kY": 0.102430888,
+                  "fi": 40,
+                  "twE": 0,
+                  "tweenFrame": true
+                }
+              ]
+            },
             {
               "name": "RightTopArm",
               "dl": 0.0,
@@ -722,7 +797,15 @@
                   "kY": 0.6192361,
                   "fi": 5,
                   "twE": 0,
-                  "tweenFrame": true
+                  "tweenFrame": true,
+                  "color": [
+                    {
+                      "a": 255,
+                      "r": 255,
+                      "g": 255,
+                      "b": 255
+                    }
+                  ]
                 },
                 {
                   "dI": 0,
@@ -1159,8 +1242,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.235503152,
-                  "kY": -0.235503152,
+                  "kX": 0.290731132,
+                  "kY": -0.290731132,
                   "fi": 40,
                   "twE": 0,
                   "tweenFrame": true,
@@ -1445,8 +1528,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.320369363,
-                  "kY": -0.320369363,
+                  "kX": 0.209829,
+                  "kY": -0.209829,
                   "fi": 5,
                   "twE": 0,
                   "tweenFrame": true
@@ -1458,8 +1541,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.2906131,
-                  "kY": -0.2906131,
+                  "kX": 0.198795676,
+                  "kY": -0.198795676,
                   "fi": 10,
                   "twE": 0,
                   "tweenFrame": true
@@ -1471,8 +1554,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.2906131,
-                  "kY": -0.2906131,
+                  "kX": 0.229388282,
+                  "kY": -0.229388282,
                   "fi": 15,
                   "twE": 0,
                   "tweenFrame": true
@@ -1484,8 +1567,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.2906131,
-                  "kY": -0.2906131,
+                  "kX": 0.221653655,
+                  "kY": -0.221653655,
                   "fi": 20,
                   "twE": 0,
                   "tweenFrame": true,
@@ -1505,8 +1588,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.2906131,
-                  "kY": -0.2906131,
+                  "kX": 0.252702028,
+                  "kY": -0.252702028,
                   "fi": 25,
                   "twE": 0,
                   "tweenFrame": true,
@@ -1526,8 +1609,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.2906131,
-                  "kY": -0.2906131,
+                  "kX": 0.264229327,
+                  "kY": -0.264229327,
                   "fi": 30,
                   "twE": 0,
                   "tweenFrame": true,
@@ -1547,8 +1630,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.2906131,
-                  "kY": -0.2906131,
+                  "kX": 0.209858119,
+                  "kY": -0.209858119,
                   "fi": 35,
                   "twE": 0,
                   "tweenFrame": true,
@@ -1568,8 +1651,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": 0.320369363,
-                  "kY": -0.320369363,
+                  "kX": 0.126432747,
+                  "kY": -0.126432747,
                   "fi": 40,
                   "twE": 0,
                   "tweenFrame": true
@@ -2196,8 +2279,8 @@
                   "z": 0,
                   "cX": 1.0,
                   "cY": 1.0,
-                  "kX": -1.063929,
-                  "kY": 1.063929,
+                  "kX": -0.9873607,
+                  "kY": 0.9873607,
                   "fi": 40,
                   "twE": 0,
                   "tweenFrame": true,
@@ -2603,6 +2686,19 @@
                   "fi": 0,
                   "twE": 0,
                   "tweenFrame": true
+                },
+                {
+                  "dI": 0,
+                  "x": 0.0,
+                  "y": 0.0,
+                  "z": 0,
+                  "cX": 1.0,
+                  "cY": 1.0,
+                  "kX": 0.0,
+                  "kY": 0.0,
+                  "fi": 5,
+                  "twE": 0,
+                  "tweenFrame": true
                 }
               ]
             }
@@ -2613,137 +2709,164 @@
   ],
   "texture_data": [
     {
-      "name": "IronMan/Head",
+      "name": "cocoman/Head",
       "width": 21.0,
       "height": 23.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/Neck",
+      "name": "cocoman/Neck",
       "width": 15.0,
       "height": 8.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/Body",
+      "name": "cocoman/Body",
       "width": 36.0,
       "height": 64.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/LeftArmTop",
+      "name": "cocoman/LeftArmTop",
       "width": 34.0,
       "height": 42.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/LeftArmBottom",
-      "width": 42.0,
-      "height": 36.0,
+      "name": "cocoman/LeftArmBottom",
+      "width": 37.0,
+      "height": 30.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/RightArmTop",
+      "name": "cocoman/RightArmTop",
       "width": 27.0,
       "height": 49.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/RightArmBottom",
+      "name": "cocoman/RightArmBottom",
       "width": 29.0,
       "height": 46.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/RightLegTop",
+      "name": "cocoman/RightLegTop",
       "width": 31.0,
       "height": 47.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/RightLegBottom",
+      "name": "cocoman/RightLegBottom",
       "width": 40.0,
       "height": 53.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/RightKnee",
+      "name": "cocoman/RightKnee",
       "width": 20.0,
       "height": 21.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/RightFoot",
+      "name": "cocoman/RightFoot",
       "width": 38.0,
       "height": 27.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/LeftLegTop",
+      "name": "cocoman/LeftLegTop",
       "width": 21.0,
       "height": 42.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/LeftLegBottom",
+      "name": "cocoman/LeftLegBottom",
       "width": 27.0,
       "height": 40.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/LeftKnee",
+      "name": "cocoman/LeftKnee",
       "width": 18.0,
       "height": 18.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
-      "name": "IronMan/LeftFoot",
+      "name": "cocoman/LeftFoot",
       "width": 32.0,
       "height": 27.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
       "name": "leftHandAttack",
       "width": 16.0,
       "height": 15.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
       "name": "leftTopArmAttack",
       "width": 37.0,
       "height": 26.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
       "name": "leftElbowAttack",
       "width": 15.0,
       "height": 11.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
     },
     {
       "name": "leftBottomArmAttack",
       "width": 27.0,
       "height": 14.0,
       "pX": 0.5,
-      "pY": 0.5
+      "pY": 0.5,
+      "plistFile": ""
+    },
+    {
+      "name": "laserShoot",
+      "width": 92.0,
+      "height": 31.0,
+      "pX": 0.5,
+      "pY": 0.5,
+      "plistFile": ""
     }
   ],
   "config_file_path": [

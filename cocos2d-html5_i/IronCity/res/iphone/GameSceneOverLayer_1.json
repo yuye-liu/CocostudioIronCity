@@ -9,7 +9,7 @@
   "designHeight": 320,
   "designWidth": 480,
   "textures": [],
-  "version": "1.0.0.0",
+  "version": "1.0.2.0",
   "widgetTree": {
     "classname": "Panel",
     "name": null,
@@ -54,7 +54,7 @@
               "fontName": "黑体",
               "fontSize": 30,
               "fontType": 1,
-              "text": "0",
+              "text": "20",
               "touchScaleEnable": false
             }
           },
@@ -500,7 +500,7 @@
               "fontName": "黑体",
               "fontSize": 30,
               "fontType": 1,
-              "text": "0",
+              "text": "20",
               "touchScaleEnable": false
             }
           }
