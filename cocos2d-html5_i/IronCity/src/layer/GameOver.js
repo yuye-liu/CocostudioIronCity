@@ -26,7 +26,7 @@ var GameOver = cc.UILayer.extend({
             this.finalScore = this.getWidgetByName("finalScore");
 
             playAgainBtn.setTouchEnabled(true);
-            playAgainBtn.addTouchEventListener(this, this.playAgainBtnCallback);
+            playAgainBtn.addTouchEventListener(this.playAgainBtnCallback, this);
 
             var monsterGroundCount= this.parentScene.playLayer.getMonsterGroundAmount();
             monsterGroundAmount.setText(monsterGroundCount);
