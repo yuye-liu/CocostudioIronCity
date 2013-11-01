@@ -1,6 +1,21 @@
+/*
+var GameScenePlayLayer = ACTION ({
+    CROUCH = 0;
 
-var GameScenePlayLayer = cc.Layer.extend
-({
+});*/
+
+var arrActionType = [
+    "ACTION_RUN",
+    "ACTION_RUN_JUMP",
+    "ACTION_RUN_STOP",
+    "ACTION_RUN_ATTACK",
+    "ACTION_STAND_ATTACK",
+    "ACTION_DEATH",
+    "ACTION_STAND_JUMP"
+];
+
+//layer: player layer.
+var Player = cc.Layer.extend({
     isMouseDown:false,
     actionNum:null,
     imManArmature:null,
@@ -20,13 +35,15 @@ var GameScenePlayLayer = cc.Layer.extend
     playerX:0,
     playerY:0,
 
-    ACTION_CROUCH:0,
-    ACTION_RUN:1,
-    ACTION_STAND_JUMP:2,
-    ACTION_RUN_JUMP:3,
-    ACTION_CROUCH_JUMP:4,
-    ACTION_RUN_STOP:5,
-    ACTION_DEATH:6,
+//    ACTION_CROUCH:0,
+//    ACTION_RUN:1,
+//    ACTION_STAND_JUMP:2,
+//    ACTION_RUN_JUMP:3,
+//    ACTION_CROUCH_JUMP:4,
+//    ACTION_RUN_STOP:5,
+//    ACTION_DEATH:6,
+//    ACTION_RUN_ATTACK:7,
+//    ACTION_STAND_ATTACK:8,
 
     //init function.
     init:function () {
@@ -57,7 +74,7 @@ var GameScenePlayLayer = cc.Layer.extend
         this._attackPos = cc.p(0,0);
         this._attackDir = 0.0;
         this.CMRunningStop();
-        this.actionNum = this.ACTION_RUN_STOP;
+        this.actionNum = ACTION_TYPE.ACTION_RUN_STOP;
     },
     //callback function of runjump action.
     runJumpActionCallBack:function(sender, data){
@@ -119,18 +136,18 @@ var GameScenePlayLayer = cc.Layer.extend
 
         if(this.touchTime<6 && this.checkIfTouchNotInSetBtnArea(touchLocation,setBtnSize, setBtnLocation))
         {
-            if(this.actionNum != this.ACTION_RUN && this.actionNum != this.ACTION_RUN_STOP)
+            if(this.actionNum != ACTION_TYPE.ACTION_RUN && this.actionNum != ACTION_TYPE.ACTION_RUN_STOP)
             {
                 return;
             }
             this.isAttack = true;
             this.imManArmature.stopAllActions();
             this.imManArmature.removeFromParent(false);
-            if(this.actionNum == this.ACTION_RUN)
+            if(this.actionNum == ACTION_TYPE.ACTION_RUN)
             {
                 this.CMRunAttack(touchLocation);
             }
-            else if(this.actionNum == this.ACTION_RUN_STOP)
+            else if(this.actionNum == ACTION_TYPE.ACTION_RUN_STOP)
             {
                 this.CMStandAttack(touchLocation);
             }
@@ -146,7 +163,7 @@ var GameScenePlayLayer = cc.Layer.extend
 
         if(nMoveX>10 && Math.abs(Math.tan(nMoveY/nMoveX))<Math.abs(Math.sqrt(3)/radian))
         {
-            if(this.actionNum == this.ACTION_RUN)
+            if(this.actionNum == ACTION_TYPE.ACTION_RUN)
             {
                 if(GameScene.getScene().moveMap.getMoveSpeed()!=6)
                 {
@@ -163,7 +180,7 @@ var GameScenePlayLayer = cc.Layer.extend
 
         if(nMoveX<-10 && Math.abs(Math.tan(nMoveY/nMoveX))<Math.abs(Math.sqrt(3)/radian))
         {
-            if(this.actionNum == this.ACTION_RUN_STOP)
+            if(this.actionNum == ACTION_TYPE.ACTION_RUN_STOP)
                 return;
 
             this.imManArmature.stopAllActions();
@@ -175,7 +192,7 @@ var GameScenePlayLayer = cc.Layer.extend
 
         if(nMoveY>10 && Math.abs(Math.tan(nMoveY/nMoveX))>Math.abs(Math.sqrt(3)/radian))
         {
-            if(this.actionNum == this.ACTION_STAND_JUMP || this.actionNum == this.ACTION_RUN_JUMP)
+            if(this.actionNum == ACTION_TYPE.ACTION_STAND_JUMP || this.actionNum == ACTION_TYPE.ACTION_RUN_JUMP)
                 return;
 
             var armatureName = this.imManArmature.getName();
@@ -226,7 +243,7 @@ var GameScenePlayLayer = cc.Layer.extend
         this.addChild(armature);
         this.imManArmature = armature;
 
-        this.actionNum = this.ACTION_RUN;
+        this.actionNum = ACTION_TYPE.ACTION_RUN;
         if(GameScene.getScene() && GameScene.getScene().moveMap)
             GameScene.getScene().moveMap.move();
     },
@@ -242,7 +259,7 @@ var GameScenePlayLayer = cc.Layer.extend
         this.armaturePosition = armature.getPosition();
         this.addChild(armature);
         this.imManArmature = armature;
-        this.actionNum = this.ACTION_RUN_JUMP;
+        this.actionNum = ACTION_TYPE.ACTION_RUN_JUMP;
         GameScene.getScene().moveMap.setMovedSpeed(6);
         armature.getAnimation().setMovementEventCallFunc(this.amatureActionCallBack, this);
     },
@@ -258,7 +275,7 @@ var GameScenePlayLayer = cc.Layer.extend
         this.armaturePosition = armature.getPosition();
         this.addChild(armature);
         this.imManArmature = armature;
-        this.actionNum = this.ACTION_STAND_JUMP;
+        this.actionNum = ACTION_TYPE.ACTION_STAND_JUMP;
         if(GameScene.getScene() && GameScene.getScene().moveMap)
             GameScene.getScene().moveMap.stop();
     },
@@ -275,7 +292,7 @@ var GameScenePlayLayer = cc.Layer.extend
         this.addChild(armature);
         this.imManArmature = armature;
 
-        this.actionNum = this.ACTION_RUN_STOP;
+        this.actionNum = ACTION_TYPE.ACTION_RUN_STOP;
         if(GameScene.getScene() && GameScene.getScene().moveMap)
             GameScene.getScene().moveMap.stop();
     },
@@ -331,7 +348,7 @@ var GameScenePlayLayer = cc.Layer.extend
         this.armaturePosition = armature.getPosition();
         this.addChild(armature);
         this.imManArmature = armature;
-        this.actionNum = this.ACTION_DEATH;
+        this.actionNum = ACTION_TYPE.ACTION_DEATH;
         armature.getAnimation().setMovementEventCallFunc(this.Dead, this);
     },
     //CallBack of running jump animation.
@@ -340,7 +357,7 @@ var GameScenePlayLayer = cc.Layer.extend
         {
             switch (this.actionNum)
             {
-                case this.ACTION_RUN_JUMP:
+                case ACTION_TYPE.ACTION_RUN_JUMP:
                 {
                     GameScene.getScene().moveMap.setMovedSpeed(3);
                 }
@@ -383,11 +400,11 @@ var GameScenePlayLayer = cc.Layer.extend
             this.isAttack = false;
             this.imManArmature.stopAllActions();
             this.imManArmature.removeFromParent(false);
-            if(this.actionNum == this.ACTION_RUN)
+            if(this.actionNum == ACTION_TYPE.ACTION_RUN)
             {
                 this.CMRunning();
             }
-            else if(this.actionNum == this.ACTION_RUN_STOP)
+            else if(this.actionNum == ACTION_TYPE.ACTION_RUN_STOP)
             {
                 this.CMRunningStop();
             }
@@ -433,3 +450,14 @@ var GameScenePlayLayer = cc.Layer.extend
     }
 
 });
+
+var ACTION_TYPE = null;
+var AddTypes = function(types){
+    ACTION_TYPE = {};
+    ACTION_TYPE.length = 0;
+    for(var i=0; i<types.length; i++){
+        ACTION_TYPE[types[i]] = ACTION_TYPE.length;
+        ACTION_TYPE.length ++;
+    }
+};
+AddTypes(arrActionType);

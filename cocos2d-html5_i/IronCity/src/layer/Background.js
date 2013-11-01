@@ -106,7 +106,7 @@ var g_w = 480;      //default screen width.
 var g_map_move_speed = 3;   //map move speed.
 var g_count = 0;    //for count
 //whole map and map manager.
-var MovedMap = cc.Node.extend({    //move map for game.
+var Background = cc.Node.extend({    //move map for game.
     arrMaps:null,   //curmap is arrMaps[0].
     _curW:null,     //current width of map.
     bMove:null,     //mark of map move.
