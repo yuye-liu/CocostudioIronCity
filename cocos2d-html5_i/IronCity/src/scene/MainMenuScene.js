@@ -33,8 +33,10 @@ var MainMenuScene = cc.Scene.extend
         var pAudio =gameSceneNode.getComponent("Audio");
         pAudio.playBackgroundMusic(pAudio.getFile(), pAudio.isLoop());
 
-        var gameComRender = gameSceneNode.getChildByTag(1).getChildByTag(-1);
-        var bgImageView = gameComRender.getWidgetByName("bgImageView");
+        var gameComRender =  gameSceneNode.getChildByTag(1);
+        var gameSceneComponent = gameComRender.getComponent("gameSceneComponent");
+        var uiLayer = gameSceneComponent.getNode();
+        var bgImageView = uiLayer.getWidgetByName("bgImageView");
         var startButton = bgImageView.getChildByName("StartButton");
         startButton.setTouchEnabled(true);
         startButton.addTouchEventListener(this.startBtnCallFunc ,this);
