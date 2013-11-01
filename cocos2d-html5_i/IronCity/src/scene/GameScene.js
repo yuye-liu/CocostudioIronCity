@@ -175,6 +175,7 @@ var GameScene = cc.Scene.extend
     gameSceneMonster:null,
     isRectDetectedLock:false,
     laser:null,
+    _STATUS:null,
     onEnter:function ()
     {
         this._super();
@@ -213,6 +214,7 @@ var GameScene = cc.Scene.extend
 
         //opening collision detection
         this.isRectDetectedLock = false;
+        this._STATUS = true;
     },
     init:function()
     {
@@ -237,12 +239,14 @@ var GameScene = cc.Scene.extend
     },
     pause:function()
     {
+        this._STATUS = false;
         this.playLayer.pause();
         this.moveMap.stop();
         this.gameSceneMonster.pause();
     },
     play:function()
     {
+        this._STATUS = true;
         this.playLayer.play();
         this.moveMap.move();
         this.gameSceneMonster.play();
@@ -250,44 +254,43 @@ var GameScene = cc.Scene.extend
     //tick: update all action of per-node in per-frame.
     update:function(dt)
     {
+        if( !this._STATUS ) return;
         //get player amature
         var imManArmature = this.playLayer.imManArmature;
         // get player index
         var actionNum = this.playLayer.actionNum;
         // no repeat same action
-        if(actionNum == this.playLayer.ACTION_RUN)
+        if(actionNum == ACTION_TYPE.ACTION_RUN)
         {
             this.playLayer.playerBoundingBox = cc.rect(imManArmature.getPosition().x-imManArmature.getContentSize().width/2+46,
                 imManArmature.getPosition().y,imManArmature.getContentSize().width-90,imManArmature.getContentSize().height-50);
         }
-        else if(actionNum == this.playLayer.ACTION_STAND_JUMP)
+        else if(actionNum == ACTION_TYPE.ACTION_STAND_JUMP)
         {
             this.playLayer.playerBoundingBox = cc.rect(imManArmature.getPosition().x-imManArmature.getContentSize().width/2+30,
                 imManArmature.getPosition().y,imManArmature.getContentSize().width-50,imManArmature.getContentSize().height-50);
         }
-        else if(actionNum == this.playLayer.ACTION_RUN_JUMP)
+        else if(actionNum == ACTION_TYPE.ACTION_RUN_JUMP)
         {
             this.playLayer.playerBoundingBox = cc.rect(imManArmature.getPosition().x-imManArmature.getContentSize().width/2+33,
                 imManArmature.getPosition().y,imManArmature.getContentSize().width-70,imManArmature.getContentSize().height-50);
         }
-        else if(actionNum == this.playLayer.ACTION_RUN_STOP)
+        else if(actionNum == ACTION_TYPE.ACTION_RUN_STOP)
         {
             this.playLayer.playerBoundingBox = cc.rect(imManArmature.getPosition().x-imManArmature.getContentSize().width/2+40,
                 imManArmature.getPosition().y,imManArmature.getContentSize().width-110,imManArmature.getContentSize().height-45);
         }
-        else if(actionNum == this.playLayer.ACTION_RUN_ATTACK)
+        else if(actionNum == ACTION_TYPE.ACTION_RUN_ATTACK)
         {
             this.playLayer.playerBoundingBox = cc.rect(imManArmature.getPosition().x-imManArmature.getContentSize().width/2,
                 imManArmature.getPosition().y,imManArmature.getContentSize().width,imManArmature.getContentSize().height);
-
         }
-        else if(actionNum == this.playLayer.ACTION_STAND_ATTACK)
+        else if(actionNum == ACTION_TYPE.ACTION_STAND_ATTACK)
         {
             this.playLayer.playerBoundingBox = cc.rect(imManArmature.getPosition().x-imManArmature.getContentSize().width/2,
                 imManArmature.getPosition().y,imManArmature.getContentSize().width,imManArmature.getContentSize().height);
-
         }
-        else if(actionNum == this.playLayer.ACTION_DEATH)
+        else if(actionNum == ACTION_TYPE.ACTION_DEATH)
         {
             this.playLayer.playerBoundingBox = cc.rect(imManArmature.getPosition().x-imManArmature.getContentSize().width/2,
                 imManArmature.getPosition().y,imManArmature.getContentSize().width,imManArmature.getContentSize().height);
