@@ -25,7 +25,7 @@ var MenuUI = cc.UILayer.extend({
             this.bloodBar      = this.getWidgetByName("BloodBar");
             this.distanceScore = this.getWidgetByName("DistanceScore");
 
-            this.settingBtn.addTouchEventListener(this, this.settingBtnCallback);
+            this.settingBtn.addTouchEventListener(this.settingBtnCallback, this);
             this.setBloodBarPercent(bloodBarPercent);
             this.setDistanceScore(value);
 
