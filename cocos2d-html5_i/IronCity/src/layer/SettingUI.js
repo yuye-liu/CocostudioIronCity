@@ -43,10 +43,10 @@ var SettingUI = cc.UILayer.extend({
             }
             this.musicVolumeSlider.setPercent(volumn);
 
-            backGameBtn.addTouchEventListener(this, this.backGameBtn);
-            returnMainMenuBtn.addTouchEventListener(this, this.returnMainMenuBtnFunc);
-            this.musicEffectSlider.addEventListener(this, this.musicEffectSliderCallFunc);
-            this.musicVolumeSlider.addEventListener(this, this.musicVolumeSliderCallFunc);
+            backGameBtn.addTouchEventListener(this.backGameBtn, this);
+            returnMainMenuBtn.addTouchEventListener(this.returnMainMenuBtnFunc, this);
+            this.musicEffectSlider.addEventListener(this.musicEffectSliderCallFunc, this);
+            this.musicVolumeSlider.addEventListener(this.musicVolumeSliderCallFunc, this);
             return true;
         }
 
