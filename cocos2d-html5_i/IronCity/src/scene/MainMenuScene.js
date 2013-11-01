@@ -5,9 +5,9 @@ var Png_StartBtnPush        = "res/iphone/StartBtnPush.png";
 //music
 var mp3_music_background    = "res/music/music_background.mp3";
 //ui
-var UI_GameSceneLayer_1    = "res/GameSceneLayer_1.json";
+var UI_GameSceneLayer_1    = "res/MainMenuLayer_1.json";
 //scene
-var Scene_GameScene     = "res/GameScene.json";
+var Scene_GameScene     = "res/MainMenuScene.json";
 //preload
 var MainMenuScene_resources =
 [
@@ -34,10 +34,9 @@ var MainMenuScene = cc.Scene.extend
         pAudio.playBackgroundMusic(pAudio.getFile(), pAudio.isLoop());
 
         var gameComRender =  gameSceneNode.getChildByTag(1);
-        var gameSceneComponent = gameComRender.getComponent("gameSceneComponent");
+        var gameSceneComponent = gameComRender.getComponent("mainMenuLayer");
         var uiLayer = gameSceneComponent.getNode();
-        var bgImageView = uiLayer.getWidgetByName("bgImageView");
-        var startButton = bgImageView.getChildByName("StartButton");
+        var startButton = uiLayer.getWidgetByName("startButton");
         startButton.setTouchEnabled(true);
         startButton.addTouchEventListener(this.startBtnCallFunc ,this);
     },
