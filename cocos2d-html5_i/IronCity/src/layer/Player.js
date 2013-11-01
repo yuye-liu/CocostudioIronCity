@@ -1,10 +1,5 @@
-/*
-var GameScenePlayLayer = ACTION ({
-    CROUCH = 0;
-
-});*/
-
-var arrActionType = [
+var arrActionType =
+[
     "ACTION_RUN",
     "ACTION_RUN_JUMP",
     "ACTION_RUN_STOP",
@@ -15,7 +10,8 @@ var arrActionType = [
 ];
 
 //layer: player layer.
-var Player = cc.Layer.extend({
+var Player = cc.Layer.extend
+({
     isMouseDown:false,
     actionNum:null,
     imManArmature:null,
@@ -34,19 +30,9 @@ var Player = cc.Layer.extend({
     playerScale:0,
     playerX:0,
     playerY:0,
-
-//    ACTION_CROUCH:0,
-//    ACTION_RUN:1,
-//    ACTION_STAND_JUMP:2,
-//    ACTION_RUN_JUMP:3,
-//    ACTION_CROUCH_JUMP:4,
-//    ACTION_RUN_STOP:5,
-//    ACTION_DEATH:6,
-//    ACTION_RUN_ATTACK:7,
-//    ACTION_STAND_ATTACK:8,
-
     //init function.
-    init:function () {
+    init:function ()
+    {
         this._super();
         this.setTouchEnabled(true);
         //this.setTouchMode(cc.TOUCH_ONE_BY_ONE);
