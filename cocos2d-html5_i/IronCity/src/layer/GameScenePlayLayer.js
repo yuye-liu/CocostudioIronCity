@@ -36,13 +36,13 @@ var GameScenePlayLayer = cc.Layer.extend
         var size = cc.Director.getInstance().getWinSize();
 
         //add cocostudio json file to widget.
-        cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_IMRun);
-        cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_IMRunJump);
-        cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_IMRunStop);
-        cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_IMStandJump);
+        cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_CMRun);
+        cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_CMRunJump);
+        cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_CMRunStop);
+        cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_CMStandJump);
         cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_LaserRunAttack);
         cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_LaserStandAttack);
-        cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_IMDead);
+        cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_CMDead);
 
         this.playerX = 50.0;
         this.playerY = 70.0;
@@ -56,29 +56,27 @@ var GameScenePlayLayer = cc.Layer.extend
         this.isAttack = false;
         this._attackPos = cc.p(0,0);
         this._attackDir = 0.0;
-        this.IMRunningStop();
+        this.CMRunningStop();
         this.actionNum = this.ACTION_RUN_STOP;
     },
     //callback function of runjump action.
     runJumpActionCallBack:function(sender, data){
-        //console.log("runJumpActionCallBack.");
         this.imManArmature.stopAllActions();
         this.imManArmature.removeFromParent(false);
         if(0xbebabebb == data)
         {
-            this.IMRunning();
+            this.CMRunning();
         }
         else
         {
-            this.IMRunningStop();
+            this.CMRunningStop();
         }
     },
     //callback function of standjump action.
     standJumpActionCallBack:function(){
-        //console.log("standJumpActionCallBack.");
         this.imManArmature.stopAllActions();
         this.imManArmature.removeFromParent(false);
-        this.IMRunningStop();
+        this.CMRunningStop();
     },
     //register touch dispatcher.
     registerWithTouchDispatcher:function(){
@@ -89,7 +87,7 @@ var GameScenePlayLayer = cc.Layer.extend
         var splitCols = cc.MoveTo.create(1.0 ,cc.p(this.imManArmature.getPosition().x+300, this.imManArmature.getPosition().y));
         this.imManArmature.runAction(splitCols);
     },
-    //change Ironman's speed.
+    //change IronMan's speed.
     changeSpeed:function(t){
         this.imManArmature.getAnimation().setSpeedScale(2.0);
         GameScene.getScene().moveMap.setMovedSpeed(3);
@@ -130,11 +128,11 @@ var GameScenePlayLayer = cc.Layer.extend
             this.imManArmature.removeFromParent(false);
             if(this.actionNum == this.ACTION_RUN)
             {
-                this.IMRunAttack(touchLocation);
+                this.CMRunAttack(touchLocation);
             }
             else if(this.actionNum == this.ACTION_RUN_STOP)
             {
-                this.IMStandAttack(touchLocation);
+                this.CMStandAttack(touchLocation);
             }
 
             this.touchTime = 0;
@@ -160,7 +158,7 @@ var GameScenePlayLayer = cc.Layer.extend
             }
             this.imManArmature.stopAllActions();
             this.imManArmature.removeFromParent(false);
-            this.IMRunning();
+            this.CMRunning();
         }
 
         if(nMoveX<-10 && Math.abs(Math.tan(nMoveY/nMoveX))<Math.abs(Math.sqrt(3)/radian))
@@ -170,7 +168,7 @@ var GameScenePlayLayer = cc.Layer.extend
 
             this.imManArmature.stopAllActions();
             this.imManArmature.removeFromParent(false);
-            this.IMRunningStop();
+            this.CMRunningStop();
         }
 
         this.touchTime = 0;
@@ -184,9 +182,9 @@ var GameScenePlayLayer = cc.Layer.extend
             this.imManArmature.stopAllActions();
             this.imManArmature.removeFromParent(false);
 
-            if(armatureName == "IMRun")
+            if(armatureName == "CMRun")
             {
-                this.IMRunJump();
+                this.CMRunJump();
                 var jumpAction = cc.JumpTo.create(0.5,cc.p(this.imManArmature.getPosition().x,this.imManArmature.getPosition().y),100,1);
                 var callBack;
                 if(nMoveX<0)
@@ -201,9 +199,9 @@ var GameScenePlayLayer = cc.Layer.extend
                 this.imManArmature.runAction(action);
             }
 
-            if(armatureName == "IMRunStop")
+            if(armatureName == "CMRunStop")
             {
-                this.IMStandJump();
+                this.CMStandJump();
                 var jumpAction = cc.JumpTo.create(0.5,cc.p(this.imManArmature.getPositionX(),this.imManArmature.getPositionY()),200,1);
                 var callBack = cc.CallFunc.create(this.standJumpActionCallBack, this, 0xbebabeba);
                 var action = cc.Sequence.create(jumpAction,callBack);
@@ -213,14 +211,12 @@ var GameScenePlayLayer = cc.Layer.extend
     },
     //on touch cancelled.
 //    onTouchesCancelled:function (touches, event) {
-//        console.log("onTouchesCancelled");
 //    },
 
 
     //Running animation.
-    IMRunning:function(){
-        //console.log("IMRunning.");
-        var armature = cc.Armature.create("IMRun");
+    CMRunning:function(){
+        var armature = cc.Armature.create("CMRun");
         armature.getAnimation().play("Running");
         armature.getAnimation().setSpeedScale(2.0);
         armature.setScale(this.playerScale);
@@ -236,9 +232,8 @@ var GameScenePlayLayer = cc.Layer.extend
     },
 
     //Run jump animation.
-    IMRunJump:function(){
-        //console.log("IMRunJump.");
-        var armature = cc.Armature.create("IMRunJump");
+    CMRunJump:function(){
+        var armature = cc.Armature.create("CMRunJump");
         armature.getAnimation().play("RuningJump");
         armature.getAnimation().setSpeedScale(1.5);
         armature.setScale(this.playerScale);
@@ -253,9 +248,8 @@ var GameScenePlayLayer = cc.Layer.extend
     },
 
     //Stand jump animation.
-    IMStandJump:function(){
-        //console.log("IMStandJump.");
-        var armature = cc.Armature.create("IMStandJump");
+    CMStandJump:function(){
+        var armature = cc.Armature.create("CMStandJump");
         armature.getAnimation().play("StandJump");
         armature.getAnimation().setSpeedScale(1.5);
         armature.setScale(this.playerScale);
@@ -270,9 +264,8 @@ var GameScenePlayLayer = cc.Layer.extend
     },
 
     //Running stop animation.
-    IMRunningStop:function(){
-        //console.log("IMRunningStop.");
-        var armature = cc.Armature.create("IMRunStop");
+    CMRunningStop:function(){
+        var armature = cc.Armature.create("CMRunStop");
         armature.getAnimation().play("RunningStop");
         armature.getAnimation().setSpeedScale(1.5);
         armature.setScale(this.playerScale);
@@ -287,8 +280,7 @@ var GameScenePlayLayer = cc.Layer.extend
             GameScene.getScene().moveMap.stop();
     },
     //Running attack animation.
-    IMRunAttack:function(touch){
-        //console.log("IMRunAttack.");
+    CMRunAttack:function(touch){
         var angle = this.getAngle(touch);
         var posHand = this.getPosHand(angle);
 
@@ -301,15 +293,13 @@ var GameScenePlayLayer = cc.Layer.extend
         this.armaturePosition = armature.getPosition();
         this.addChild(armature);
         this.imManArmature = armature;
-        //console.log("IMRunAttack end.");
         armature.getAnimation().setMovementEventCallFunc(this.setAttackEvent, this);
 
         this._attackPos = posHand;
         this._attackDir = angle;
     },
     //Stand attack animation.
-    IMStandAttack:function(touch){
-        //console.log("IMStandAttack.");
+    CMStandAttack:function(touch){
         var posHand = this.getPosHand(0.1);
         this._attackPos = posHand;
         var angle = this.getAngle(touch);
@@ -326,20 +316,18 @@ var GameScenePlayLayer = cc.Layer.extend
         armature.getAnimation().setMovementEventCallFunc(this.setAttackEvent, this);
 
         this._attackDir = angle;
-        //console.log("IMStandAttack end.");
     },
     //death animation.
-    IMDeath:function(){
-        //console.log("IMDeath.");
+    CMDeath:function(){
         this.setTouchEnabled(false);
         this.imManArmature.removeFromParent(true);
         var armature = null;
-        armature = cc.Armature.create("IMDead");
+        armature = cc.Armature.create("CMDead");
         armature.getAnimation().playByIndex(0.0, 1.0, 1.0,0.0, 1.0);
-        armature.getAnimation().setSpeedScale(1.0);
+        armature.getAnimation().setSpeedScale(0.5);
         armature.setScale(this.playerScale);
         armature.setAnchorPoint(cc.p(0.5,0));
-        armature.setPosition(cc.p(100, this.playerY));
+        armature.setPosition(cc.p(100, this.playerY-8));
         this.armaturePosition = armature.getPosition();
         this.addChild(armature);
         this.imManArmature = armature;
@@ -380,14 +368,13 @@ var GameScenePlayLayer = cc.Layer.extend
         var angle = Math.atan(tan);
         return -angle;
     },
-    //get Ironman's hand position.
+    //get IronMan's hand position.
     getPosHand:function(angle){
         var posH = cc.p(141, 141);
         return posH;
     },
     //callback function of attack animation.
     setAttackEvent:function(armature, movementType, movementID){
-        //console.log("setAttackEvent, movementType:", movementType, "movementID: ", movementID, "armature: ", armature);
         if (movementType == CC_MovementEventType_COMPLETE || movementType == CC_MovementEventType_LOOP_COMPLETE)
         {
             //play audio and launch laser.
@@ -398,17 +385,16 @@ var GameScenePlayLayer = cc.Layer.extend
             this.imManArmature.removeFromParent(false);
             if(this.actionNum == this.ACTION_RUN)
             {
-                this.IMRunning();
+                this.CMRunning();
             }
             else if(this.actionNum == this.ACTION_RUN_STOP)
             {
-                this.IMRunningStop();
+                this.CMRunningStop();
             }
         }
     },
     //callback function of dead animation.
     Dead:function(armature, movementType, movementID){
-        //console.log("Dead");
         if (movementType == CC_MovementEventType_COMPLETE || movementType == CC_MovementEventType_LOOP_COMPLETE)
         {
             if(GameScene.getScene())
@@ -417,17 +403,14 @@ var GameScenePlayLayer = cc.Layer.extend
     },
     //chech area of not in set button.
     checkIfTouchNotInSetBtnArea:function(touchPosition, setBtnSize, setBtnPosition){
-        //console.log("checkIfTouchNotInSetBtnArea.");
         return true;
     },
     //get Amount of monster on ground.
     getMonsterGroundAmount:function(){
-        //console.log("getMonsterGroundAmount.");
         return this.monsterGroundAmount;
     },
     //get Amount of monster in sky.
     getMonsterSkyAmount:function(){
-        //console.log("getMonsterSkyAmount.");
         return this.monsterSkyAmount;
     },
     //add Amount of monster on ground.

@@ -158,7 +158,6 @@ cc.UISlider = cc.UIWidget.extend({
             default:
                 break;
         }
-
         if (this._scale9Enabled) {
             this._progressBarRenderer.setColor(this.getColor());
             this._progressBarRenderer.setOpacity(this.getOpacity());
@@ -172,7 +171,6 @@ cc.UISlider = cc.UIWidget.extend({
         this._progressBarTextureSize.width = locSize.width;
         this._progressBarTextureSize.height = locSize.height;
         this.progressBarRendererScaleChangedWithSize();
-
     },
 
     /**
@@ -417,12 +415,12 @@ cc.UISlider = cc.UIWidget.extend({
 
     /**
      * add event listener
-     * @param {Object} target
      * @param {Function} selector
+     * @param {Object} target
      */
-    addEventListener: function (target, selector) {
-        this._slidPercentListener = target;
+    addEventListener: function (selector, target) {
         this._slidPercentSelector = selector;
+        this._slidPercentListener = target;
     },
 
     percentChangedEvent: function () {
@@ -467,7 +465,7 @@ cc.UISlider = cc.UIWidget.extend({
             var locSize = this._barRenderer.getContentSize();
             this._size.width = locSize.width;
             this._size.height = locSize.height;
-            this._barLength = this._size.width;
+            this._barLength = locSize.width;
         }
         else {
             this._barLength = this._size.width;

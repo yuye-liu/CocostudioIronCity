@@ -2,9 +2,12 @@
 var Png_MainMenuSceneBK     = "res/iphone/MainMenuSceneBK.png";
 var Png_StartBtn             = "res/iphone/StartBtn.png";
 var Png_StartBtnPush        = "res/iphone/StartBtnPush.png";
-var Png_loadingPng           = "res/iphone/loading.png";
 //music
 var mp3_music_background    = "res/music/music_background.mp3";
+//ui
+var UI_GameSceneLayer_1    = "res/GameSceneLayer_1.json";
+//scene
+var Scene_GameScene     = "res/GameScene.json";
 //preload
 var MainMenuScene_resources =
 [
@@ -12,7 +15,8 @@ var MainMenuScene_resources =
     {src:Png_MainMenuSceneBK},
     {src:Png_StartBtn},
     {src:Png_StartBtnPush},
-    {src:Png_loadingPng}
+    {src:UI_GameSceneLayer_1},
+    {src:Scene_GameScene}
 ];
 //scene: main menu.
 var MainMenuScene = cc.Scene.extend
@@ -21,30 +25,19 @@ var MainMenuScene = cc.Scene.extend
     onEnter:function ()
     {
         this._super();
-        // Add a Layer
-        var menuLayer = cc.Layer.create();
-        // Get screen size
-        var size = cc.Director.getInstance().getWinSize();
 
-        // Add backGroundPic
-        var backGroundPic = cc.Sprite.create(Png_MainMenuSceneBK);
-        backGroundPic.setAnchorPoint(cc.p(0,0));
-        menuLayer.addChild(backGroundPic,0);
+        //add cocostudio scene as gameScne
+        var gameSceneNode = cc.CCSSceneReader.getInstance().createNodeWithSceneFile(Scene_GameScene);
+        this.addChild(gameSceneNode);
 
-        //Add StartBtn
-        var start = cc.Sprite.create(Png_StartBtn);
-        var startPush = cc.Sprite.create(Png_StartBtnPush);
-        var startBtn = cc.MenuItemSprite.create(start, startPush, this.startBtnCallFunc, this);
+        var pAudio =gameSceneNode.getComponent("Audio");
+        pAudio.playBackgroundMusic(pAudio.getFile(), pAudio.isLoop());
 
-        //Add Menu
-        this.mainMenu = cc.Menu.create(startBtn);
-        this.mainMenu.setAnchorPoint(cc.p(0, 0));
-        this.mainMenu.setPosition(cc.p(size.width/2, size.height/5));
-        menuLayer.addChild(this.mainMenu,1);
-        this.addChild(menuLayer);
-
-        // Play music
-        AudioPlayer.getInstance();
+        var gameComRender = gameSceneNode.getChildByTag(1).getChildByTag(-1);
+        var bgImageView = gameComRender.getWidgetByName("bgImageView");
+        var startButton = bgImageView.getChildByName("StartButton");
+        startButton.setTouchEnabled(true);
+        startButton.addTouchEventListener(this.startBtnCallFunc ,this);
     },
     //click btn of start.
     startBtnCallFunc:function(pSender)

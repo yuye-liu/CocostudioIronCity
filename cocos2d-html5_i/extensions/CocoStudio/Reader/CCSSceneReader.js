@@ -81,15 +81,17 @@ cc.CCSSceneReader = cc.Class.extend({
                 var resType = 0;
                 path +=this._baseBath;
                 if (fileData != null) {
-                    var locPath = fileData["path"];
-                    resType = fileData["resourceType"]
-                    resType = (resType || resType == 0) ? resType : -1;
-                    var locPlistFile = fileData["plistFile"];
-                    path += locPath;
+                    if(fileData.hasOwnProperty("resourceType")){
+                        resType = fileData["resourceType"]
+                    }else{
+                        resType =-1;
+                    }
+
+                    path += fileData["path"];
+                    plistFile += fileData["plistFile"];
+
                     fullPath = cc.FileUtils.getInstance().fullPathForFilename(path);
-                    plistFile += locPlistFile;
                     fullPlistFile = cc.FileUtils.getInstance().fullPathForFilename(plistFile);
-                    fileData = null;
                 }
 
                 if (className == "CCSprite") {
@@ -111,9 +113,10 @@ cc.CCSSceneReader = cc.Class.extend({
                         var pngFile = plistFile.substr(0, startPos);
                         pngFile = pngFile + ".png";
 
-                        pngFile.replace(pos, pngFile.length(), ".png");
+                        plistFile = this._baseBath + plistFile;
+                        pngFile = this._baseBath + pngFile;
                         cc.SpriteFrameCache.getInstance().addSpriteFrames(plistFile, pngFile);
-                        sprite = cc.Sprite.createWithSpriteFrameName(path);
+                        sprite = cc.Sprite.createWithSpriteFrameName(fileData["path"]);
                     }
                     else {
                         continue;
@@ -176,7 +179,6 @@ cc.CCSSceneReader = cc.Class.extend({
                     if (pos != -1) {
                         file_path = reDir.substr(0, pos + 1);
                     }
-                    var size = 0;
                     var des = cc.FileUtils.getInstance().getTextFileData(fullPath);
                     if (!des) {
                         cc.log("read json file[%s] error!\n", path);

@@ -66,7 +66,6 @@ var Laser = cc.Sprite.extend({
         if (this.inRect(GameScene.getScene().gameSceneMonster.MonsterAmatureBoundingBox))
         {
             //add score.
-            console.log("get score.");
             var type = GameScene.getScene().gameSceneMonster.MonsterIndex;
             if (type == MonsterType.MonsterSky_enum) {
                 GameScene.getScene().playLayer.addMonsterSkyAmount();
@@ -97,7 +96,7 @@ var Laser = cc.Sprite.extend({
 });
 
 //manager of lasers.
-var LaserManager = cc.Layer.extend({
+var LaserManager = cc.Node.extend({
     lasers:null,    //array of lasers.
     topNum:0,       //for count top number.
     attackTime:0,   //set attack time of two laser.

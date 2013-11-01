@@ -54,12 +54,10 @@ var VisibleRect = {
         return cc.rect(s_visibleRect.origin.x, s_visibleRect.origin.y, s_visibleRect.size.width, s_visibleRect.size.height);
     },
     lazyInit:function(){
-        //console.log("s_visibleRect.size:", s_visibleRect.size, s_visibleRect);
         if (s_visibleRect.size.width == 0.0 && s_visibleRect.size.height == 0.0)
         {
             s_visibleRect.origin = cc.p(0, 0);
             s_visibleRect.size = cc.Director.getInstance().getWinSize();
-            //console.log("s_visibleRect: ", s_visibleRect);
         }
     }
 };
