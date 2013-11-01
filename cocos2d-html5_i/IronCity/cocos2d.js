@@ -19,14 +19,14 @@
             'src/other/AudioPlayer.js',
             'src/scene/GameScene.js',
             'src/other/VisibleRect.js',
-            'src/other/CCShake.js',
-            'src/layer/tiledMap.js',
+            'src/other/ShakeAction.js',
+            'src/layer/Background.js',
             'src/layer/Laser.js',
-            'src/layer/GameSceneMenuLayer.js',
-            'src/layer/GameSceneSetLayer.js',
-            'src/layer/GameSceneMonster.js',
-            'src/layer/GameSceneOverLayer.js',
-            'src/layer/GameScenePlayLayer.js'
+            'src/layer/MenuUI.js',
+            'src/layer/SettingUI.js',
+            'src/layer/Monster.js',
+            'src/layer/GameOver.js',
+            'src/layer/Player.js'
         ]
     };
 

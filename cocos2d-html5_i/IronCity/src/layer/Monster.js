@@ -12,7 +12,7 @@ MonsterType =
 };  //monster type.
 
 //layer: monster scene.
-var GameSceneMonster = cc.Node.extend({
+var Monster = cc.Node.extend({
     MonsterAmature:null,
     MonsterAmatureBoundingBox:null,
     MonsterIndex:null,

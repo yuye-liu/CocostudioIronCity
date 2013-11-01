@@ -7,7 +7,7 @@
  */
 
 //layer: game over.
-var GameSceneOverLayer = cc.UILayer.extend({
+var GameOver = cc.UILayer.extend({
     finalScore:null,
     parentScene:null,
     //init function.

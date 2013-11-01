@@ -7,7 +7,7 @@
  */
 
 //layer: setting layer.
-var GameSceneSetLayer = cc.UILayer.extend({
+var SettingUI = cc.UILayer.extend({
     musicEffectStatus:0,
     musicEffectSlider:null,
     musicVolumeSlider:null,
