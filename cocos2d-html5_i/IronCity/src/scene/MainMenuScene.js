@@ -26,7 +26,7 @@ var MainMenuScene = cc.Scene.extend
     {
         this._super();
 
-        //add cocostudio scene as gameScne
+        //add cocostudio scene to game
         var gameSceneNode = cc.CCSSceneReader.getInstance().createNodeWithSceneFile(Scene_GameScene);
         this.addChild(gameSceneNode);
 

@@ -76,7 +76,8 @@ var Player = cc.Layer.extend
         }
     },
     //callback function of standjump action.
-    standJumpActionCallBack:function(){
+    standJumpActionCallBack:function()
+    {
         this.imManArmature.stopAllActions();
         this.imManArmature.removeFromParent(false);
         this.CMRunningStop();

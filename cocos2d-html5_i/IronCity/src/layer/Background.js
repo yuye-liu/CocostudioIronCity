@@ -11,7 +11,8 @@ var arrMap2 = [s_bg_20, s_bg_21, s_bg_22];  //map 3.
 var arrBgs = [arrMap1, arrMap0, arrMap2];   //map array.
 
 //one tiledmap.
-var TiledMap = cc.Node.extend({    //load one tiledmap.
+var TiledMap = cc.Node.extend
+({    //load one tiledmap.
     //init function.
     init:function(arr, index){
         //add tiled
@@ -196,7 +197,8 @@ var Background = cc.Node.extend({    //move map for game.
 });
 
 //get random number 0~n
-var getRandN = function(num){
+var getRandN = function(num)
+{
     var aNum = cc.RANDOM_0_1() * num | 0;
     return aNum;
 }

@@ -43,10 +43,6 @@ var GameOver = cc.UILayer.extend({
         }
         return false;
     },
-//    onTouchBegan:function(touch){
-//    },
-//    onTouchesBegan:function(touch){
-//    },
     //calculate final score.
     calculateFinalScore:function(monsterSkyAmountValue, monsterGroundAmountValue, distanceScoreValue){
         var distanceScore = 0;
