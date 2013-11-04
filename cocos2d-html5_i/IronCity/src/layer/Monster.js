@@ -194,10 +194,6 @@ var Monster = cc.Node.extend({
                 var ex =movePoint.x+50;
                 var ey =movePoint.y+150;
 
-//                var bezier = {};
-//                bezier.controlPoint_1 = this.MonsterAmature.getPosition();
-//                bezier.controlPoint_2 = cc.p(sx+(ex-sx)*0.5+randomNumX, sy+(ey-sy)*0.5+randomNumY);
-//                bezier.endPosition = movePoint;
                 var bezier = [];
                 bezier[0] = this.MonsterAmature.getPosition();
                 bezier[1] = cc.p(sx+(ex-sx)*0.5+randomNumX, sy+(ey-sy)*0.5+randomNumY);
@@ -218,8 +214,6 @@ var Monster = cc.Node.extend({
     DestroyActionActionEnded:function(armature, movementType, movementID){
         if (movementType == CC_MovementEventType_COMPLETE || movementType == CC_MovementEventType_LOOP_COMPLETE)
         {
-            //this.schedule( cc.scheduleCallbackForTarget(this, this.DelayInit, 0.0, 0, 0.0) );
-            //this.schedule(cc.schedule_selector(this.DelayInit), 0.0, 0, 0.0);
             this.DelayInit(0.3);
         }
     },
@@ -229,10 +223,6 @@ var Monster = cc.Node.extend({
     },
     pause:function()
     {
-        /*
-        this.MonsterAmature.stopAllActions();
-        this.MonsterAmature.unscheduleUpdate();
-        */
         this.MonsterAmature.pauseSchedulerAndActions();
         this.MonsterAmature.unscheduleUpdate();
     },
