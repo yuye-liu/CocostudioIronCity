@@ -19,6 +19,7 @@ var Monster = cc.Node.extend({
     VisibleSize:null,
     VisiblePosition:null,
     lastAction:null,
+    _isLive:null,
     init:function(){
         //add cocostudio json file to widget.
         cc.ArmatureDataManager.getInstance().addArmatureFileInfo(Json_MonsterGroundMoving);
@@ -47,6 +48,7 @@ var Monster = cc.Node.extend({
         }
 
         this.lastAction = null;
+        this._isLive = true;
 
         return true;
     },
@@ -230,5 +232,11 @@ var Monster = cc.Node.extend({
     {
         this.MonsterAmature.resumeSchedulerAndActions();
         this.MonsterAmature.scheduleUpdate();
+    },
+    IsLive:function(){
+        return this._isLive;
+    },
+    setIsLive:function(live){
+        this._isLive = live;
     }
 });
