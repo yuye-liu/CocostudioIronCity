@@ -63,8 +63,9 @@ var Laser = cc.Sprite.extend({
             return;
         }
         //if hit a monster
-        if (this.inRect(GameScene.getScene().gameSceneMonster.MonsterAmatureBoundingBox))
+        if (this.inRect(GameScene.getScene().gameSceneMonster.MonsterAmatureBoundingBox) && GameScene.getScene().gameSceneMonster.IsLive())
         {
+            GameScene.getScene().gameSceneMonster.setIsLive(false);
             //add score.
             var type = GameScene.getScene().gameSceneMonster.MonsterIndex;
             if (type == MonsterType.MonsterSky_enum) {
