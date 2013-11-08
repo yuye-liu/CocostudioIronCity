@@ -28,8 +28,8 @@
             'src/layer/GameOver.js',
             'src/layer/Player.js'
         ]
-    };
-
+    }; 
+  
     if(!d.createElement('canvas').getContext)
     {
         var s = d.createElement('div');
