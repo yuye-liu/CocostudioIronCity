@@ -213,11 +213,6 @@ var Player = cc.Layer.extend
             }
         }
     },
-    //on touch cancelled.
-//    onTouchesCancelled:function (touches, event) {
-//    },
-
-
     //Running animation.
     CMRunning:function(){
         var armature = cc.Armature.create("CMRun");

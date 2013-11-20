@@ -65,18 +65,18 @@ var AudioPlayer = cc.Class.extend
 
         if (this._bMusicPlay)
         {
-            this._audio.stopBackgroundMusic();
+            this._audio.pauseMusic();
         }
         else
         {
-            this._audio.playBackgroundMusic(mp3_music_background, true);
+            this._audio.resumeMusic();
         }
     },
     //set volume.
     setVolume:function(volume)
     {
-        this._audio.setBackgroundMusicVolume(volume);
         this._audio.setEffectsVolume(volume);
+        this._audio.setMusicVolume(volume);
     }
 });
 
