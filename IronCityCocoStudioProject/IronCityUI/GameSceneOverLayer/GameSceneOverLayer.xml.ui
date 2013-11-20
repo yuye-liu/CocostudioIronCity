@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>1.0.2.0</Version>
+  <Name>GameSceneOverLayer</Name>
+  <ProjectDir>C:\Users\cocos2d-x\Desktop\华南理工大学讲课\IronCityStudio\IronCityUI\GameSceneOverLayer</ProjectDir>
+  <JsonFileName>GameSceneOverLayer.json</JsonFileName>
+  <Resources>C:\Users\cocos2d-x\Desktop\华南理工大学讲课\IronCityStudio\IronCityUI\GameSceneOverLayer\Resources</Resources>
+  <JsonFolder>C:\Users\cocos2d-x\Desktop\华南理工大学讲课\IronCityStudio\IronCityUI\GameSceneOverLayer\Json</JsonFolder>
+  <JsonList>
+    <string>GameSceneOverLayer_1.json</string>
+  </JsonList>
+  <imageFileList />
+  <JsonSuffix>.json</JsonSuffix>
+  <CurrentUIJson />
+  <CanvasSize>
+    <Width>480</Width>
+    <Height>320</Height>
+  </CanvasSize>
+</UIProject>

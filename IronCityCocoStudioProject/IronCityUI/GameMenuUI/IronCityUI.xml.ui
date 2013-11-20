@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>1.0.2.0</Version>
+  <Name>IronCityUI</Name>
+  <ProjectDir>C:\Users\cocos2d-x\Desktop\华南理工大学讲课\IronCityStudio\IronCityUI\GameMenuUI</ProjectDir>
+  <JsonFileName>IronCityUI.json</JsonFileName>
+  <Resources>C:\Users\cocos2d-x\Desktop\华南理工大学讲课\IronCityStudio\IronCityUI\GameMenuUI\Resources</Resources>
+  <JsonFolder>C:\Users\cocos2d-x\Desktop\华南理工大学讲课\IronCityStudio\IronCityUI\GameMenuUI\Json</JsonFolder>
+  <JsonList>
+    <string>IronCityUI_1.json</string>
+  </JsonList>
+  <imageFileList />
+  <JsonSuffix>.json</JsonSuffix>
+  <CurrentUIJson>IronCityUI_1.json</CurrentUIJson>
+  <CanvasSize>
+    <Width>480</Width>
+    <Height>320</Height>
+  </CanvasSize>
+</UIProject>

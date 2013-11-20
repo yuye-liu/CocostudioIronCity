@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<AnimationProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Version>0.0.0.0</Version>
+  <Name>IronManAnimation</Name>
+  <ProjectDir>C:\Users\cocos2d-x\Desktop\华南理工大学讲课\IronCityStudio\IronManAction\IMRunStop</ProjectDir>
+  <JsonFileName>IronManAnimation.json</JsonFileName>
+  <Resources>C:\Users\cocos2d-x\Desktop\华南理工大学讲课\IronCityStudio\IronManAction\IMRunStop\Resources</Resources>
+  <JsonFolder>C:\Users\cocos2d-x\Desktop\华南理工大学讲课\IronCityStudio\IronManAction\IMRunStop\Json</JsonFolder>
+  <JsonList />
+  <ResourceFileList>
+    <string>IMRunStop0.plist</string>
+  </ResourceFileList>
+  <CanvasSize>
+    <Width>0</Width>
+    <Height>0</Height>
+  </CanvasSize>
+  <bBatchImage>true</bBatchImage>
+</AnimationProject>
